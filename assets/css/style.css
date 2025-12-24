@@ -501,7 +501,8 @@ main {
   color: var(--light-gray);
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
-  line-height: 1.6;
+  line-height: 1.4;
+  text-align: justify;
 }
 
 .about-text p { margin-bottom: 15px; }
@@ -552,19 +553,20 @@ main {
   color: var(--light-gray);
   font-size: var(--fs-6);
   font-weight: var(--fw-3);
-  line-height: 1.6;
+  line-height: 1.4;
+  text-align: justify;
 }
 
 
 /**
- * #testimonials 
+ * #companies 
  */
 
-.testimonials { margin-bottom: 30px; }
+.companies { margin-bottom: 30px; }
 
-.testimonials-title { margin-bottom: 20px; }
+.companies-title { margin-bottom: 20px; }
 
-.testimonials-list {
+.companies-list {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -578,12 +580,12 @@ main {
   scroll-snap-type: inline mandatory;
 }
 
-.testimonials-item {
+.companies-item {
   min-width: 100%;
   scroll-snap-align: center;
 }
 
-.testimonials-avatar-box {
+.companies-avatar-box {
   position: absolute;
   top: 0;
   left: 0;
@@ -593,13 +595,14 @@ main {
   box-shadow: var(--shadow-1);
 }
 
-.testimonials-item-title { margin-bottom: 7px; }
+.companies-item-title { margin-bottom: 7px; }
 
-.testimonials-text {
+.companies-text {
   color: var(--light-gray);
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
-  line-height: 1.6;
+  line-height: 1.4;
+  text-align: justify;
   display: -webkit-box;
   line-clamp: 4;
   -webkit-line-clamp: 4;
@@ -607,6 +610,14 @@ main {
   overflow: hidden;
 }
 
+
+/**
+ * Auto-scroll animation for testimonials
+ */
+@keyframes auto-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
 
 /**
  * #testimonials-modal
@@ -652,10 +663,10 @@ main {
 .overlay.active {
   opacity: 0.8;
   visibility: visible;
-  pointer-events: all;
+  /* pointer-events: all; */ /* Removed to make modal static */
 }
 
-.testimonials-modal {
+.companies-modal {
   background: var(--eerie-black-2);
   position: relative;
   padding: 15px;
@@ -669,7 +680,7 @@ main {
   z-index: 2;
 }
 
-.modal-container.active .testimonials-modal {
+.modal-container.active .companies-modal {
   transform: scale(1);
   opacity: 1;
 }
@@ -722,44 +733,6 @@ main {
 }
 
 
-/**
- * #clients 
- */
-
-.clients { margin-bottom: 15px; }
-
-.clients-list {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 15px;
-  margin: 0 -15px;
-  padding: 25px;
-  padding-bottom: 25px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  overscroll-behavior-inline: contain;
-  scroll-snap-type: inline mandatory;
-  scroll-padding-inline: 25px;
-}
-
-.clients-item {
-  min-width: 50%;
-  scroll-snap-align: start;
-}
-
-.clients-item img {
-  width: 100%;
-  filter: grayscale(1);
-  transition: var(--transition-1);
-}
-
-.clients-item img:hover { filter: grayscale(0); }
-
-
-
-
-
 /*-----------------------------------*\
   #RESUME
 \*-----------------------------------*/
@@ -770,6 +743,17 @@ main {
 /**
  * education and experience 
  */
+
+.resume-container {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.resume-container .timeline {
+  flex: 1;
+  margin-bottom: 0;
+}
 
 .timeline { margin-bottom: 30px; }
 
@@ -787,7 +771,7 @@ main {
 
 .timeline-item { position: relative; }
 
-.timeline-item:not(:last-child) { margin-bottom: 20px; }
+.timeline-item:not(:last-child) { margin-bottom: 15px; }
 
 .timeline-item-title {
   font-size: var(--fs-6);
@@ -826,7 +810,8 @@ main {
 .timeline-text {
   color: var(--light-gray);
   font-weight: var(--fw-300);
-  line-height: 1.6;
+  line-height: 1.4;
+  text-align: justify;
 }
 
 
@@ -1111,7 +1096,8 @@ main {
   color: var(--light-gray);
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
-  line-height: 1.6;
+  line-height: 1.4;
+  text-align: justify;
 }
 
 
@@ -1234,14 +1220,6 @@ textarea.form-input::-webkit-resizer { display: none; }
  */
 
 @media (min-width: 450px) {
-
-  /**
-   * client
-   */
-
-  .clients-item { min-width: calc(33.33% - 10px); }
-
-
 
   /**
    * #PORTFOLIO, BLOG 
@@ -1406,11 +1384,11 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .service-content-box { text-align: left; }
 
-  /* testimonials */
+  /* companies */
 
-  .testimonials-title { margin-bottom: 25px; }
+  .companies-title { margin-bottom: 25px; }
 
-  .testimonials-list {
+  .companies-list {
     gap: 30px;
     margin: 0 -30px;
     padding: 30px;
@@ -1422,28 +1400,28 @@ textarea.form-input::-webkit-resizer { display: none; }
     padding-top: 25px;
   }
 
-  .testimonials-avatar-box {
+  .companies-avatar-box {
     transform: translate(30px, -30px);
     border-radius: 20px;
   }
 
-  .testimonials-avatar-box img { width: 80px; }
+  .companies-avatar-box img { width: 80px; }
 
-  .testimonials-item-title {
+  .companies-item-title {
     margin-bottom: 10px;
     margin-left: 95px;
   }
 
-  .testimonials-text {
+  .companies-text {
     line-clamp: 2;
     -webkit-line-clamp: 2;
   }
 
-  /* testimonials modal */
+  /* companies modal */
 
   .modal-container { padding: 20px; }
 
-  .testimonials-modal {
+  .companies-modal {
     display: flex;
     justify-content: flex-start;
     align-items: stretch;
@@ -1470,17 +1448,6 @@ textarea.form-input::-webkit-resizer { display: none; }
     flex-grow: 1;
     width: 35px;
   }
-
-  /* clients */
-
-  .clients-list {
-    gap: 50px;
-    margin: 0 -30px;
-    padding: 45px;
-    scroll-padding-inline: 45px;
-  }
-
-  .clients-item { min-width: calc(33.33% - 35px); }
 
 
 
@@ -1584,9 +1551,9 @@ textarea.form-input::-webkit-resizer { display: none; }
    * ABOUT
    */
 
-  /* testimonials modal */
+  /* companies modal */
 
-  .testimonials-modal {
+  .companies-modal {
     gap: 35px;
     max-width: 680px;
   }
@@ -1730,13 +1697,9 @@ textarea.form-input::-webkit-resizer { display: none; }
     gap: 20px 25px;
   }
 
-  /* testimonials */
+  /* companies */
 
-  .testimonials-item { min-width: calc(50% - 15px); }
-
-  /* clients */
-
-  .clients-item { min-width: calc(25% - 38px); }
+  .companies-item { min-width: calc(50% - 15px); }
 
 
 
@@ -1879,4 +1842,12 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .timeline-text { max-width: 700px; }
 
+}
+
+/* Responsive for resume sections */
+@media (max-width: 767px) {
+  .resume-container {
+    flex-direction: column;
+    gap: 20px;
+  }
 }

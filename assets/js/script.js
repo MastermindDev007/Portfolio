@@ -16,42 +16,39 @@ sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); }
 
 
 
-// testimonials variables
-const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
+// companies modal variables
+const companiesItem = document.querySelectorAll("[data-companies-item]");
 const modalContainer = document.querySelector("[data-modal-container]");
 const modalCloseBtn = document.querySelector("[data-modal-close-btn]");
 const overlay = document.querySelector("[data-overlay]");
 
-// modal variable
+// modal variables
 const modalImg = document.querySelector("[data-modal-img]");
 const modalTitle = document.querySelector("[data-modal-title]");
 const modalText = document.querySelector("[data-modal-text]");
 
 // modal toggle function
-const testimonialsModalFunc = function () {
+const companiesModalFunc = function () {
   modalContainer.classList.toggle("active");
   overlay.classList.toggle("active");
 }
 
-// add click event to all modal items
-for (let i = 0; i < testimonialsItem.length; i++) {
+// add click event to all company items
+for (let i = 0; i < companiesItem.length; i++) {
+  companiesItem[i].addEventListener("click", function () {
+    modalImg.src = this.querySelector("[data-companies-avatar]").src;
+    modalImg.alt = this.querySelector("[data-companies-avatar]").alt;
+    modalTitle.innerHTML = this.querySelector("[data-companies-title]").innerHTML;
+    modalText.innerHTML = this.querySelector("[data-companies-text]").innerHTML;
 
-  testimonialsItem[i].addEventListener("click", function () {
-
-    modalImg.src = this.querySelector("[data-testimonials-avatar]").src;
-    modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
-    modalTitle.innerHTML = this.querySelector("[data-testimonials-title]").innerHTML;
-    modalText.innerHTML = this.querySelector("[data-testimonials-text]").innerHTML;
-
-    testimonialsModalFunc();
-
+    companiesModalFunc();
   });
-
 }
 
-// add click event to modal close button
-modalCloseBtn.addEventListener("click", testimonialsModalFunc);
-overlay.addEventListener("click", testimonialsModalFunc);
+// add click event to modal close button only
+modalCloseBtn.addEventListener("click", companiesModalFunc);
+
+// Note: Modal is static - does NOT close on escape key or outside click
 
 
 
@@ -142,18 +139,65 @@ const pages = document.querySelectorAll("[data-page]");
 
 // add event to all nav link
 for (let i = 0; i < navigationLinks.length; i++) {
-  navigationLinks[i].addEventListener("click", function () {
+  navigationLinks[i].addEventListener("click", function (event) {
+    event.preventDefault();
 
-    for (let i = 0; i < pages.length; i++) {
-      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
-        pages[i].classList.add("active");
-        navigationLinks[i].classList.add("active");
-        window.scrollTo(0, 0);
-      } else {
-        pages[i].classList.remove("active");
-        navigationLinks[i].classList.remove("active");
-      }
+    // Remove active class from all nav links
+    navigationLinks.forEach(link => link.classList.remove("active"));
+
+    // Remove active class from all pages
+    pages.forEach(page => page.classList.remove("active"));
+
+    // Add active class to clicked nav link
+    this.classList.add("active");
+
+    // Find and activate the corresponding page
+    const targetPage = this.innerHTML.trim().toLowerCase();
+    const targetElement = document.querySelector(`[data-page="${targetPage}"]`);
+    if (targetElement) {
+      targetElement.classList.add("active");
     }
 
+    // Scroll to top
+    window.scrollTo(0, 0);
   });
 }
+
+
+// auto-slide companies
+const companiesList = document.querySelector('.companies-list');
+let companiesIndex = 0;
+
+setInterval(() => {
+  companiesIndex = (companiesIndex + 2) % 4; // Show 2 companies at a time
+  const container = companiesList;
+  if (container) {
+    const item = container.children[companiesIndex];
+    if (item) {
+      const itemLeft = item.offsetLeft - container.offsetLeft;
+      container.scrollTo({
+        left: itemLeft,
+        behavior: 'smooth'
+      });
+    }
+  }
+}, 3000);
+
+// Content Protection
+// Disable right-click
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+});
+
+// Disable keyboard shortcuts for developer tools and view source
+document.addEventListener('keydown', function(e) {
+  // Prevent Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U, F12
+  if (
+    (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) ||
+    (e.ctrlKey && e.key === 'U') ||
+    e.key === 'F12'
+  ) {
+    e.preventDefault();
+    return false;
+  }
+});
