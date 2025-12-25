@@ -1,0 +1,38 @@
+[
+     {
+          "id": 1,
+          "name": "Mehta Websolutions",
+          "avatar": "assets/images/avatar-1.png",
+          "position": "Full-Stack Developer",
+          "period": "January 15, 2025 — Present",
+          "description": "Currently working as a Full-Stack Developer at Mehta Websolutions under CEO Nirav Mehta. Leading development of innovative web solutions and digital transformation projects.",
+          "delay": "0.1s"
+     },
+     {
+          "id": 2,
+          "name": "Web World Developing",
+          "avatar": "assets/images/avatar-2.png",
+          "position": "Junior Web Designer Intern",
+          "period": "2024",
+          "description": "Completed a 6-month Junior Web Designer internship in 2024. Focused on web design, UI/UX principles, and frontend development.",
+          "delay": "0.2s"
+     },
+     {
+          "id": 3,
+          "name": "DreamWebZ",
+          "avatar": "assets/images/avatar-3.png",
+          "position": "Junior Web Developer Intern",
+          "period": "2024",
+          "description": "Served as Junior Web Developer intern for 2 months in 2024. Developed responsive websites and learned modern web development practices.",
+          "delay": "0.3s"
+     },
+     {
+          "id": 4,
+          "name": "Auranics Solution",
+          "avatar": "assets/images/avatar-4.png",
+          "position": "Software Engineer Intern",
+          "period": "2023",
+          "description": "Completed a 2-week Software Engineer internship in 2023. Gained hands-on experience in software development and project implementation.",
+          "delay": "0.4s"
+     }
+]

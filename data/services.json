@@ -1,0 +1,30 @@
+[
+     {
+          "id": 1,
+          "title": "Web Design",
+          "icon": "assets/images/icon-design.svg",
+          "description": "Creating visually stunning and user-friendly web interfaces with modern design principles.",
+          "delay": "0.1s"
+     },
+     {
+          "id": 2,
+          "title": "Web Development",
+          "icon": "assets/images/icon-dev.svg",
+          "description": "Building robust and scalable web applications using cutting-edge technologies.",
+          "delay": "0.2s"
+     },
+     {
+          "id": 3,
+          "title": "DevOps Engineer",
+          "icon": "assets/images/icon-app.svg",
+          "description": "Streamlining development and operations with automation, CI/CD, and cloud infrastructure.",
+          "delay": "0.3s"
+     },
+     {
+          "id": 4,
+          "title": "Full-Stack Developer (Laravel, Python, PHP)",
+          "icon": "assets/images/icon-photo.svg",
+          "description": "End-to-end development expertise in Laravel, Python, and PHP for comprehensive solutions.",
+          "delay": "0.4s"
+     }
+]

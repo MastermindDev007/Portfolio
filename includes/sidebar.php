@@ -3,12 +3,12 @@
   <div class="sidebar-info">
 
     <figure class="avatar-box wow animate__animated animate__zoomIn" data-wow-delay="0.2s">
-      <img src="assets/images/my-avatar.png" alt="Richard hanrick" width="80">
+      <img src="assets/images/my-avatar.png" alt="Dev Davda" width="80">
     </figure>
 
     <div class="info-content wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
       <h1 class="name" title="Dev Davda">Dev Davda</h1>
-      <p class="title">Full‑Stack Web Developer</p>
+      <p class="title" data-typing-text>Full‑Stack Web Developer</p>
     </div>
 
     <button class="info_more-btn" data-sidebar-btn>
@@ -19,6 +19,14 @@
   </div>
 
   <div class="sidebar-info_more">
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+      <button class="theme-toggle-btn" data-theme-toggle>
+        <ion-icon name="sunny-outline" class="theme-icon" data-theme-icon></ion-icon>
+        <span style="color: var(--light-gray); font-size: var(--fs-7);">Toggle Theme</span>
+      </button>
+    </div>
 
     <div class="separator"></div>
 
@@ -68,19 +76,29 @@
 
     <div class="separator"></div>
 
+    <!-- Resume Download Button -->
+    <div class="resume-download">
+      <a href="assets/resume/Dev_Davda_Resume.pdf" target="_blank" class="resume-btn">
+        <ion-icon name="download-outline"></ion-icon>
+        <span>Download Resume</span>
+      </a>
+    </div>
+
+    <div class="separator"></div>
+
     <ul class="social-list">
       <li class="social-item">
-        <a href="https://www.linkedin.com/in/dev-davda-ab8378239" class="social-link">
+        <a href="https://www.linkedin.com/in/dev-davda-ab8378239" class="social-link" target="_blank">
           <ion-icon name="logo-linkedin"></ion-icon>
         </a>
       </li>
       <li class="social-item">
-        <a href="https://wa.me/7779092005" class="social-link">
+        <a href="https://wa.me/7779092005" class="social-link" target="_blank">
           <ion-icon name="logo-whatsapp"></ion-icon>
         </a>
       </li>
       <li class="social-item">
-        <a href="https://www.instagram.com/dev_davda_555/" class="social-link">
+        <a href="https://www.instagram.com/dev_davda_555/" class="social-link" target="_blank">
           <ion-icon name="logo-instagram"></ion-icon>
         </a>
       </li>

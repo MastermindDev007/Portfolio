@@ -3,82 +3,162 @@
     "id": 1,
     "title": "Finance",
     "category": "Web development",
-    "image": "assets/images/project-1.jpg",
+    "images": [
+      "assets/images/project-1.jpg",
+      "assets/images/project-1.jpg"
+    ],
     "alt": "finance",
-    "link": "#",
-    "description": "A comprehensive financial management web application"
+    "description": "A comprehensive financial management web application with real-time tracking, budget planning, and investment portfolio management. Built with Laravel and Vue.js for seamless user experience.",
+    "demoUrl": "demos/finance/index.html",
+    "technologies": [
+      "Laravel",
+      "Vue.js",
+      "MySQL",
+      "Chart.js"
+    ]
   },
   {
     "id": 2,
     "title": "Orizon",
     "category": "Web development",
-    "image": "assets/images/project-2.png",
+    "images": [
+      "assets/images/project-2.png",
+      "assets/images/project-2.png"
+    ],
     "alt": "orizon",
-    "link": "#",
-    "description": "Modern web development platform with advanced features"
+    "description": "Modern web development platform with advanced features including drag-and-drop builder, real-time collaboration, and integrated deployment pipeline. Perfect for teams building scalable applications.",
+    "demoUrl": "demos/orizon/index.html",
+    "technologies": [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "Docker"
+    ]
   },
   {
     "id": 3,
     "title": "Fundo",
     "category": "Web design",
-    "image": "assets/images/project-3.jpg",
+    "images": [
+      "assets/images/project-3.jpg",
+      "assets/images/project-3.jpg"
+    ],
     "alt": "fundo",
-    "link": "#",
-    "description": "Creative web design project with stunning visuals"
+    "description": "Creative web design project with stunning visuals, smooth animations, and intuitive user interface. Focused on delivering exceptional user experience through minimalist design principles.",
+    "demoUrl": "demos/fundo/index.html",
+    "technologies": [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "GSAP"
+    ]
   },
   {
     "id": 4,
     "title": "Brawlhalla",
     "category": "Applications",
-    "image": "assets/images/project-4.png",
+    "images": [
+      "assets/images/project-4.png",
+      "assets/images/project-4.png"
+    ],
     "alt": "brawlhalla",
-    "link": "#",
-    "description": "Gaming application with immersive user experience"
+    "description": "Gaming application with immersive user experience, featuring real-time multiplayer, leaderboards, character customization, and in-game chat. Built with Unity and Firebase.",
+    "demoUrl": "demos/brawlhalla/index.html",
+    "technologies": [
+      "Unity",
+      "C#",
+      "Firebase",
+      "Photon"
+    ]
   },
   {
     "id": 5,
     "title": "DSM.",
     "category": "Web design",
-    "image": "assets/images/project-5.png",
+    "images": [
+      "assets/images/project-5.png",
+      "assets/images/project-5.png"
+    ],
     "alt": "dsm.",
-    "link": "#",
-    "description": "Minimalist web design with clean aesthetics"
+    "description": "Minimalist web design with clean aesthetics, focusing on typography, whitespace, and subtle interactions. A showcase of modern design system methodologies.",
+    "demoUrl": "demos/dsm/index.html",
+    "technologies": [
+      "Figma",
+      "HTML5",
+      "Tailwind CSS",
+      "Alpine.js"
+    ]
   },
   {
     "id": 6,
     "title": "MetaSpark",
     "category": "Web design",
-    "image": "assets/images/project-6.png",
+    "images": [
+      "assets/images/project-6.png",
+      "assets/images/project-6.png"
+    ],
     "alt": "metaspark",
-    "link": "#",
-    "description": "Innovative web design with modern UI/UX principles"
+    "description": "Innovative web design with modern UI/UX principles, featuring 3D elements, parallax scrolling, and micro-interactions that engage users throughout their journey.",
+    "demoUrl": "demos/metaspark/index.html",
+    "technologies": [
+      "Three.js",
+      "React",
+      "Framer Motion",
+      "WebGL"
+    ]
   },
   {
     "id": 7,
     "title": "Summary",
     "category": "Web development",
-    "image": "assets/images/project-7.png",
+    "images": [
+      "assets/images/project-7.png",
+      "assets/images/project-7.png"
+    ],
     "alt": "summary",
-    "link": "#",
-    "description": "Data visualization and summary web application"
+    "description": "Data visualization and summary web application with interactive charts, custom reports, and export functionality. Designed for business analytics and data-driven decision making.",
+    "demoUrl": "demos/summary/index.html",
+    "technologies": [
+      "Python",
+      "Django",
+      "D3.js",
+      "PostgreSQL"
+    ]
   },
   {
     "id": 8,
     "title": "Task Manager",
     "category": "Applications",
-    "image": "assets/images/project-8.jpg",
+    "images": [
+      "assets/images/project-8.jpg",
+      "assets/images/project-8.jpg"
+    ],
     "alt": "task manager",
-    "link": "#",
-    "description": "Productivity application for task management"
+    "description": "Productivity application for task management with features like project boards, time tracking, team collaboration, and automated reminders. Boost your productivity with smart organization.",
+    "demoUrl": "demos/task-manager/index.html",
+    "technologies": [
+      "Vue.js",
+      "Express",
+      "Socket.io",
+      "Redis"
+    ]
   },
   {
     "id": 9,
     "title": "Arrival",
     "category": "Web development",
-    "image": "assets/images/project-9.png",
+    "images": [
+      "assets/images/project-9.png",
+      "assets/images/project-9.png"
+    ],
     "alt": "arrival",
-    "link": "#",
-    "description": "Modern web development project with cutting-edge technology"
+    "description": "Modern web development project with cutting-edge technology including progressive web app features, offline functionality, and push notifications. Built for the future of web.",
+    "demoUrl": "demos/arrival/index.html",
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "PWA",
+      "GraphQL"
+    ]
   }
 ]
-

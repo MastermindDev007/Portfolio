@@ -1,0 +1,26 @@
+[
+     {
+          "id": 1,
+          "category": "Designing Skills",
+          "icon": "color-palette-outline",
+          "percentage": 80,
+          "technologies": "HTML, CSS, JavaScript, AngularJS, Bootstrap, Tailwind CSS",
+          "delay": "0.1s"
+     },
+     {
+          "id": 2,
+          "category": "Development Skills",
+          "icon": "terminal-outline",
+          "percentage": 70,
+          "technologies": "PHP, Laravel, Python, DevOps",
+          "delay": "0.2s"
+     },
+     {
+          "id": 3,
+          "category": "Other Skills",
+          "icon": "layers-outline",
+          "percentage": 60,
+          "technologies": "Canva, Python Machine Learning",
+          "delay": "0.3s"
+     }
+]

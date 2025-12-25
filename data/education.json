@@ -1,0 +1,24 @@
+[
+     {
+          "id": 1,
+          "title": "Bachelor's Degree - BCA",
+          "university": "Saurashtra University",
+          "college": "SVET College",
+          "badge": "2022 — 2025",
+          "status": "Completed",
+          "note": "Built a project in Semester 6",
+          "isActive": false,
+          "delay": "0.1s"
+     },
+     {
+          "id": 2,
+          "title": "Master's Degree - M.Sc. IT & CA",
+          "university": "GCAS",
+          "college": "Vidhya Sagar Infotech College",
+          "badge": "Ongoing",
+          "status": "Ongoing",
+          "note": "Built a project in Semester 1",
+          "isActive": true,
+          "delay": "0.2s"
+     }
+]

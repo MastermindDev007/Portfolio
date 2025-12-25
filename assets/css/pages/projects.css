@@ -1,4 +1,4 @@
-/* Projects Page Styles */
+/* Projects Page Styles - UPDATED */
 
 /* Filter Controls */
 .filter-list {
@@ -70,6 +70,18 @@
      background: hsl(240, 2%, 20%);
 }
 
+/* Category Count Badge */
+.category-count {
+     display: inline-block;
+     background: var(--onyx);
+     color: var(--orange-yellow-crayola);
+     padding: 2px 8px;
+     border-radius: var(--radius-sm);
+     font-size: var(--fs-8);
+     margin-left: 8px;
+     font-weight: var(--fw-500);
+}
+
 /* Project Grid */
 .project-list {
      display: grid;
@@ -80,17 +92,18 @@
 
 .project-item {
      display: none;
+     opacity: 0;
 }
 
 .project-item.active {
      display: block;
-     animation: projectFade 0.4s ease forwards;
+     animation: projectSlideUp 0.5s ease forwards;
 }
 
-@keyframes projectFade {
+@keyframes projectSlideUp {
      0% {
           opacity: 0;
-          transform: translateY(20px);
+          transform: translateY(30px);
      }
 
      100% {
@@ -101,6 +114,7 @@
 
 .project-item>a {
      width: 100%;
+     display: block;
 }
 
 /* Project Card */
@@ -145,11 +159,18 @@
      opacity: 0;
      z-index: 1;
      transition: var(--transition-1);
+     cursor: pointer;
 }
 
 .project-item>a:hover .project-item-icon-box {
      --scale: 1;
      opacity: 1;
+}
+
+.project-item-icon-box:hover {
+     background: var(--orange-yellow-crayola);
+     color: var(--smoky-black);
+     transform: translate(-50%, -50%) scale(1.1);
 }
 
 .project-item-icon-box ion-icon {
@@ -216,6 +237,9 @@
           color: var(--light-gray);
           font-size: var(--fs-5);
           transition: var(--transition-1);
+          display: flex;
+          align-items: center;
+          gap: 5px;
      }
 
      .filter-item button:hover {

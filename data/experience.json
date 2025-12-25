@@ -1,0 +1,43 @@
+[
+     {
+          "id": 1,
+          "title": "Software Engineer Intern",
+          "company": "Auranics Solution",
+          "location": "Rajkot",
+          "duration": "2 weeks",
+          "badge": "2023",
+          "isActive": false,
+          "delay": "0.1s"
+     },
+     {
+          "id": 2,
+          "title": "Junior Web Developer Intern",
+          "company": "DreamWebZ",
+          "location": "Jamnagar",
+          "duration": "2 months",
+          "badge": "2024",
+          "isActive": false,
+          "delay": "0.2s"
+     },
+     {
+          "id": 3,
+          "title": "Junior Web Designer Intern",
+          "company": "Web World Developing",
+          "location": "Jamnagar",
+          "duration": "6 months",
+          "badge": "2024",
+          "isActive": false,
+          "delay": "0.3s"
+     },
+     {
+          "id": 4,
+          "title": "Junior Web Developer",
+          "company": "Wenta Websolutions",
+          "location": "Jamnagar",
+          "duration": "6 months internship → Converted to full-time",
+          "badge": "Jan 2025 — Present",
+          "status": "Ongoing",
+          "isActive": true,
+          "delay": "0.4s"
+     }
+]

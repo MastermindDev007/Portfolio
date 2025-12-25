@@ -1,6 +1,6 @@
 'use strict';
 
-// Main JavaScript Entry Point
+// Main JavaScript Entry Point - UPDATED
 
 // Import modules
 import { initPreloader } from './modules/preloader.js';
@@ -12,6 +12,11 @@ import { initFilters } from './modules/filters.js';
 import { initForm } from './modules/form.js';
 import { initSkills } from './modules/skills.js';
 import { initSecurity } from './modules/security.js';
+import { initThemeToggle } from './modules/theme-toggle.js';
+import { initTypingAnimation } from './modules/typing-animation.js';
+import { initProjectModal } from './modules/project-modal.js';
+import { initBackToTop } from './modules/back-to-top.js';
+import { initTestimonialsControl } from './modules/testimonials-control.js';
 
 // Initialize all modules
 document.addEventListener('DOMContentLoaded', () => {
@@ -24,4 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
      initForm();
      initSkills();
      initSecurity();
+     initThemeToggle();
+     initTypingAnimation();
+     initProjectModal();
+     initBackToTop();
+     initTestimonialsControl();
 });

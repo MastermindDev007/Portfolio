@@ -1,0 +1,50 @@
+[
+     {
+          "id": 1,
+          "name": "HTML5",
+          "icon": "logo-html5",
+          "color": "#E34F26"
+     },
+     {
+          "id": 2,
+          "name": "CSS3",
+          "icon": "logo-css3",
+          "color": "#1572B6"
+     },
+     {
+          "id": 3,
+          "name": "JavaScript",
+          "icon": "logo-javascript",
+          "color": "#F7DF1E"
+     },
+     {
+          "id": 4,
+          "name": "Python",
+          "icon": "logo-python",
+          "color": "#3776AB"
+     },
+     {
+          "id": 5,
+          "name": "Laravel",
+          "icon": "logo-laravel",
+          "color": "#FF2D20"
+     },
+     {
+          "id": 6,
+          "name": "Angular",
+          "icon": "logo-angular",
+          "color": "#DD0031"
+     },
+     {
+          "id": 7,
+          "name": "Bootstrap",
+          "icon": "logo-sass",
+          "color": "#7952B3"
+     },
+     {
+          "id": 8,
+          "name": "GitHub",
+          "icon": "logo-github",
+          "color": "#181717"
+     }
+]

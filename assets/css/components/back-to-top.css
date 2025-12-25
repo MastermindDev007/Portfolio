@@ -1,0 +1,64 @@
+/* Back to Top Button */
+
+.back-to-top {
+     position: fixed;
+     bottom: 30px;
+     right: 30px;
+     width: 50px;
+     height: 50px;
+     background: var(--border-gradient-onyx);
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     color: var(--orange-yellow-crayola);
+     font-size: 24px;
+     box-shadow: var(--shadow-3);
+     z-index: 100;
+     opacity: 0;
+     visibility: hidden;
+     transform: translateY(20px);
+     transition: all var(--transition-1);
+     cursor: pointer;
+}
+
+.back-to-top::before {
+     content: "";
+     position: absolute;
+     inset: 2px;
+     background: var(--bg-gradient-jet);
+     border-radius: inherit;
+     z-index: -1;
+     transition: var(--transition-1);
+}
+
+.back-to-top.active {
+     opacity: 1;
+     visibility: visible;
+     transform: translateY(0);
+}
+
+.back-to-top:hover {
+     background: var(--bg-gradient-yellow-1);
+     transform: translateY(-5px);
+     box-shadow: 0 8px 20px hsla(45, 100%, 72%, 0.4);
+}
+
+.back-to-top:hover::before {
+     background: var(--bg-gradient-yellow-2);
+}
+
+.back-to-top ion-icon {
+     --ionicon-stroke-width: 50px;
+}
+
+/* Responsive */
+@media (max-width: 580px) {
+     .back-to-top {
+          bottom: 20px;
+          right: 20px;
+          width: 45px;
+          height: 45px;
+          font-size: 20px;
+     }
+}
