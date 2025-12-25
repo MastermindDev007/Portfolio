@@ -80,7 +80,7 @@
     <div class="separator"></div>
 
     <!-- Resume Download Button -->
-    <div class="resume-download">
+    <div class="resume-download wow animate__animated animate__fadeInUp" data-wow-delay="0.5s">
       <a href="assets/resume/Dev_Davda.pdf" download="Dev_Davda_CV.pdf" class="resume-btn">
         <ion-icon name="download-outline"></ion-icon>
         <span>Download Resume</span>
@@ -89,18 +89,18 @@
 
     <div class="separator"></div>
 
-    <ul class="social-list wow animate__animated animate__zoomIn" data-wow-delay="0.5s">
+    <ul class="social-list wow animate__animated animate__zoomIn" data-wow-delay="0.6s">
       <li class="social-item">
         <a href="https://www.linkedin.com/in/dev-davda-ab8378239" class="social-link" target="_blank">
           <ion-icon name="logo-linkedin"></ion-icon>
         </a>
       </li>
-      <li class="social-item wow animate__animated animate__zoomIn" data-wow-delay="0.6s">
+      <li class="social-item">
         <a href="https://wa.me/7779092005" class="social-link" target="_blank">
           <ion-icon name="logo-whatsapp"></ion-icon>
         </a>
       </li>
-      <li class="social-item wow animate__animated animate__zoomIn" data-wow-delay="0.7s">
+      <li class="social-item">
         <a href="https://www.instagram.com/dev_davda_555/" class="social-link" target="_blank">
           <ion-icon name="logo-instagram"></ion-icon>
         </a>

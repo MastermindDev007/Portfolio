@@ -18,6 +18,11 @@ export function initTypingAnimation() {
      let isDeleting = false;
      let typingSpeed = 100;
 
+     // Set fixed min-width to prevent sidebar height changes
+     typingElement.style.minWidth = '220px';
+     typingElement.style.display = 'inline-block';
+     typingElement.style.whiteSpace = 'nowrap';
+
      function type() {
           const currentText = texts[textIndex];
 
@@ -30,6 +35,10 @@ export function initTypingAnimation() {
                charIndex++;
                typingSpeed = 100;
           }
+
+          // Add blinking cursor
+          typingElement.style.borderRight = '2px solid var(--orange-yellow-crayola)';
+          typingElement.style.paddingRight = '5px';
 
           if (!isDeleting && charIndex === currentText.length) {
                isDeleting = true;
@@ -45,4 +54,12 @@ export function initTypingAnimation() {
 
      // Start typing animation
      type();
+
+     // Blinking cursor animation
+     setInterval(() => {
+          typingElement.style.borderRight =
+               typingElement.style.borderRight === '2px solid transparent'
+                    ? '2px solid var(--orange-yellow-crayola)'
+                    : '2px solid transparent';
+     }, 500);
 }

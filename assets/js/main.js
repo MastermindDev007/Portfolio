@@ -16,7 +16,7 @@ import { initThemeToggle } from './modules/theme-toggle.js';
 import { initTypingAnimation } from './modules/typing-animation.js';
 import { initProjectModal } from './modules/project-modal.js';
 import { initBackToTop } from './modules/back-to-top.js';
-import { initTestimonialsControl } from './modules/testimonials-control.js';
+import { initAutoSliders } from './modules/auto-sliders.js';
 
 // Initialize all modules
 document.addEventListener('DOMContentLoaded', () => {
@@ -33,5 +33,5 @@ document.addEventListener('DOMContentLoaded', () => {
      initTypingAnimation();
      initProjectModal();
      initBackToTop();
-     initTestimonialsControl();
+     initAutoSliders();
 });

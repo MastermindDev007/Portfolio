@@ -1,11 +1,7 @@
 <?php
 // Load services from JSON
 $services = json_decode(file_get_contents('data/services.json'), true);
-
-// Load companies from JSON
 $companies = json_decode(file_get_contents('data/companies.json'), true);
-
-// Load tech stack from JSON
 $techStack = json_decode(file_get_contents('data/tech-stack.json'), true);
 ?>
 
@@ -15,23 +11,43 @@ $techStack = json_decode(file_get_contents('data/tech-stack.json'), true);
         <h2 class="h2 article-title wow animate__animated animate__fadeInDown">About me</h2>
     </header>
 
-    <section class="about-text wow animate__animated animate__fadeInUp">
-        <p>
-            I am a passionate Full-Stack Web Developer dedicated to crafting innovative digital solutions that drive business growth and user engagement.
-        </p>
-        <p>
-            With expertise in modern web technologies, I specialize in building responsive, scalable, and user-centric applications. My approach combines technical proficiency with creative design to deliver exceptional results that exceed client expectations.
-        </p>
+    <!-- Intro Section - Redesigned -->
+    <section class="about-intro wow animate__animated animate__fadeInUp">
+        <div class="intro-content">
+            <h3 class="h3">Full-Stack Developer & Digital Craftsman</h3>
+            <p>
+                I transform ideas into elegant digital solutions. With a passion for clean code and innovative
+                design,
+                I specialize in building scalable web applications that drive business growth and deliver
+                exceptional user experiences.
+            </p>
+            <div class="intro-stats">
+                <div class="stat-item">
+                    <h4 class="stat-number">15+</h4>
+                    <p class="stat-label">Projects Completed</p>
+                </div>
+                <div class="stat-item">
+                    <h4 class="stat-number">4</h4>
+                    <p class="stat-label">Companies Worked With</p>
+                </div>
+                <div class="stat-item">
+                    <h4 class="stat-number">2+</h4>
+                    <p class="stat-label">Years Experience</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Services Section - Redesigned -->
     <section class="service">
-        <h3 class="h3 service-title wow animate__animated animate__fadeInUp">What i'm doing</h3>
+        <h3 class="h3 service-title wow animate__animated animate__fadeInUp">What I Do</h3>
         <ul class="service-list">
             <?php foreach ($services as $service): ?>
-                <li class="service-item wow animate__animated animate__fadeIn<?php echo $service['id'] % 2 == 0 ? 'Right' : 'Left'; ?>" data-wow-delay="<?php echo $service['delay']; ?>">
+                <li class="service-item wow animate__animated animate__fadeIn<?php echo $service['id'] % 2 == 0 ? 'Right' : 'Left'; ?>"
+                    data-wow-delay="<?php echo $service['delay']; ?>">
                     <div class="service-icon-box">
-                        <img src="<?php echo htmlspecialchars($service['icon']); ?>" alt="<?php echo htmlspecialchars($service['title']); ?> icon" width="40">
+                        <img src="<?php echo htmlspecialchars($service['icon']); ?>"
+                            alt="<?php echo htmlspecialchars($service['title']); ?> icon" width="40">
                     </div>
                     <div class="service-content-box">
                         <h4 class="h4 service-item-title"><?php echo htmlspecialchars($service['title']); ?></h4>
@@ -49,7 +65,8 @@ $techStack = json_decode(file_get_contents('data/tech-stack.json'), true);
         <h3 class="h3 tech-stack-title wow animate__animated animate__fadeInUp">Tech Stack</h3>
         <div class="tech-stack-grid">
             <?php foreach ($techStack as $tech): ?>
-                <div class="tech-item wow animate__animated animate__zoomIn" data-wow-delay="<?php echo ($tech['id'] * 0.1); ?>s">
+                <div class="tech-item wow animate__animated animate__zoomIn"
+                    data-wow-delay="<?php echo ($tech['id'] * 0.1); ?>s">
                     <ion-icon name="<?php echo htmlspecialchars($tech['icon']); ?>" class="tech-icon"></ion-icon>
                     <p class="tech-name"><?php echo htmlspecialchars($tech['name']); ?></p>
                 </div>
@@ -59,21 +76,19 @@ $techStack = json_decode(file_get_contents('data/tech-stack.json'), true);
 
     <!-- Companies Section -->
     <section class="companies">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-            <h3 class="h3 companies-title wow animate__animated animate__fadeInUp">Companies I've Worked With</h3>
-            <button class="theme-toggle-btn" data-testimonials-toggle style="padding: 8px 12px;">
-                <ion-icon name="pause-outline" class="theme-icon" data-pause-icon></ion-icon>
-                <ion-icon name="play-outline" class="theme-icon" data-play-icon style="display: none;"></ion-icon>
-            </button>
-        </div>
+        <h3 class="h3 companies-title wow animate__animated animate__fadeInUp">Companies I've Worked With</h3>
         <ul class="companies-list has-scrollbar">
             <?php foreach ($companies as $company): ?>
-                <li class="companies-item wow animate__animated animate__fadeInUp" data-wow-delay="<?php echo $company['delay']; ?>">
+                <li class="companies-item wow animate__animated animate__fadeInUp"
+                    data-wow-delay="<?php echo $company['delay']; ?>">
                     <div class="content-card" data-companies-item>
                         <figure class="companies-avatar-box">
-                            <img src="<?php echo htmlspecialchars($company['avatar']); ?>" alt="<?php echo htmlspecialchars($company['name']); ?>" width="60" data-companies-avatar>
+                            <img src="<?php echo htmlspecialchars($company['avatar']); ?>"
+                                alt="<?php echo htmlspecialchars($company['name']); ?>" width="60"
+                                data-companies-avatar>
                         </figure>
-                        <h4 class="h4 companies-item-title" data-companies-title><?php echo htmlspecialchars($company['name']); ?></h4>
+                        <h4 class="h4 companies-item-title" data-companies-title>
+                            <?php echo htmlspecialchars($company['name']); ?></h4>
                         <div class="companies-text" data-companies-text>
                             <p><?php echo htmlspecialchars($company['description']); ?></p>
                         </div>

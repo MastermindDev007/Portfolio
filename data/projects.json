@@ -1,15 +1,15 @@
 [
   {
     "id": 1,
-    "title": "Finance",
-    "category": "Web development",
+    "title": "Amazon",
+    "category": "Web design",
     "images": [
       "assets/images/project-1.jpg",
       "assets/images/project-1.jpg"
     ],
-    "alt": "finance",
+    "alt": "amazon",
     "description": "A comprehensive financial management web application with real-time tracking, budget planning, and investment portfolio management. Built with Laravel and Vue.js for seamless user experience.",
-    "demoUrl": "demos/finance/index.html",
+    "demoUrl": "index.html",
     "technologies": [
       "Laravel",
       "Vue.js",

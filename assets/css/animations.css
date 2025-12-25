@@ -1,36 +1,29 @@
-/* Animations */
+/* Animations - FIXED (Consistent fade timing) */
 
+/* Page transitions */
 article[data-page] {
      animation: fadeInPage 0.5s ease-in-out;
 }
 
-.wow {
-     visibility: hidden;
-     will-change: transform, opacity;
+/* About & Resume - Good (keep as is) */
+article[data-page="about"],
+article[data-page="resume"] {
+     animation: fadeInPage 0.5s ease-in-out;
 }
 
-.wow.animated {
-     visibility: visible;
-     will-change: auto;
+/* Projects - Slower fade (like Blog but slightly slower) */
+article[data-page="projects"] {
+     animation: fadeInPage 0.7s ease-in-out;
 }
 
-.fade-in-up {
-     animation: fadeInUpCustom 0.6s ease forwards;
+/* Blog - Slightly slower */
+article[data-page="blog"] {
+     animation: fadeInPage 0.65s ease-in-out;
 }
 
-/* Reduce motion for accessibility */
-@media (prefers-reduced-motion: reduce) {
-
-     .wow,
-     .animate__animated,
-     .fade-in-up,
-     .fade-in-left,
-     .fade-in-right {
-          animation: none !important;
-          visibility: visible !important;
-          opacity: 1 !important;
-          transform: none !important;
-     }
+/* Contact - Slightly slower */
+article[data-page="contact"] {
+     animation: fadeInPage 0.65s ease-in-out;
 }
 
 @keyframes fadeInPage {
@@ -43,6 +36,40 @@ article[data-page] {
           opacity: 1;
           transform: translateY(0);
      }
+}
+
+/* Project items fade - slower */
+.project-item.active {
+     display: block;
+     animation: projectSlideUp 0.7s ease forwards;
+}
+
+@keyframes projectSlideUp {
+     0% {
+          opacity: 0;
+          transform: translateY(30px);
+     }
+
+     100% {
+          opacity: 1;
+          transform: translateY(0);
+     }
+}
+
+/* WOW.js elements */
+.wow {
+     visibility: hidden;
+     will-change: transform, opacity;
+}
+
+.wow.animated {
+     visibility: visible;
+     will-change: auto;
+}
+
+/* Fade utilities */
+.fade-in-up {
+     animation: fadeInUpCustom 0.6s ease forwards;
 }
 
 @keyframes fadeInUpCustom {
@@ -110,33 +137,19 @@ article[data-page] {
      animation-delay: 0.5s;
 }
 
-.animate__animated {
-     animation-duration: 0.6s;
-     animation-fill-mode: both;
-}
-
-.animate__fadeInUp {
-     animation-duration: 0.5s;
-}
-
-.animate__fadeInDown {
-     animation-duration: 0.4s;
-}
-
-.animate__fadeInLeft,
-.animate__fadeInRight {
-     animation-duration: 0.5s;
-}
-
-.animate__zoomIn {
-     animation-duration: 0.4s;
-}
-
+/* Reduce motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
 
      .wow,
-     .animate__animated {
+     .animate__animated,
+     .fade-in-up,
+     .fade-in-left,
+     .fade-in-right,
+     article[data-page],
+     .project-item.active {
           animation: none !important;
           visibility: visible !important;
+          opacity: 1 !important;
+          transform: none !important;
      }
 }
