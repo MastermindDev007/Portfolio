@@ -141,25 +141,33 @@ const pages = document.querySelectorAll("[data-page]");
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function (event) {
     event.preventDefault();
+    event.stopPropagation();
 
     // Remove active class from all nav links
-    navigationLinks.forEach(link => link.classList.remove("active"));
+    for (let j = 0; j < navigationLinks.length; j++) {
+      navigationLinks[j].classList.remove("active");
+    }
 
     // Remove active class from all pages
-    pages.forEach(page => page.classList.remove("active"));
+    for (let j = 0; j < pages.length; j++) {
+      pages[j].classList.remove("active");
+    }
 
     // Add active class to clicked nav link
     this.classList.add("active");
 
     // Find and activate the corresponding page
-    const targetPage = this.innerHTML.trim().toLowerCase();
+    const targetPage = this.textContent.trim().toLowerCase();
     const targetElement = document.querySelector(`[data-page="${targetPage}"]`);
+    
     if (targetElement) {
       targetElement.classList.add("active");
+    } else {
+      console.warn(`Page with data-page="${targetPage}" not found`);
     }
 
     // Scroll to top
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
 
