@@ -1,11 +1,113 @@
 /* Animations */
 
+article[data-page] {
+     animation: fadeInPage 0.5s ease-in-out;
+}
+
 .wow {
      visibility: hidden;
+     will-change: transform, opacity;
 }
 
 .wow.animated {
      visibility: visible;
+     will-change: auto;
+}
+
+.fade-in-up {
+     animation: fadeInUpCustom 0.6s ease forwards;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+
+     .wow,
+     .animate__animated,
+     .fade-in-up,
+     .fade-in-left,
+     .fade-in-right {
+          animation: none !important;
+          visibility: visible !important;
+          opacity: 1 !important;
+          transform: none !important;
+     }
+}
+
+@keyframes fadeInPage {
+     from {
+          opacity: 0;
+          transform: translateY(20px);
+     }
+
+     to {
+          opacity: 1;
+          transform: translateY(0);
+     }
+}
+
+@keyframes fadeInUpCustom {
+     from {
+          opacity: 0;
+          transform: translateY(30px);
+     }
+
+     to {
+          opacity: 1;
+          transform: translateY(0);
+     }
+}
+
+.fade-in-left {
+     animation: fadeInLeftCustom 0.6s ease forwards;
+}
+
+@keyframes fadeInLeftCustom {
+     from {
+          opacity: 0;
+          transform: translateX(-30px);
+     }
+
+     to {
+          opacity: 1;
+          transform: translateX(0);
+     }
+}
+
+.fade-in-right {
+     animation: fadeInRightCustom 0.6s ease forwards;
+}
+
+@keyframes fadeInRightCustom {
+     from {
+          opacity: 0;
+          transform: translateX(30px);
+     }
+
+     to {
+          opacity: 1;
+          transform: translateX(0);
+     }
+}
+
+/* Stagger delay utility */
+.stagger-delay-1 {
+     animation-delay: 0.1s;
+}
+
+.stagger-delay-2 {
+     animation-delay: 0.2s;
+}
+
+.stagger-delay-3 {
+     animation-delay: 0.3s;
+}
+
+.stagger-delay-4 {
+     animation-delay: 0.4s;
+}
+
+.stagger-delay-5 {
+     animation-delay: 0.5s;
 }
 
 .animate__animated {

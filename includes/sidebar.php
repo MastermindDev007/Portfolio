@@ -32,7 +32,7 @@
 
     <ul class="contacts-list">
 
-      <li class="contact-item">
+      <li class="contact-item wow animate__animated animate__fadeInLeft" data-wow-delay="0.1s">
         <div class="icon-box">
           <ion-icon name="mail-outline"></ion-icon>
         </div>
@@ -42,7 +42,7 @@
         </div>
       </li>
 
-      <li class="contact-item">
+      <li class="contact-item wow animate__animated animate__fadeInLeft" data-wow-delay="0.2s">
         <div class="icon-box">
           <ion-icon name="phone-portrait-outline"></ion-icon>
         </div>
@@ -52,7 +52,7 @@
         </div>
       </li>
 
-      <li class="contact-item">
+      <li class="contact-item wow animate__animated animate__fadeInLeft" data-wow-delay="0.3s">
         <div class="icon-box">
           <ion-icon name="calendar-outline"></ion-icon>
         </div>
@@ -62,13 +62,16 @@
         </div>
       </li>
 
-      <li class="contact-item">
+      <li class="contact-item wow animate__animated animate__fadeInLeft" data-wow-delay="0.4s">
         <div class="icon-box">
           <ion-icon name="location-outline"></ion-icon>
         </div>
         <div class="contact-info">
           <p class="contact-title">Location</p>
-          <address>Gujarat</address>
+          <a href="https://www.google.com/maps/place/Jamnagar,+Gujarat" target="_blank"
+            rel="noopener noreferrer" class="contact-link">
+            Jamnagar, Gujarat
+          </a>
         </div>
       </li>
 
@@ -78,7 +81,7 @@
 
     <!-- Resume Download Button -->
     <div class="resume-download">
-      <a href="assets/resume/Dev_Davda_Resume.pdf" target="_blank" class="resume-btn">
+      <a href="assets/resume/Dev_Davda.pdf" download="Dev_Davda_CV.pdf" class="resume-btn">
         <ion-icon name="download-outline"></ion-icon>
         <span>Download Resume</span>
       </a>
@@ -86,18 +89,18 @@
 
     <div class="separator"></div>
 
-    <ul class="social-list">
+    <ul class="social-list wow animate__animated animate__zoomIn" data-wow-delay="0.5s">
       <li class="social-item">
         <a href="https://www.linkedin.com/in/dev-davda-ab8378239" class="social-link" target="_blank">
           <ion-icon name="logo-linkedin"></ion-icon>
         </a>
       </li>
-      <li class="social-item">
+      <li class="social-item wow animate__animated animate__zoomIn" data-wow-delay="0.6s">
         <a href="https://wa.me/7779092005" class="social-link" target="_blank">
           <ion-icon name="logo-whatsapp"></ion-icon>
         </a>
       </li>
-      <li class="social-item">
+      <li class="social-item wow animate__animated animate__zoomIn" data-wow-delay="0.7s">
         <a href="https://www.instagram.com/dev_davda_555/" class="social-link" target="_blank">
           <ion-icon name="logo-instagram"></ion-icon>
         </a>

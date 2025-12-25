@@ -34,7 +34,7 @@ $categoryCounts['all'] = count($projects);
 
           <!-- Filter List (Desktop) -->
           <ul class="filter-list">
-               <li class="filter-item">
+               <li class="filter-item wow animate__animated animate__fadeInDown" data-wow-delay="0.1s">
                     <button class="active" data-filter-btn>
                          All
                          <span class="category-count"><?php echo $categoryCounts['all']; ?></span>
@@ -91,23 +91,22 @@ $categoryCounts['all'] = count($projects);
                          $projectImages = json_encode($project['images'] ?? [$project['image']]);
                          $projectTech = json_encode($project['technologies'] ?? []);
                     ?>
-                         <li class="project-item active wow animate__animated animate__fadeInUp"
-                              data-filter-item
+                         <li class="project-item active wow animate__animated animate__fadeInUp" data-filter-item
                               data-category="<?php echo htmlspecialchars($category_lower); ?>"
                               data-wow-delay="<?php echo number_format($delay, 1); ?>s"
                               data-project-item="<?php echo $project['id']; ?>"
                               data-project-title="<?php echo $project['title']; ?>"
                               data-project-category="<?php echo $project['category']; ?>"
                               data-project-description="<?php echo $project['description']; ?>"
-                              data-project-images='<?php echo $projectImages; ?>'
-                              data-project-tech='<?php echo $projectTech; ?>'
+                              data-project-images='<?php echo $projectImages; ?>' data-project-tech='<?php echo $projectTech; ?>'
                               data-project-demo="<?php echo $project['demoUrl'] ?? '#'; ?>">
                               <a href="<?php echo $project['link'] ?? '#'; ?>">
                                    <figure class="project-img">
                                         <div class="project-item-icon-box" data-project-eye>
                                              <ion-icon name="eye-outline"></ion-icon>
                                         </div>
-                                        <img src="<?php echo $project['image']; ?>" alt="<?php echo $project['alt']; ?>" loading="lazy">
+                                        <img src="<?php echo $project['image']; ?>" alt="<?php echo $project['alt']; ?>"
+                                             loading="lazy">
                                    </figure>
                                    <h3 class="project-title"><?php echo $project['title']; ?></h3>
                                    <p class="project-category"><?php echo $project['category']; ?></p>

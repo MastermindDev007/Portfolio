@@ -2,6 +2,7 @@
 
 .tech-stack-section {
      margin-bottom: 35px;
+     overflow: hidden;
 }
 
 .tech-stack-title {
@@ -27,6 +28,7 @@
      gap: 10px;
      transition: all var(--transition-1);
      cursor: pointer;
+     flex-shrink: 0;
 }
 
 .tech-item:hover {
@@ -52,8 +54,8 @@
      text-align: center;
 }
 
-/* Responsive */
-@media (min-width: 580px) {
+/* Responsive adjustments */
+@media (min-width: 580px) and (max-width: 1023px) {
      .tech-stack-grid {
           grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
           gap: 25px;
@@ -68,8 +70,50 @@
      }
 }
 
+/* Desktop - Slider View */
 @media (min-width: 1024px) {
      .tech-stack-grid {
-          grid-template-columns: repeat(8, 1fr);
+          display: flex;
+          flex-wrap: nowrap;
+          gap: 25px;
+          overflow-x: auto;
+          scroll-behavior: smooth;
+          scroll-snap-type: x mandatory;
+          padding: 15px 0;
+          margin: 0 -15px;
+          padding: 25px 15px 35px;
+          overscroll-behavior-inline: contain;
+     }
+
+     .tech-item {
+          min-width: 120px;
+          max-width: 120px;
+          scroll-snap-align: center;
+          padding: 25px;
+     }
+
+     .tech-icon {
+          font-size: 48px;
+     }
+
+     /* Custom scrollbar for tech stack */
+     .tech-stack-grid::-webkit-scrollbar {
+          height: 6px;
+     }
+
+     .tech-stack-grid::-webkit-scrollbar-track {
+          background: var(--eerie-black-1);
+          border-radius: 6px;
+          border: 1px solid var(--jet);
+     }
+
+     .tech-stack-grid::-webkit-scrollbar-thumb {
+          background: var(--orange-yellow-crayola);
+          border-radius: 6px;
+          transition: background var(--transition-1);
+     }
+
+     .tech-stack-grid::-webkit-scrollbar-thumb:hover {
+          background: var(--vegas-gold);
      }
 }

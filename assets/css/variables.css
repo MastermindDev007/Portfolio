@@ -65,6 +65,65 @@
      --radius-xl: 20px;
 }
 
+html[data-theme="light"] {
+     /* Premium Light Theme Colors */
+     --bg-gradient-onyx: linear-gradient(to bottom right, #e8eaf6 3%, #f5f5f7 97%);
+     --bg-gradient-jet: linear-gradient(to bottom right, rgba(237, 241, 254, 0.8) 0%, rgba(248, 249, 253, 0) 100%), #f8f9fd;
+     --bg-gradient-yellow-1: linear-gradient(to bottom right, #5e35b1 0%, rgba(94, 53, 177, 0) 50%);
+     --bg-gradient-yellow-2: linear-gradient(135deg, rgba(94, 53, 177, 0.15) 0%, rgba(126, 87, 194, 0) 59.86%), #f8f9fd;
+     --border-gradient-onyx: linear-gradient(to bottom right, #d1d5db 0%, rgba(209, 213, 219, 0) 50%);
+     --text-gradient-yellow: linear-gradient(to right, #5e35b1, #7e57c2);
+
+     /* Solid Colors */
+     --jet: #e0e4e8;
+     --onyx: #f0f2f5;
+     --eerie-black-1: #f8f9fd;
+     --eerie-black-2: #ffffff;
+     --smoky-black: #fafbfc;
+     --white-1: #1a1a2e;
+     --white-2: #2d2d3f;
+     --orange-yellow-crayola: #5e35b1;
+     --vegas-gold: #7e57c2;
+     --light-gray: #4a5568;
+     --light-gray-70: rgba(74, 85, 104, 0.7);
+     --bittersweet-shimmer: #e53e3e;
+
+     /* Shadows - Softer for light theme */
+     --shadow-1: 0 4px 16px rgba(94, 53, 177, 0.08);
+     --shadow-2: 0 8px 24px rgba(94, 53, 177, 0.12);
+     --shadow-3: 0 12px 32px rgba(94, 53, 177, 0.15);
+     --shadow-4: 0 16px 40px rgba(94, 53, 177, 0.1);
+     --shadow-5: 0 20px 48px rgba(94, 53, 177, 0.18);
+}
+
+/* Smooth theme transition */
+html {
+     transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+* {
+     transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light theme scrollbar */
+html[data-theme="light"] body::-webkit-scrollbar-track {
+     background: #f0f2f5;
+     border-left: 1px solid #e0e4e8;
+}
+
+html[data-theme="light"] body::-webkit-scrollbar-thumb {
+     background: #5e35b1;
+     border: 2px solid #f0f2f5;
+}
+
+html[data-theme="light"] body::-webkit-scrollbar-thumb:hover {
+     background: #7e57c2;
+}
+
+html[data-theme="light"] * {
+     scrollbar-color: #5e35b1 #f0f2f5;
+}
+
 /* Responsive Typography */
 @media (min-width: 580px) {
      :root {

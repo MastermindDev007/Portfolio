@@ -5,20 +5,16 @@ let isPaused = false;
 
 export function initTestimonialsControl() {
      const companiesList = document.querySelector('.companies-list');
-     const playPauseBtn = document.querySelector('[data-testimonials-toggle]');
-     const playIcon = document.querySelector('[data-play-icon]');
-     const pauseIcon = document.querySelector('[data-pause-icon]');
-     
+
      if (!companiesList) return;
-     
+
      let companiesIndex = 0;
-     
+     const scrollDelay = 2000; // 2 seconds (faster than before)
+
      function autoScroll() {
-          if (isPaused) return;
-          
           companiesIndex = (companiesIndex + 1) % companiesList.children.length;
           const item = companiesList.children[companiesIndex];
-          
+
           if (item) {
                const itemLeft = item.offsetLeft - companiesList.offsetLeft;
                companiesList.scrollTo({
@@ -27,37 +23,21 @@ export function initTestimonialsControl() {
                });
           }
      }
-     
+
      // Start auto-scroll
-     testimonialInterval = setInterval(autoScroll, 3000);
-     
-     // Play/Pause control
-     if (playPauseBtn) {
-          playPauseBtn.addEventListener('click', () => {
-               isPaused = !isPaused;
-               
-               if (isPaused) {
-                    if (playIcon) playIcon.style.display = 'block';
-                    if (pauseIcon) pauseIcon.style.display = 'none';
-               } else {
-                    if (playIcon) playIcon.style.display = 'none';
-                    if (pauseIcon) pauseIcon.style.display = 'block';
-               }
-          });
-     }
-     
-     // Pause on hover
-     if (companiesList) {
-          companiesList.addEventListener('mouseenter', () => {
-               isPaused = true;
-          });
-          
-          companiesList.addEventListener('mouseleave', () => {
-               if (playPauseBtn && playIcon && playIcon.style.display !== 'block') {
-                    isPaused = false;
-               }
-          });
-     }
+     setInterval(autoScroll, scrollDelay);
+
+     // Optional: Pause on hover for better UX
+     companiesList.addEventListener('mouseenter', () => {
+          clearInterval(window.companiesInterval);
+     });
+
+     companiesList.addEventListener('mouseleave', () => {
+          window.companiesInterval = setInterval(autoScroll, scrollDelay);
+     });
+
+     // Store interval globally for cleanup
+     window.companiesInterval = setInterval(autoScroll, scrollDelay);
 }
 
 export function stopTestimonialsScroll() {
