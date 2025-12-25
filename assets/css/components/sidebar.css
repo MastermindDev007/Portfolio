@@ -392,8 +392,6 @@
           margin-bottom: 0;
           padding-top: 60px;
           z-index: 1;
-          /* overflow-y: auto;
-          overflow-x: hidden; */
      }
 
      .sidebar::-webkit-scrollbar {
