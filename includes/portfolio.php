@@ -1,31 +1,50 @@
-<article class="portfolio" data-page="portfolio">
+<?php
+/**
+ * Portfolio / Projects Section
+ * 
+ * Displays projects loaded from JSON with dynamic filtering.
+ * 
+ * @package Portfolio
+ * @version 1.0.0
+ */
+
+// Load helper functions
+require_once __DIR__ . '/helpers/projects-helper.php';
+
+// Load projects from JSON
+$projects = load_projects();
+
+// Get unique categories for filters
+$categories = get_project_categories($projects);
+
+// Default active category
+$active_category = 'all';
+?>
+
+<article class="portfolio" data-page="projects">
 
   <header>
-    <h2 class="h2 article-title">Portfolio</h2>
+    <h2 class="h2 article-title wow animate__animated animate__fadeInDown">Projects</h2>
   </header>
 
   <section class="projects">
 
+    <!-- Filter List (Desktop) -->
     <ul class="filter-list">
 
       <li class="filter-item">
         <button class="active" data-filter-btn>All</button>
       </li>
 
-      <li class="filter-item">
-        <button data-filter-btn>Web design</button>
-      </li>
-
-      <li class="filter-item">
-        <button data-filter-btn>Applications</button>
-      </li>
-
-      <li class="filter-item">
-        <button data-filter-btn>Web development</button>
-      </li>
+      <?php foreach ($categories as $category): ?>
+        <li class="filter-item">
+          <button data-filter-btn><?php echo htmlspecialchars($category, ENT_QUOTES, 'UTF-8'); ?></button>
+        </li>
+      <?php endforeach; ?>
 
     </ul>
 
+    <!-- Filter Select (Mobile) -->
     <div class="filter-select-box">
 
       <button class="filter-select" data-select>
@@ -44,144 +63,52 @@
           <button data-select-item>All</button>
         </li>
 
-        <li class="select-item">
-          <button data-select-item>Web design</button>
-        </li>
-
-        <li class="select-item">
-          <button data-select-item>Applications</button>
-        </li>
-
-        <li class="select-item">
-          <button data-select-item>Web development</button>
-        </li>
+        <?php foreach ($categories as $category): ?>
+          <li class="select-item">
+            <button data-select-item><?php echo htmlspecialchars($category, ENT_QUOTES, 'UTF-8'); ?></button>
+          </li>
+        <?php endforeach; ?>
 
       </ul>
 
     </div>
 
+    <!-- Projects List -->
     <ul class="project-list">
 
-      <li class="project-item active" data-filter-item data-category="web development">
-        <a href="#">
-          <figure class="project-img">
-            <div class="project-item-icon-box">
-              <ion-icon name="eye-outline"></ion-icon>
-            </div>
-            <img src="assets/images/project-1.jpg" alt="finance" loading="lazy">
-          </figure>
-          <h3 class="project-title">Finance</h3>
-          <p class="project-category">Web development</p>
-        </a>
-      </li>
-
-      <li class="project-item active" data-filter-item data-category="web development">
-        <a href="#">
-          <figure class="project-img">
-            <div class="project-item-icon-box">
-              <ion-icon name="eye-outline"></ion-icon>
-            </div>
-            <img src="assets/images/project-2.png" alt="orizon" loading="lazy">
-          </figure>
-          <h3 class="project-title">Orizon</h3>
-          <p class="project-category">Web development</p>
-        </a>
-      </li>
-
-      <li class="project-item active" data-filter-item data-category="web design">
-        <a href="#">
-          <figure class="project-img">
-            <div class="project-item-icon-box">
-              <ion-icon name="eye-outline"></ion-icon>
-            </div>
-            <img src="assets/images/project-3.jpg" alt="fundo" loading="lazy">
-          </figure>
-          <h3 class="project-title">Fundo</h3>
-          <p class="project-category">Web design</p>
-        </a>
-      </li>
-
-      <li class="project-item active" data-filter-item data-category="applications">
-        <a href="#">
-          <figure class="project-img">
-            <div class="project-item-icon-box">
-              <ion-icon name="eye-outline"></ion-icon>
-            </div>
-            <img src="assets/images/project-4.png" alt="brawlhalla" loading="lazy">
-          </figure>
-          <h3 class="project-title">Brawlhalla</h3>
-          <p class="project-category">Applications</p>
-        </a>
-      </li>
-
-      <li class="project-item active" data-filter-item data-category="web design">
-        <a href="#">
-          <figure class="project-img">
-            <div class="project-item-icon-box">
-              <ion-icon name="eye-outline"></ion-icon>
-            </div>
-            <img src="assets/images/project-5.png" alt="dsm." loading="lazy">
-          </figure>
-          <h3 class="project-title">DSM.</h3>
-          <p class="project-category">Web design</p>
-        </a>
-      </li>
-
-      <li class="project-item active" data-filter-item data-category="web design">
-        <a href="#">
-          <figure class="project-img">
-            <div class="project-item-icon-box">
-              <ion-icon name="eye-outline"></ion-icon>
-            </div>
-            <img src="assets/images/project-6.png" alt="metaspark" loading="lazy">
-          </figure>
-          <h3 class="project-title">MetaSpark</h3>
-          <p class="project-category">Web design</p>
-        </a>
-      </li>
-
-      <li class="project-item active" data-filter-item data-category="web development">
-        <a href="#">
-          <figure class="project-img">
-            <div class="project-item-icon-box">
-              <ion-icon name="eye-outline"></ion-icon>
-            </div>
-            <img src="assets/images/project-7.png" alt="summary" loading="lazy">
-          </figure>
-          <h3 class="project-title">Summary</h3>
-          <p class="project-category">Web development</p>
-        </a>
-      </li>
-
-      <li class="project-item active" data-filter-item data-category="applications">
-        <a href="#">
-          <figure class="project-img">
-            <div class="project-item-icon-box">
-              <ion-icon name="eye-outline"></ion-icon>
-            </div>
-            <img src="assets/images/project-8.jpg" alt="task manager" loading="lazy">
-          </figure>
-          <h3 class="project-title">Task Manager</h3>
-          <p class="project-category">Applications</p>
-        </a>
-      </li>
-
-      <li class="project-item active" data-filter-item data-category="web development">
-        <a href="#">
-          <figure class="project-img">
-            <div class="project-item-icon-box">
-              <ion-icon name="eye-outline"></ion-icon>
-            </div>
-            <img src="assets/images/project-9.png" alt="arrival" loading="lazy">
-          </figure>
-          <h3 class="project-title">Arrival</h3>
-          <p class="project-category">Web development</p>
-        </a>
-      </li>
+      <?php if (empty($projects)): ?>
+        <li class="project-item">
+          <p style="color: var(--light-gray); text-align: center; padding: 40px;">
+            No projects available at the moment.
+          </p>
+        </li>
+      <?php else: 
+        $delay = 0.1;
+        foreach ($projects as $project): 
+          $project = sanitize_project($project);
+          $category_lower = strtolower(trim($project['category']));
+        ?>
+          <li class="project-item active wow animate__animated animate__fadeInUp" data-filter-item data-category="<?php echo htmlspecialchars($category_lower, ENT_QUOTES, 'UTF-8'); ?>" data-wow-delay="<?php echo number_format($delay, 1); ?>s">
+            <a href="<?php echo $project['link']; ?>">
+              <figure class="project-img">
+                <div class="project-item-icon-box">
+                  <ion-icon name="eye-outline"></ion-icon>
+                </div>
+                <img src="<?php echo $project['image']; ?>" alt="<?php echo $project['alt']; ?>" loading="lazy">
+              </figure>
+              <h3 class="project-title"><?php echo $project['title']; ?></h3>
+              <p class="project-category"><?php echo $project['category']; ?></p>
+            </a>
+          </li>
+        <?php 
+          $delay += 0.1;
+          if ($delay > 0.9) $delay = 0.1;
+        endforeach; 
+      endif; ?>
+      <?php endif; ?>
 
     </ul>
 
   </section>
 
 </article>
-

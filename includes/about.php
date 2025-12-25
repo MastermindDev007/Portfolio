@@ -1,10 +1,10 @@
 <article class="about active" data-page="about">
 
   <header>
-    <h2 class="h2 article-title">About me</h2>
+    <h2 class="h2 article-title wow animate__animated animate__fadeInDown">About me</h2>
   </header>
 
-  <section class="about-text">
+  <section class="about-text wow animate__animated animate__fadeInUp">
     <p>
       I am a passionate Full-Stack Web Developer dedicated to crafting innovative digital solutions that drive business growth and user engagement.
     </p>
@@ -14,9 +14,9 @@
   </section>
 
   <section class="service">
-    <h3 class="h3 service-title">What i'm doing</h3>
+    <h3 class="h3 service-title wow animate__animated animate__fadeInUp">What i'm doing</h3>
     <ul class="service-list">
-      <li class="service-item">
+      <li class="service-item wow animate__animated animate__fadeInLeft" data-wow-delay="0.1s">
         <div class="service-icon-box">
           <img src="assets/images/icon-design.svg" alt="design icon" width="40">
         </div>
@@ -27,7 +27,7 @@
           </p>
         </div>
       </li>
-      <li class="service-item">
+      <li class="service-item wow animate__animated animate__fadeInRight" data-wow-delay="0.2s">
         <div class="service-icon-box">
           <img src="assets/images/icon-dev.svg" alt="Web development icon" width="40">
         </div>
@@ -38,7 +38,7 @@
           </p>
         </div>
       </li>
-      <li class="service-item">
+      <li class="service-item wow animate__animated animate__fadeInLeft" data-wow-delay="0.3s">
         <div class="service-icon-box">
           <img src="assets/images/icon-app.svg" alt="DevOps icon" width="40">
         </div>
@@ -49,7 +49,7 @@
           </p>
         </div>
       </li>
-      <li class="service-item">
+      <li class="service-item wow animate__animated animate__fadeInRight" data-wow-delay="0.4s">
         <div class="service-icon-box">
           <img src="assets/images/icon-photo.svg" alt="Full-Stack icon" width="40">
         </div>
@@ -64,9 +64,9 @@
   </section>
 
   <section class="companies">
-    <h3 class="h3 companies-title">Companies I've Worked With</h3>
+    <h3 class="h3 companies-title wow animate__animated animate__fadeInUp">Companies I've Worked With</h3>
     <ul class="companies-list has-scrollbar">
-      <li class="companies-item">
+      <li class="companies-item wow animate__animated animate__fadeInUp" data-wow-delay="0.1s">
         <div class="content-card" data-companies-item>
           <figure class="companies-avatar-box">
             <img src="assets/images/avatar-1.png" alt="Mehta Websolutions" width="60" data-companies-avatar>
@@ -79,7 +79,7 @@
           </div>
         </div>
       </li>
-      <li class="companies-item">
+      <li class="companies-item wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
         <div class="content-card" data-companies-item>
           <figure class="companies-avatar-box">
             <img src="assets/images/avatar-2.png" alt="Web World Developing" width="60" data-companies-avatar>
@@ -92,7 +92,7 @@
           </div>
         </div>
       </li>
-      <li class="companies-item">
+      <li class="companies-item wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
         <div class="content-card" data-companies-item>
           <figure class="companies-avatar-box">
             <img src="assets/images/avatar-3.png" alt="DreamWebZ" width="60" data-companies-avatar>
@@ -105,7 +105,7 @@
           </div>
         </div>
       </li>
-      <li class="companies-item">
+      <li class="companies-item wow animate__animated animate__fadeInUp" data-wow-delay="0.4s">
         <div class="content-card" data-companies-item>
           <figure class="companies-avatar-box">
             <img src="assets/images/avatar-4.png" alt="Auranics Solution" width="60" data-companies-avatar>
@@ -123,7 +123,7 @@
 
   <div class="modal-container" data-modal-container>
     <div class="overlay" data-overlay></div>
-    <section class="companies-modal">
+    <section class="companies-modal wow animate__animated animate__zoomIn">
       <button class="modal-close-btn" data-modal-close-btn>
         <ion-icon name="close-outline"></ion-icon>
       </button>

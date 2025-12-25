@@ -2,6 +2,137 @@
 
 
 
+//-----------------------------------*\
+//  #WOW.JS INITIALIZATION
+//\*-----------------------------------*/
+
+let wowInstance = null;
+
+// Initialize WOW.js for scroll animations
+function initWOW() {
+  if (typeof WOW !== 'undefined') {
+    // Destroy existing instance if it exists
+    if (wowInstance) {
+      wowInstance = null;
+    }
+    
+    wowInstance = new WOW({
+      boxClass: 'wow',
+      animateClass: 'animated',
+      offset: 80,
+      mobile: true,
+      live: true,
+      callback: function(box) {
+        // Optional callback when animation triggers
+      },
+      scrollContainer: null
+    });
+    wowInstance.init();
+  }
+}
+
+// Initialize on page load
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initWOW);
+} else {
+  initWOW();
+}
+
+// Re-initialize WOW.js when page changes (for single-page app)
+const pages = document.querySelectorAll("[data-page]");
+const navigationLinks = document.querySelectorAll("[data-nav-link]");
+
+// Observe page changes and reinitialize animations
+const pageObserver = new MutationObserver(function(mutations) {
+  mutations.forEach(function(mutation) {
+    if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+      const target = mutation.target;
+      if (target.classList.contains('active')) {
+        // Small delay to ensure DOM is ready
+        setTimeout(function() {
+          if (wowInstance) {
+            wowInstance.sync();
+          } else {
+            initWOW();
+          }
+        }, 100);
+      }
+    }
+  });
+});
+
+// Observe all pages for class changes
+pages.forEach(function(page) {
+  pageObserver.observe(page, {
+    attributes: true,
+    attributeFilter: ['class']
+  });
+});
+
+//-----------------------------------*\
+//  #PRELOADER
+//\*-----------------------------------*/
+
+const preloader = document.getElementById('preloader');
+const progressBar = document.querySelector('.progress-bar');
+const percentageText = document.querySelector('.percentage-text');
+
+// Prevent body scroll during preload
+document.body.classList.add('preloader-active');
+
+let progress = 0;
+let progressInterval;
+
+// Simulate loading progress
+function updateProgress() {
+  progress += Math.random() * 15;
+  
+  if (progress >= 100) {
+    progress = 100;
+    clearInterval(progressInterval);
+  }
+  
+  percentageText.textContent = Math.floor(progress);
+}
+
+// Start progress animation
+progressInterval = setInterval(updateProgress, 100);
+
+// Hide preloader when page is fully loaded
+window.addEventListener('load', function() {
+  // Ensure progress reaches 100%
+  progress = 100;
+  percentageText.textContent = '100';
+  clearInterval(progressInterval);
+  
+  // Hide preloader after a short delay
+  setTimeout(function() {
+    preloader.classList.add('hidden');
+    document.body.classList.remove('preloader-active');
+    
+    // Remove preloader from DOM after animation
+    setTimeout(function() {
+      preloader.remove();
+    }, 500);
+  }, 300);
+});
+
+// Fallback: Hide preloader after max 3 seconds (performance safeguard)
+setTimeout(function() {
+  if (preloader && !preloader.classList.contains('hidden')) {
+    progress = 100;
+    percentageText.textContent = '100';
+    clearInterval(progressInterval);
+    preloader.classList.add('hidden');
+    document.body.classList.remove('preloader-active');
+    setTimeout(function() {
+      if (preloader) preloader.remove();
+    }, 500);
+  }
+}, 3000);
+
+
+
 // element toggle function
 const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
 
@@ -88,6 +219,13 @@ const filterFunc = function (selectedValue) {
     }
 
   }
+
+  // Re-trigger WOW.js animations for visible items
+  setTimeout(function() {
+    if (wowInstance) {
+      wowInstance.sync();
+    }
+  }, 300);
 
 }
 
@@ -190,6 +328,49 @@ setInterval(() => {
     }
   }
 }, 3000);
+
+//-----------------------------------*\
+//  #SKILLS PROGRESS ANIMATION
+//\*-----------------------------------*/
+
+const skillProgressBars = document.querySelectorAll('.skill-progress-fill');
+
+// Function to animate progress bars
+function animateProgressBar(bar) {
+  const width = bar.getAttribute('data-width');
+  if (width) {
+    bar.style.width = width + '%';
+  }
+}
+
+// Intersection Observer for scroll-triggered animations
+const progressObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateProgressBar(entry.target);
+      progressObserver.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.3,
+  rootMargin: '0px 0px -50px 0px'
+});
+
+// Observe all progress bars
+skillProgressBars.forEach(bar => {
+  progressObserver.observe(bar);
+});
+
+// Animate on page load if already visible
+window.addEventListener('load', function() {
+  skillProgressBars.forEach(bar => {
+    const rect = bar.getBoundingClientRect();
+    const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+    if (isVisible) {
+      animateProgressBar(bar);
+    }
+  });
+});
 
 // Content Protection
 // Disable right-click

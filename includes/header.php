@@ -22,5 +22,29 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <div class="code-bracket left">{</div>
+        <div class="preloader-text">
+          <span class="dev-text">DEV</span>
+          <span class="ampersand">&</span>
+          <span class="design-text">DESIGN</span>
+        </div>
+        <div class="code-bracket right">}</div>
+      </div>
+      <div class="preloader-progress">
+        <div class="progress-bar"></div>
+      </div>
+      <div class="preloader-percentage">
+        <span class="percentage-text">0</span><span>%</span>
+      </div>
+    </div>
+  </div>

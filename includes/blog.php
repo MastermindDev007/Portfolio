@@ -1,14 +1,14 @@
 <article class="blog" data-page="blog">
 
   <header>
-    <h2 class="h2 article-title">Blog</h2>
+    <h2 class="h2 article-title wow animate__animated animate__fadeInDown">Blog</h2>
   </header>
 
   <section class="blog-posts">
 
     <ul class="blog-posts-list">
 
-      <li class="blog-post-item">
+      <li class="blog-post-item wow animate__animated animate__fadeInUp" data-wow-delay="0.1s">
         <a href="#">
           <figure class="blog-banner-box">
             <img src="assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
@@ -27,7 +27,7 @@
         </a>
       </li>
 
-      <li class="blog-post-item">
+      <li class="blog-post-item wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
         <a href="#">
           <figure class="blog-banner-box">
             <img src="assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
@@ -46,7 +46,7 @@
         </a>
       </li>
 
-      <li class="blog-post-item">
+      <li class="blog-post-item wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
         <a href="#">
           <figure class="blog-banner-box">
             <img src="assets/images/blog-3.jpg" alt="Design digest #80" loading="lazy">
@@ -65,7 +65,7 @@
         </a>
       </li>
 
-      <li class="blog-post-item">
+      <li class="blog-post-item wow animate__animated animate__fadeInUp" data-wow-delay="0.4s">
         <a href="#">
           <figure class="blog-banner-box">
             <img src="assets/images/blog-4.jpg" alt="UI interactions of the week" loading="lazy">
@@ -84,7 +84,7 @@
         </a>
       </li>
 
-      <li class="blog-post-item">
+      <li class="blog-post-item wow animate__animated animate__fadeInUp" data-wow-delay="0.5s">
         <a href="#">
           <figure class="blog-banner-box">
             <img src="assets/images/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
@@ -103,7 +103,7 @@
         </a>
       </li>
 
-      <li class="blog-post-item">
+      <li class="blog-post-item wow animate__animated animate__fadeInUp" data-wow-delay="0.6s">
         <a href="#">
           <figure class="blog-banner-box">
             <img src="assets/images/blog-6.jpg" alt="Design digest #79" loading="lazy">

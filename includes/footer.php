@@ -1,3 +1,6 @@
+<!-- WOW.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
 <!-- Custom JS -->
 <script src="assets/js/script.js"></script>
 

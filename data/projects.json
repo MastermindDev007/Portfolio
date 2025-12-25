@@ -1,0 +1,84 @@
+[
+  {
+    "id": 1,
+    "title": "Finance",
+    "category": "Web development",
+    "image": "assets/images/project-1.jpg",
+    "alt": "finance",
+    "link": "#",
+    "description": "A comprehensive financial management web application"
+  },
+  {
+    "id": 2,
+    "title": "Orizon",
+    "category": "Web development",
+    "image": "assets/images/project-2.png",
+    "alt": "orizon",
+    "link": "#",
+    "description": "Modern web development platform with advanced features"
+  },
+  {
+    "id": 3,
+    "title": "Fundo",
+    "category": "Web design",
+    "image": "assets/images/project-3.jpg",
+    "alt": "fundo",
+    "link": "#",
+    "description": "Creative web design project with stunning visuals"
+  },
+  {
+    "id": 4,
+    "title": "Brawlhalla",
+    "category": "Applications",
+    "image": "assets/images/project-4.png",
+    "alt": "brawlhalla",
+    "link": "#",
+    "description": "Gaming application with immersive user experience"
+  },
+  {
+    "id": 5,
+    "title": "DSM.",
+    "category": "Web design",
+    "image": "assets/images/project-5.png",
+    "alt": "dsm.",
+    "link": "#",
+    "description": "Minimalist web design with clean aesthetics"
+  },
+  {
+    "id": 6,
+    "title": "MetaSpark",
+    "category": "Web design",
+    "image": "assets/images/project-6.png",
+    "alt": "metaspark",
+    "link": "#",
+    "description": "Innovative web design with modern UI/UX principles"
+  },
+  {
+    "id": 7,
+    "title": "Summary",
+    "category": "Web development",
+    "image": "assets/images/project-7.png",
+    "alt": "summary",
+    "link": "#",
+    "description": "Data visualization and summary web application"
+  },
+  {
+    "id": 8,
+    "title": "Task Manager",
+    "category": "Applications",
+    "image": "assets/images/project-8.jpg",
+    "alt": "task manager",
+    "link": "#",
+    "description": "Productivity application for task management"
+  },
+  {
+    "id": 9,
+    "title": "Arrival",
+    "category": "Web development",
+    "image": "assets/images/project-9.png",
+    "alt": "arrival",
+    "link": "#",
+    "description": "Modern web development project with cutting-edge technology"
+  }
+]
+

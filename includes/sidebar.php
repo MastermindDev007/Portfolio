@@ -1,12 +1,12 @@
-<aside class="sidebar" data-sidebar>
+<aside class="sidebar wow animate__animated animate__fadeInLeft" data-sidebar>
 
   <div class="sidebar-info">
 
-    <figure class="avatar-box">
+    <figure class="avatar-box wow animate__animated animate__zoomIn" data-wow-delay="0.2s">
       <img src="assets/images/my-avatar.png" alt="Richard hanrick" width="80">
     </figure>
 
-    <div class="info-content">
+    <div class="info-content wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
       <h1 class="name" title="Dev Davda">Dev Davda</h1>
       <p class="title">Full‑Stack Web Developer</p>
     </div>
