@@ -153,10 +153,15 @@ input, textarea {
 
 :focus { outline-color: var(--orange-yellow-crayola); }
 
-html { font-family: var(--ff-poppins); }
+html { 
+  font-family: var(--ff-poppins);
+  overflow-x: hidden;
+}
 
 body { 
   background: var(--smoky-black); 
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /*-----------------------------------*\
@@ -234,6 +239,8 @@ body {
 body.preloader-active {
   overflow: hidden;
   height: 100vh;
+  width: 100vw;
+  position: fixed;
 }
 
 .preloader-content {

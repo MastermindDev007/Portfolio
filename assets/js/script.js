@@ -15,14 +15,14 @@ function initWOW() {
     if (wowInstance) {
       wowInstance = null;
     }
-    
+
     wowInstance = new WOW({
       boxClass: 'wow',
       animateClass: 'animated',
       offset: 80,
       mobile: true,
       live: true,
-      callback: function(box) {
+      callback: function (box) {
         // Optional callback when animation triggers
       },
       scrollContainer: null
@@ -43,13 +43,13 @@ const pages = document.querySelectorAll("[data-page]");
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 
 // Observe page changes and reinitialize animations
-const pageObserver = new MutationObserver(function(mutations) {
-  mutations.forEach(function(mutation) {
+const pageObserver = new MutationObserver(function (mutations) {
+  mutations.forEach(function (mutation) {
     if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
       const target = mutation.target;
       if (target.classList.contains('active')) {
         // Small delay to ensure DOM is ready
-        setTimeout(function() {
+        setTimeout(function () {
           if (wowInstance) {
             wowInstance.sync();
           } else {
@@ -62,7 +62,7 @@ const pageObserver = new MutationObserver(function(mutations) {
 });
 
 // Observe all pages for class changes
-pages.forEach(function(page) {
+pages.forEach(function (page) {
   pageObserver.observe(page, {
     attributes: true,
     attributeFilter: ['class']
@@ -86,50 +86,66 @@ let progressInterval;
 // Simulate loading progress
 function updateProgress() {
   progress += Math.random() * 15;
-  
+
   if (progress >= 100) {
     progress = 100;
     clearInterval(progressInterval);
   }
-  
-  percentageText.textContent = Math.floor(progress);
+
+  if (percentageText) {
+    percentageText.textContent = Math.floor(progress);
+  }
 }
 
 // Start progress animation
 progressInterval = setInterval(updateProgress, 100);
 
-// Hide preloader when page is fully loaded
-window.addEventListener('load', function() {
-  // Ensure progress reaches 100%
+// Hide preloader function
+function hidePreloader() {
   progress = 100;
-  percentageText.textContent = '100';
+  if (percentageText) percentageText.textContent = '100';
   clearInterval(progressInterval);
-  
-  // Hide preloader after a short delay
-  setTimeout(function() {
-    preloader.classList.add('hidden');
-    document.body.classList.remove('preloader-active');
-    
-    // Remove preloader from DOM after animation
-    setTimeout(function() {
-      preloader.remove();
-    }, 500);
+
+  setTimeout(function () {
+    if (preloader) {
+      preloader.classList.add('hidden');
+      document.body.classList.remove('preloader-active');
+
+      // Re-enable body scroll and fix overflow
+      document.documentElement.style.overflow = '';
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+
+      // Remove preloader from DOM after animation
+      setTimeout(function () {
+        if (preloader && preloader.parentNode) {
+          preloader.remove();
+        }
+      }, 500);
+    }
   }, 300);
-});
+}
+
+// Hide preloader when page is fully loaded
+window.addEventListener('load', hidePreloader);
 
 // Fallback: Hide preloader after max 3 seconds (performance safeguard)
-setTimeout(function() {
+setTimeout(function () {
   if (preloader && !preloader.classList.contains('hidden')) {
-    progress = 100;
-    percentageText.textContent = '100';
-    clearInterval(progressInterval);
-    preloader.classList.add('hidden');
-    document.body.classList.remove('preloader-active');
-    setTimeout(function() {
-      if (preloader) preloader.remove();
-    }, 500);
+    hidePreloader();
   }
 }, 3000);
+
+// Also trigger on DOMContentLoaded as backup
+document.addEventListener('DOMContentLoaded', function () {
+  // If everything loads super fast, hide after 1 second minimum for UX
+  setTimeout(function () {
+    if (preloader && !preloader.classList.contains('hidden')) {
+      hidePreloader();
+    }
+  }, 1000);
+});
 
 
 
@@ -143,7 +159,9 @@ const sidebar = document.querySelector("[data-sidebar]");
 const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 
 // sidebar toggle functionality for mobile
-sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
+if (sidebarBtn) {
+  sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
+}
 
 
 
@@ -160,24 +178,30 @@ const modalText = document.querySelector("[data-modal-text]");
 
 // modal toggle function
 const companiesModalFunc = function () {
-  modalContainer.classList.toggle("active");
-  overlay.classList.toggle("active");
+  if (modalContainer && overlay) {
+    modalContainer.classList.toggle("active");
+    overlay.classList.toggle("active");
+  }
 }
 
 // add click event to all company items
 for (let i = 0; i < companiesItem.length; i++) {
   companiesItem[i].addEventListener("click", function () {
-    modalImg.src = this.querySelector("[data-companies-avatar]").src;
-    modalImg.alt = this.querySelector("[data-companies-avatar]").alt;
-    modalTitle.innerHTML = this.querySelector("[data-companies-title]").innerHTML;
-    modalText.innerHTML = this.querySelector("[data-companies-text]").innerHTML;
+    if (modalImg && modalTitle && modalText) {
+      modalImg.src = this.querySelector("[data-companies-avatar]").src;
+      modalImg.alt = this.querySelector("[data-companies-avatar]").alt;
+      modalTitle.innerHTML = this.querySelector("[data-companies-title]").innerHTML;
+      modalText.innerHTML = this.querySelector("[data-companies-text]").innerHTML;
 
-    companiesModalFunc();
+      companiesModalFunc();
+    }
   });
 }
 
 // add click event to modal close button only
-modalCloseBtn.addEventListener("click", companiesModalFunc);
+if (modalCloseBtn) {
+  modalCloseBtn.addEventListener("click", companiesModalFunc);
+}
 
 // Note: Modal is static - does NOT close on escape key or outside click
 
@@ -189,15 +213,17 @@ const selectItems = document.querySelectorAll("[data-select-item]");
 const selectValue = document.querySelector("[data-selecct-value]");
 const filterBtn = document.querySelectorAll("[data-filter-btn]");
 
-select.addEventListener("click", function () { elementToggleFunc(this); });
+if (select) {
+  select.addEventListener("click", function () { elementToggleFunc(this); });
+}
 
 // add event in all select items
 for (let i = 0; i < selectItems.length; i++) {
   selectItems[i].addEventListener("click", function () {
 
     let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
-    elementToggleFunc(select);
+    if (selectValue) selectValue.innerText = this.innerText;
+    if (select) elementToggleFunc(select);
     filterFunc(selectedValue);
 
   });
@@ -221,7 +247,7 @@ const filterFunc = function (selectedValue) {
   }
 
   // Re-trigger WOW.js animations for visible items
-  setTimeout(function() {
+  setTimeout(function () {
     if (wowInstance) {
       wowInstance.sync();
     }
@@ -237,10 +263,10 @@ for (let i = 0; i < filterBtn.length; i++) {
   filterBtn[i].addEventListener("click", function () {
 
     let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
+    if (selectValue) selectValue.innerText = this.innerText;
     filterFunc(selectedValue);
 
-    lastClickedBtn.classList.remove("active");
+    if (lastClickedBtn) lastClickedBtn.classList.remove("active");
     this.classList.add("active");
     lastClickedBtn = this;
 
@@ -260,10 +286,10 @@ for (let i = 0; i < formInputs.length; i++) {
   formInputs[i].addEventListener("input", function () {
 
     // check form validation
-    if (form.checkValidity()) {
-      formBtn.removeAttribute("disabled");
+    if (form && form.checkValidity()) {
+      if (formBtn) formBtn.removeAttribute("disabled");
     } else {
-      formBtn.setAttribute("disabled", "");
+      if (formBtn) formBtn.setAttribute("disabled", "");
     }
 
   });
@@ -272,8 +298,8 @@ for (let i = 0; i < formInputs.length; i++) {
 
 
 // page navigation variables
-const navigationLinks = document.querySelectorAll("[data-nav-link]");
-const pages = document.querySelectorAll("[data-page]");
+// const navigationLinks = document.querySelectorAll("[data-nav-link]"); // Already declared above
+// const pages = document.querySelectorAll("[data-page]"); // Already declared above
 
 // add event to all nav link
 for (let i = 0; i < navigationLinks.length; i++) {
@@ -297,7 +323,7 @@ for (let i = 0; i < navigationLinks.length; i++) {
     // Find and activate the corresponding page
     const targetPage = this.textContent.trim().toLowerCase();
     const targetElement = document.querySelector(`[data-page="${targetPage}"]`);
-    
+
     if (targetElement) {
       targetElement.classList.add("active");
     } else {
@@ -314,20 +340,22 @@ for (let i = 0; i < navigationLinks.length; i++) {
 const companiesList = document.querySelector('.companies-list');
 let companiesIndex = 0;
 
-setInterval(() => {
-  companiesIndex = (companiesIndex + 2) % 4; // Show 2 companies at a time
-  const container = companiesList;
-  if (container) {
-    const item = container.children[companiesIndex];
-    if (item) {
-      const itemLeft = item.offsetLeft - container.offsetLeft;
-      container.scrollTo({
-        left: itemLeft,
-        behavior: 'smooth'
-      });
+if (companiesList) {
+  setInterval(() => {
+    companiesIndex = (companiesIndex + 2) % 4; // Show 2 companies at a time
+    const container = companiesList;
+    if (container && container.children.length > 0) {
+      const item = container.children[companiesIndex];
+      if (item) {
+        const itemLeft = item.offsetLeft - container.offsetLeft;
+        container.scrollTo({
+          left: itemLeft,
+          behavior: 'smooth'
+        });
+      }
     }
-  }
-}, 3000);
+  }, 3000);
+}
 
 //-----------------------------------*\
 //  #SKILLS PROGRESS ANIMATION
@@ -362,7 +390,7 @@ skillProgressBars.forEach(bar => {
 });
 
 // Animate on page load if already visible
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
   skillProgressBars.forEach(bar => {
     const rect = bar.getBoundingClientRect();
     const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
@@ -374,12 +402,12 @@ window.addEventListener('load', function() {
 
 // Content Protection
 // Disable right-click
-document.addEventListener('contextmenu', function(e) {
+document.addEventListener('contextmenu', function (e) {
   e.preventDefault();
 });
 
 // Disable keyboard shortcuts for developer tools and view source
-document.addEventListener('keydown', function(e) {
+document.addEventListener('keydown', function (e) {
   // Prevent Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U, F12
   if (
     (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) ||

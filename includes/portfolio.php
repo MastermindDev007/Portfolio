@@ -105,7 +105,6 @@ $active_category = 'all';
           if ($delay > 0.9) $delay = 0.1;
         endforeach; 
       endif; ?>
-      <?php endif; ?>
 
     </ul>
 

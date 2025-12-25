@@ -123,7 +123,7 @@
 
   <div class="modal-container" data-modal-container>
     <div class="overlay" data-overlay></div>
-    <section class="companies-modal wow animate__animated animate__zoomIn">
+    <section class="companies-modal">
       <button class="modal-close-btn" data-modal-close-btn>
         <ion-icon name="close-outline"></ion-icon>
       </button>
