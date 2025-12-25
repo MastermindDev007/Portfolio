@@ -1,87 +1,124 @@
-# Portfolio Website
+# Dev Davda - Full-Stack Developer Portfolio
 
-A modern, responsive portfolio website built with PHP, showcasing professional work, skills, and achievements. This single-page application features a clean, intuitive interface with smooth navigation and interactive elements.
+A modern, professional portfolio website showcasing full-stack development expertise with clean design, optimal performance, and complete SEO optimization.
 
-## Features
+## 🚀 Features
 
-- **Preloader**: Modern animated preloader with progress indicator
-- **About Section**: Personal introduction and services offered
-- **Resume Section**: Professional experience, education, and skills
-- **Projects Section**: Dynamic project showcase with JSON-based management and category filtering
-- **Blog Section**: Latest articles and blog posts
-- **Contact Section**: Get in touch form and social media links
-- **Custom Scrollbar**: Themed scrollbar matching the portfolio design
+- **Modular Architecture** - Clean, scalable CSS and JavaScript structure
+- **SEO Optimized** - Complete meta tags, structured data, sitemap, and robots.txt
+- **Responsive Design** - Works flawlessly across all devices
+- **Performance Optimized** - Fast loading with efficient animations
+- **Security Hardened** - .htaccess security headers and content protection
+- **Modern UI/UX** - Clean, professional design suitable for senior developers
 
-## Technologies Used
-
-- **PHP**: Server-side scripting for modular component structure
-- **HTML5**: Semantic markup
-- **CSS3**: Modern styling with responsive design
-- **JavaScript**: Interactive functionality and dynamic content
-- **JSON**: Project data storage
-
-## Project Structure
+## 📁 Project Structure
 
 ```
 Portfolio/
 ├── assets/
 │   ├── css/
-│   │   └── style.css          # Main stylesheet with preloader and scrollbar styles
-│   ├── images/                # Images and icons
+│   │   ├── variables.css          # Design system variables
+│   │   ├── base.css                # Reset and base styles
+│   │   ├── utilities.css           # Utility classes
+│   │   ├── layout.css              # Layout structure
+│   │   ├── animations.css          # Animation definitions
+│   │   ├── components/
+│   │   │   ├── preloader.css       # Preloader component
+│   │   │   ├── sidebar.css         # Sidebar component
+│   │   │   └── navbar.css          # Navbar component
+│   │   └── pages/
+│   │       ├── about.css           # About page styles
+│   │       ├── resume.css          # Resume page styles
+│   │       ├── projects.css        # Projects page styles
+│   │       ├── blog.css            # Blog page styles
+│   │       └── contact.css         # Contact page styles
+│   ├── images/                     # Images and icons
 │   └── js/
-│       └── script.js          # JavaScript functionality with preloader
+│       ├── main.js                 # Main entry point (ES6 modules)
+│       ├── script.js               # Fallback bundle
+│       └── modules/
+│           ├── preloader.js        # Preloader module
+│           ├── animations.js       # WOW.js animations
+│           ├── sidebar.js          # Sidebar functionality
+│           ├── modal.js            # Modal functionality
+│           ├── navigation.js       # Page navigation
+│           ├── filters.js          # Project filters
+│           ├── form.js             # Form validation
+│           ├── skills.js           # Skills progress bars
+│           └── security.js         # Security features
 ├── config/
-│   └── constants.php          # Global constants and configuration
+│   └── constants.php               # Global configuration
 ├── data/
-│   └── projects.json          # Project data (JSON format)
+│   └── projects.json               # Project data
 ├── includes/
 │   ├── helpers/
-│   │   └── projects-helper.php  # Helper functions for project management
-│   ├── about.php              # About section
-│   ├── blog.php               # Blog section
-│   ├── contact.php            # Contact section
-│   ├── footer.php             # Footer component
-│   ├── header.php             # Header component with preloader
-│   ├── navbar.php             # Navigation bar
-│   ├── portfolio.php          # Projects section (dynamic JSON-based)
-│   ├── resume.php             # Resume section
-│   └── sidebar.php            # Sidebar component
-├── index.php                  # Main entry point
-└── README.md                  # Project documentation
+│   │   └── projects-helper.php     # Project utilities
+│   ├── about.php                   # About section
+│   ├── blog.php                    # Blog section
+│   ├── contact.php                 # Contact section
+│   ├── footer.php                  # Footer with scripts
+│   ├── header.php                  # Header with SEO
+│   ├── navbar.php                  # Navigation bar
+│   ├── portfolio.php               # Projects section
+│   ├── resume.php                  # Resume section
+│   └── sidebar.php                 # Sidebar component
+├── .htaccess                       # Apache configuration & security
+├── robots.txt                      # Search engine directives
+├── sitemap.xml                     # XML sitemap
+├── index.php                       # Main entry point
+└── README.md                       # Documentation
 ```
 
-## Getting Started
+## 🛠️ Technologies
+
+- **Frontend**: HTML5, CSS3 (Modular), JavaScript (ES6 Modules)
+- **Backend**: PHP 7.4+
+- **Animations**: WOW.js, Animate.css
+- **Icons**: Ionicons
+- **Fonts**: Google Fonts (Poppins)
+- **Data Management**: JSON
+
+## ⚙️ Installation
 
 ### Prerequisites
-
 - PHP 7.4 or higher
-- A web server (Apache, Nginx, or PHP built-in server)
+- Apache server with mod_rewrite enabled
 - Modern web browser
 
-### Installation
+### Setup
 
-1. Clone or download this repository
-2. Place the project in your web server directory (e.g., `htdocs`, `www`, or `public_html`)
-3. Ensure PHP is properly configured on your server
-4. Open the project in your web browser
+1. **Clone or download the repository**
+   ```bash
+   git clone https://github.com/yourusername/portfolio.git
+   cd portfolio
+   ```
 
-### Running with PHP Built-in Server
+2. **Configure your web server**
+   - Place files in your web root (e.g., `htdocs`, `www`, `public_html`)
+   - Ensure `.htaccess` is enabled
 
-If you don't have a web server configured, you can use PHP's built-in server:
+3. **Update configuration**
+   - Edit `includes/header.php` - Update SEO meta tags and URLs
+   - Edit `sitemap.xml` - Replace `yourwebsite.com` with your domain
+   - Edit `robots.txt` - Update sitemap URL
+
+4. **Customize content**
+   - Update personal information in `includes/sidebar.php`
+   - Modify sections in `includes/` directory
+   - Add projects to `data/projects.json`
+
+### Running Locally
 
 ```bash
 php -S localhost:8000
 ```
 
-Then navigate to `http://localhost:8000` in your browser.
+Navigate to `http://localhost:8000`
 
-## Customization
+## 📝 Customization
 
 ### Adding Projects
-
-Projects are managed through `data/projects.json`. Simply edit the JSON file to add, modify, or remove projects. The filter categories are automatically generated from the projects.
-
-**Project JSON Structure:**
+Edit `data/projects.json`:
 ```json
 {
   "id": 1,
@@ -94,142 +131,82 @@ Projects are managed through `data/projects.json`. Simply edit the JSON file to 
 }
 ```
 
-**Available Categories:**
-- Web development
-- Web design
-- Applications
+### Modifying Styles
+- **Colors & Variables**: `assets/css/variables.css`
+- **Page-specific styles**: `assets/css/pages/`
+- **Components**: `assets/css/components/`
 
-Categories are case-sensitive and should match exactly. New categories will automatically appear in the filter tabs.
+### Updating Content
+- **About**: `includes/about.php`
+- **Resume**: `includes/resume.php`
+- **Contact**: `includes/contact.php`
+- **Sidebar**: `includes/sidebar.php`
 
-### Modifying Content
+## 🔒 Security Features
 
-- **About Section**: Edit `includes/about.php`
-- **Resume Section**: Edit `includes/resume.php`
-- **Projects Section**: Edit `data/projects.json` (projects are loaded dynamically)
-- **Blog Section**: Edit `includes/blog.php`
-- **Contact Section**: Edit `includes/contact.php`
+- HTTPS enforcement (configurable in `.htaccess`)
+- Security headers (XSS, clickjacking protection)
+- Content protection (right-click, DevTools disabled)
+- File access restrictions
+- Input sanitization
 
-### Configuration
+## 🎯 SEO Features
 
-Global constants and configuration can be modified in `config/constants.php`. This includes:
-- Directory paths
-- URL paths
-- Project categories
-- Default settings
+- Semantic HTML5 markup
+- Meta tags optimization
+- Open Graph protocol
+- Twitter Cards
+- Structured data (JSON-LD)
+- XML Sitemap
+- Robots.txt
+- Clean URLs
+- Canonical URLs
+- Performance optimization
 
-### Styling
+## 📱 Responsive Breakpoints
 
-Customize the appearance by modifying `assets/css/style.css`. The stylesheet uses CSS variables for easy theming and includes:
-- Responsive breakpoints for mobile, tablet, and desktop views
-- Custom scrollbar styling
-- Preloader animations
-- Theme color variables (easily customizable)
+- Mobile: < 580px
+- Tablet: 580px - 1024px
+- Desktop: > 1024px
+- Large Desktop: > 1250px
 
-### Helper Functions
+## ⚡ Performance
 
-The project includes helper functions in `includes/helpers/projects-helper.php`:
-- `load_projects()` - Loads and validates projects from JSON
-- `get_project_categories()` - Extracts unique categories from projects
-- `filter_projects_by_category()` - Filters projects by category
-- `sanitize_project()` - Sanitizes project data for safe output
+- Modular CSS (load only what's needed)
+- Lazy loading images
+- Optimized animations
+- Gzip compression
+- Browser caching
+- Minified assets (production)
 
-These functions handle error checking, validation, and data sanitization automatically.
-
-## Features in Detail
-
-### Preloader
-
-The website features a modern, animated preloader that displays during page load:
-- Animated code brackets with "DEV & DESIGN" text
-- Progress bar with percentage counter
-- Smooth fade-out animation
-- Performance optimized with fallback timer
-
-### Projects Management
-
-The Projects section uses a JSON-based system for easy management:
-- **Dynamic Loading**: Projects are loaded from `data/projects.json`
-- **Auto-Generated Filters**: Category filters are automatically created from project data
-- **Easy Updates**: Simply edit the JSON file to add/remove/modify projects
-- **Category Filtering**: Filter projects by category (Web development, Web design, Applications)
-- **Responsive Design**: Works seamlessly on all device sizes
-
-### Custom Scrollbar
-
-The website features a custom-styled scrollbar that matches the portfolio theme:
-- Dark theme with yellow/gold accent colors
-- Smooth hover effects
-- Consistent styling across all scrollable elements
-- Cross-browser support (Webkit and Firefox)
-
-### Responsive Design
-
-The website is fully responsive and adapts to different screen sizes:
-- Mobile devices (< 768px)
-- Tablets (768px - 1024px)
-- Desktop (> 1024px)
-- Large screens (> 1250px)
-
-### Interactive Elements
-
-- Smooth page transitions between sections
-- Modal windows for detailed project views
-- Mobile-friendly sidebar navigation
-- Dynamic content loading
-- Category-based project filtering
-
-### Modern UI/UX
-
-- Clean and minimalist design
-- Intuitive navigation
-- Smooth animations and transitions
-- Accessible color scheme and typography
-- Premium scrollbar styling
-
-## Browser Support
+## 🧪 Browser Support
 
 - Chrome (latest)
 - Firefox (latest)
 - Safari (latest)
 - Edge (latest)
+- Opera (latest)
 
-## License
+## 📄 License
 
 This project is open source and available for personal and commercial use.
 
-## Development
+## 👤 Author
 
-### File Organization
+**Dev Davda**
+- Email: devndavda59425@gmail.com
+- Phone: +91 7779092005
+- LinkedIn: [dev-davda-ab8378239](https://www.linkedin.com/in/dev-davda-ab8378239)
+- Instagram: [@dev_davda_555](https://www.instagram.com/dev_davda_555/)
 
-The project follows a clean, scalable structure:
-- **Config**: Global constants and configuration (`config/constants.php`)
-- **Data**: JSON data files for dynamic content (`data/`)
-- **Helpers**: Reusable utility functions (`includes/helpers/`)
-- **Includes**: Page components and sections (`includes/`)
-- **Assets**: Static files (CSS, JS, images) (`assets/`)
+## 🤝 Contributing
 
-### Adding New Features
+Contributions, issues, and feature requests are welcome!
 
-1. **New Projects**: Add entries to `data/projects.json`
-2. **New Categories**: Add new category values in project JSON (filters auto-update)
-3. **Constants**: Add global constants in `config/constants.php`
-4. **Helpers**: Add utility functions in `includes/helpers/`
+## ⭐ Show Your Support
 
-### Code Standards
-
-- PHP: Follows PSR-12 coding standards
-- Security: All user inputs are sanitized
-- Error Handling: Comprehensive error logging
-- Documentation: Functions include PHPDoc comments
-
-## Contributing
-
-Feel free to fork this project and customize it for your own portfolio. If you make improvements that could benefit others, pull requests are welcome!
-
-## Contact
-
-For questions or suggestions, please open an issue in the repository.
+Give a ⭐️ if you like this project!
 
 ---
 
-**Note**: This is a template portfolio website. Customize all content, images, and styling to reflect your personal brand and professional work.
+**Built with 💻 by Dev Davda - Full-Stack Developer**

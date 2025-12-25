@@ -1,0 +1,226 @@
+/* Utility Classes - Bootstrap-like utilities */
+
+/* Typography */
+.h2,
+.h3,
+.h4,
+.h5 {
+     color: var(--white-2);
+     text-transform: capitalize;
+}
+
+.h2 {
+     font-size: var(--fs-1);
+}
+
+.h3 {
+     font-size: var(--fs-2);
+}
+
+.h4 {
+     font-size: var(--fs-4);
+}
+
+.h5 {
+     font-size: var(--fs-7);
+     font-weight: var(--fw-500);
+}
+
+/* Layout */
+.sidebar,
+article {
+     background: var(--eerie-black-2);
+     border: 1px solid var(--jet);
+     border-radius: var(--radius-xl);
+     padding: 15px;
+     box-shadow: var(--shadow-1);
+     z-index: 1;
+}
+
+.separator {
+     width: 100%;
+     height: 1px;
+     background: var(--jet);
+     margin: var(--spacing-md) 0;
+}
+
+.icon-box {
+     position: relative;
+     background: var(--border-gradient-onyx);
+     width: 30px;
+     height: 30px;
+     border-radius: var(--radius-sm);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-size: 16px;
+     color: var(--orange-yellow-crayola);
+     box-shadow: var(--shadow-1);
+     z-index: 1;
+}
+
+.icon-box::before {
+     content: "";
+     position: absolute;
+     inset: 1px;
+     background: var(--eerie-black-1);
+     border-radius: inherit;
+     z-index: -1;
+}
+
+.icon-box ion-icon {
+     --ionicon-stroke-width: 35px;
+}
+
+/* Article */
+article {
+     display: none;
+}
+
+article.active {
+     display: block;
+     animation: fadeIn 0.5s ease backwards;
+}
+
+@keyframes fadeIn {
+     0% {
+          opacity: 0;
+     }
+
+     100% {
+          opacity: 1;
+     }
+}
+
+.article-title {
+     position: relative;
+     padding-bottom: 7px;
+}
+
+.article-title::after {
+     content: "";
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     width: 30px;
+     height: 3px;
+     background: var(--text-gradient-yellow);
+     border-radius: 3px;
+}
+
+/* Content Card */
+.content-card {
+     position: relative;
+     background: var(--eerie-black-2);
+     padding: 15px;
+     padding-top: 45px;
+     border-radius: var(--radius-md);
+     border: 1px solid var(--jet);
+     cursor: pointer;
+     transition: border-color var(--transition-1);
+}
+
+.content-card:hover {
+     border-color: var(--orange-yellow-crayola);
+}
+
+/* Scrollbar for specific elements */
+.has-scrollbar::-webkit-scrollbar {
+     width: 6px;
+     height: 6px;
+}
+
+.has-scrollbar::-webkit-scrollbar-track {
+     background: var(--eerie-black-1);
+     border-radius: 6px;
+     border: 1px solid var(--jet);
+}
+
+.has-scrollbar::-webkit-scrollbar-thumb {
+     background: var(--orange-yellow-crayola);
+     border-radius: 6px;
+     transition: background var(--transition-1);
+}
+
+.has-scrollbar::-webkit-scrollbar-thumb:hover {
+     background: var(--vegas-gold);
+}
+
+.has-scrollbar::-webkit-scrollbar-button {
+     width: 0;
+     display: none;
+}
+
+/* Responsive Utilities */
+@media (min-width: 580px) {
+
+     .sidebar,
+     article {
+          width: 520px;
+          margin-inline: auto;
+          padding: 30px;
+     }
+
+     .article-title {
+          font-weight: var(--fw-600);
+          padding-bottom: 15px;
+     }
+
+     .article-title::after {
+          width: 40px;
+          height: 5px;
+     }
+
+     .icon-box {
+          width: 48px;
+          height: 48px;
+          border-radius: var(--radius-md);
+          font-size: 18px;
+     }
+
+     .separator {
+          margin: 32px 0;
+     }
+
+     .content-card {
+          padding: 30px;
+          padding-top: 25px;
+     }
+}
+
+@media (min-width: 768px) {
+
+     .sidebar,
+     article {
+          width: 700px;
+     }
+
+     .article-title {
+          padding-bottom: 20px;
+     }
+
+     .has-scrollbar::-webkit-scrollbar-button {
+          width: 100px;
+     }
+}
+
+@media (min-width: 1024px) {
+
+     .sidebar,
+     article {
+          width: 950px;
+          box-shadow: var(--shadow-5);
+     }
+}
+
+@media (min-width: 1250px) {
+
+     .sidebar,
+     article {
+          width: auto;
+     }
+
+     article {
+          min-height: 100%;
+     }
+}

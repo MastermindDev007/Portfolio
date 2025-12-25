@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Disallow: /config/
+Disallow: /includes/helpers/
+Disallow: /data/
+Disallow: /*.json$
+
+Sitemap: https://yourwebsite.com/sitemap.xml
