@@ -4,8 +4,8 @@ export function initTypingAnimation() {
 
      const phrases = [
           'Full Stack Developer',
-          'Laravel Expert',
-          'UI Craftsman'
+          'Laravel Developer',
+          'PHP Web Developer'
      ];
 
      let phraseIndex = 0;

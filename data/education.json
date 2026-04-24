@@ -2,35 +2,34 @@
   {
     "id": 1,
     "title": "G.H.S.E.B (12th)",
-    "university": "Gujarat Board",
-    "college": "Gujarat Board",
+    "university": "Gujarat Board Gandhinagar",
+    "college": "Junagadh",
     "badge": "2021 - 2022",
     "status": "Completed",
-    "note": "Result: 490/750",
+    "note": "Score: 490 / 750",
     "isActive": false,
     "delay": "0.1s"
   },
   {
     "id": 2,
-    "title": "B.C.A",
-    "university": "Saurashtra University, Jamnagar",
-    "college": "Saurashtra University, Jamnagar",
+    "title": "B.C.A Degree Course",
+    "university": "Saurashtra University Rajkot",
+    "college": "Jamnagar",
     "badge": "2022 - 2025",
     "status": "Completed",
-    "note": "Result: 65% Pass",
+    "note": "65% Pass",
     "isActive": false,
     "delay": "0.2s"
   },
   {
     "id": 3,
     "title": "MSc IT & CA",
-    "university": "Saurashtra University, Jamnagar",
-    "college": "Saurashtra University, Jamnagar",
+    "university": "Saurashtra University",
+    "college": "Jamnagar",
     "badge": "2025 - Present",
     "status": "Ongoing",
-    "note": "Sem 1: 67.80%",
+    "note": "Sem 1 score: 67.80% pass",
     "isActive": true,
     "delay": "0.3s"
   }
 ]
-

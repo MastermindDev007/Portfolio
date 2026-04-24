@@ -1,3 +1,7 @@
+<?php
+require_once __DIR__ . '/../config/constants.php';
+?>
+
 <aside class="sidebar wow animate__animated animate__fadeInLeft" data-sidebar>
 
   <div class="sidebar-info">
@@ -8,7 +12,7 @@
 
     <div class="info-content wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
       <h1 class="name" title="Dev Davda">Dev Davda</h1>
-      <p class="title" data-typing-text>Full-Stack Web Developer</p>
+      <p class="title" data-typing-text>Full Stack Developer</p>
     </div>
 
     <button class="info_more-btn" data-sidebar-btn>
@@ -67,10 +71,20 @@
         </div>
         <div class="contact-info">
           <p class="contact-title">Location</p>
-          <a href="https://www.google.com/maps/place/Jamnagar,+Gujarat" target="_blank"
+          <a href="https://www.google.com/maps/place/Jamnagar,+Gujarat+361008" target="_blank"
             rel="noopener noreferrer" class="contact-link">
-            Jamnagar, Gujarat
+            Jamnagar, Gujarat 361008
           </a>
+        </div>
+      </li>
+
+      <li class="contact-item wow animate__animated animate__fadeInLeft" data-wow-delay="0.5s">
+        <div class="icon-box">
+          <ion-icon name="home-outline"></ion-icon>
+        </div>
+        <div class="contact-info">
+          <p class="contact-title">Address</p>
+          <address>Madhav, Ist State Bank Society, Patel Colony, Road 3, Jamnagar</address>
         </div>
       </li>
 
@@ -89,23 +103,18 @@
 
     <ul class="social-list wow animate__animated animate__zoomIn" data-wow-delay="0.6s">
       <li class="social-item">
-        <a href="https://github.com/devndavda59425" class="social-link" target="_blank" rel="noopener noreferrer">
+        <a href="<?php echo htmlspecialchars(DEV_GITHUB_URL, ENT_QUOTES, 'UTF-8'); ?>" class="social-link" target="_blank" rel="noopener noreferrer">
           <ion-icon name="logo-github"></ion-icon>
         </a>
       </li>
       <li class="social-item">
-        <a href="https://www.linkedin.com/in/dev-davda-ab8378239" class="social-link" target="_blank" rel="noopener noreferrer">
+        <a href="<?php echo htmlspecialchars(DEV_LINKEDIN_URL, ENT_QUOTES, 'UTF-8'); ?>" class="social-link" target="_blank" rel="noopener noreferrer">
           <ion-icon name="logo-linkedin"></ion-icon>
         </a>
       </li>
       <li class="social-item">
         <a href="https://wa.me/7779092005" class="social-link" target="_blank" rel="noopener noreferrer">
           <ion-icon name="logo-whatsapp"></ion-icon>
-        </a>
-      </li>
-      <li class="social-item">
-        <a href="https://www.instagram.com/dev_davda_555/" class="social-link" target="_blank" rel="noopener noreferrer">
-          <ion-icon name="logo-instagram"></ion-icon>
         </a>
       </li>
     </ul>

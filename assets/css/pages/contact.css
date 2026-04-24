@@ -63,6 +63,13 @@
      color: var(--white-2);
 }
 
+.form-note {
+     color: var(--light-gray-70);
+     text-align: center;
+     font-size: var(--fs-7);
+     margin: -12px 0 20px;
+}
+
 .form-status:empty {
      display: none;
 }

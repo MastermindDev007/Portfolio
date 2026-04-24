@@ -8,6 +8,7 @@ export function initModal() {
      const modalImg = document.querySelector("[data-modal-img]");
      const modalTitle = document.querySelector("[data-modal-title]");
      const modalText = document.querySelector("[data-modal-text]");
+     const modalTime = document.querySelector("[data-modal-time]");
 
      const toggleModal = () => {
           if (modalContainer && overlay) {
@@ -24,6 +25,11 @@ export function initModal() {
                     modalImg.alt = this.querySelector("[data-companies-avatar]").alt;
                     modalTitle.innerHTML = this.querySelector("[data-companies-title]").innerHTML;
                     modalText.innerHTML = this.querySelector("[data-companies-text]").innerHTML;
+                    if (modalTime) {
+                         const period = this.querySelector("[data-companies-period]")?.textContent?.trim() || '';
+                         modalTime.textContent = period || 'Experience';
+                         modalTime.setAttribute('datetime', period || '');
+                    }
                     toggleModal();
                }
           });

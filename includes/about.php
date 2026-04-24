@@ -6,10 +6,23 @@ $services = json_decode(file_get_contents('data/services.json'), true);
 $companies = json_decode(file_get_contents('data/companies.json'), true);
 $techStack = json_decode(file_get_contents('data/tech-stack.json'), true);
 $projects = json_decode(file_get_contents('data/projects.json'), true);
+$experience = json_decode(file_get_contents('data/experience.json'), true);
 
 $projectCount = is_array($projects) ? count($projects) : 0;
 $companyCount = is_array($companies) ? count($companies) : 0;
 $githubUsername = DEV_GITHUB_USERNAME;
+$experienceYears = 1;
+$currentYear = (int) date('Y');
+
+if (is_array($experience) && !empty($experience)) {
+    $firstYear = $currentYear;
+    foreach ($experience as $exp) {
+        if (preg_match('/(20\\d{2})/', (string) ($exp['badge'] ?? ''), $matches)) {
+            $firstYear = min($firstYear, (int) $matches[1]);
+        }
+    }
+    $experienceYears = max(1, $currentYear - $firstYear);
+}
 ?>
 
 <article class="about active" data-page="about">
@@ -21,13 +34,17 @@ $githubUsername = DEV_GITHUB_USERNAME;
     <!-- Intro Section - Redesigned -->
     <section class="about-intro wow animate__animated animate__fadeInUp">
         <div class="intro-content">
-            <h3 class="h3">Full-Stack Developer & Digital Craftsman</h3>
+            <h3 class="h3">Full Stack Developer</h3>
             <p>
-                Web Developer with hands-on experience in building and optimizing web applications using
-                <strong>Laravel</strong> and modern frontend technologies. Transitioned from intern to
-                full-time developer with a focus on performance optimization, debugging, and scalable
-                backend development. Passionate about clean code, intuitive UI/UX, and building products
-                that make a real impact.
+                Web Developer with hands-on experience in building and optimizing web applications using Laravel
+                and modern front end technologies. Started as an intern and transitioned into a full-time role,
+                gaining practical experience in performance optimization, debugging, UI improvements, and scalable
+                back end development. Focused on writing efficient code, handling real-world issues, and delivering
+                high-quality solutions.
+            </p>
+            <p class="intro-objective">
+                Objective: Build scalable and efficient web applications by leveraging strong front end and back end
+                development skills while continuously improving performance, code quality, and user experience.
             </p>
             <div class="intro-stats">
                 <div class="stat-item">
@@ -39,7 +56,7 @@ $githubUsername = DEV_GITHUB_USERNAME;
                     <p class="stat-label">Companies Worked With</p>
                 </div>
                 <div class="stat-item">
-                    <h4 class="stat-number">3+</h4>
+                    <h4 class="stat-number"><?php echo $experienceYears; ?>+</h4>
                     <p class="stat-label">Years Experience</p>
                 </div>
             </div>
@@ -48,7 +65,7 @@ $githubUsername = DEV_GITHUB_USERNAME;
 
     <!-- Services Section - Redesigned -->
     <section class="service">
-        <h3 class="h3 service-title wow animate__animated animate__fadeInUp">What I Do</h3>
+        <h3 class="h3 service-title wow animate__animated animate__fadeInUp">Core Focus Areas</h3>
         <ul class="service-list">
             <?php foreach ($services as $service): ?>
                 <li class="service-item wow animate__animated animate__fadeIn<?php echo $service['id'] % 2 == 0 ? 'Right' : 'Left'; ?>"
@@ -118,8 +135,16 @@ $githubUsername = DEV_GITHUB_USERNAME;
                         </figure>
                         <h4 class="h4 companies-item-title" data-companies-title>
                             <?php echo htmlspecialchars($company['name']); ?></h4>
+                        <?php if (!empty($company['position']) || !empty($company['period'])): ?>
+                            <p class="companies-role" data-companies-period>
+                                <?php echo htmlspecialchars(trim(($company['position'] ?? '') . ' | ' . ($company['period'] ?? ''), ' |')); ?>
+                            </p>
+                        <?php endif; ?>
                         <div class="companies-text" data-companies-text>
                             <p><?php echo htmlspecialchars($company['description']); ?></p>
+                            <?php if (!empty($company['website'])): ?>
+                                <p><a href="<?php echo htmlspecialchars($company['website']); ?>" target="_blank" rel="noopener noreferrer"><?php echo htmlspecialchars($company['website']); ?></a></p>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </li>

@@ -15,7 +15,7 @@ export async function initGithubRepos() {
      if (!containers.length) return;
 
      const cfg = window.PORTFOLIO_CONFIG || {};
-     const username = cfg.githubUsername || 'devndavda59425';
+     const username = cfg.githubUsername || 'MastermindDev007';
 
      try {
           const res = await fetch(`https://api.github.com/users/${encodeURIComponent(username)}/repos?sort=updated&per_page=6`);
@@ -42,7 +42,7 @@ export async function initGithubRepos() {
                               <p>${repo.description || 'Repository synced from GitHub.'}</p>
                               <div class="github-meta">
                                    <span>${language}</span>
-                                   <span>★ ${stars}</span>
+                                   <span>Stars: ${stars}</span>
                                    <span>Updated ${updated}</span>
                               </div>
                          </article>

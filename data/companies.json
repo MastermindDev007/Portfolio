@@ -1,38 +1,41 @@
 [
-     {
-          "id": 1,
-          "name": "Mehta Websolution",
-          "avatar": "assets/images/avatar-1.png",
-          "position": "Full Stack Developer",
-          "period": "January 15, 2025 — Present",
-          "description": "Started as a 6-month intern and was promoted to a full-time Full Stack Developer role. Building and optimizing web applications using Laravel and modern frontend technologies, focusing on performance, debugging, and scalable backend development.",
-          "delay": "0.1s"
-     },
-     {
-          "id": 2,
-          "name": "Web World Developing",
-          "avatar": "assets/images/avatar-2.png",
-          "position": "PHP Web Developer Intern",
-          "period": "2023 — 2024 (6 months)",
-          "description": "Worked as a PHP Web Developer Intern for 6 months. Built and maintained PHP-based web applications, worked on database management with SQL, and developed responsive frontend interfaces.",
-          "delay": "0.2s"
-     },
-     {
-          "id": 3,
-          "name": "Dream Webz",
-          "avatar": "assets/images/avatar-3.png",
-          "position": "Junior WordPress Developer Intern",
-          "period": "2023 (3 months)",
-          "description": "Completed a 3-month internship as a Junior WordPress Developer. Developed and customized WordPress websites, managed themes and plugins, and created responsive layouts for clients.",
-          "delay": "0.3s"
-     },
-     {
-          "id": 4,
-          "name": "Auranics Solution",
-          "avatar": "assets/images/avatar-4.png",
-          "position": "Junior Web Designing Intern",
-          "period": "2022 (2 weeks)",
-          "description": "Completed a 2-week Junior Web Designing internship. Gained hands-on experience with web design fundamentals, HTML/CSS layouts, and UI design principles.",
-          "delay": "0.4s"
-     }
+  {
+    "id": 1,
+    "name": "Mehta Websolution",
+    "avatar": "assets/images/avatar-1.png",
+    "position": "Full Stack Developer",
+    "period": "15 Jan 2025 - Present",
+    "website": "https://mehtawebsolution.com/",
+    "description": "Started as an intern for 6 months and then moved into a full-time role. Works on scalable web development, performance optimization, debugging, and responsive UI implementation.",
+    "delay": "0.1s"
+  },
+  {
+    "id": 2,
+    "name": "Web World Developing",
+    "avatar": "assets/images/avatar-2.png",
+    "position": "PHP Web Developer Intern",
+    "period": "2023 - 2024",
+    "website": "https://webworlddeveloping.com/",
+    "description": "Worked as a PHP Web Developer intern for 6 months in Jamnagar and gained practical experience with PHP application development and maintenance.",
+    "delay": "0.2s"
+  },
+  {
+    "id": 3,
+    "name": "Dream Webz",
+    "avatar": "assets/images/avatar-3.png",
+    "position": "Junior WordPress Developer Intern",
+    "period": "2023",
+    "description": "Worked as a Web Developer intern for 3 months with focus on WordPress-based development and site customization.",
+    "delay": "0.3s"
+  },
+  {
+    "id": 4,
+    "name": "Auranics Solution",
+    "avatar": "assets/images/avatar-4.png",
+    "position": "Junior Web Designing Intern",
+    "period": "2022",
+    "website": "https://auranics.com/",
+    "description": "Worked as a Web Design intern for 2 weeks and built a practical foundation in web layout and UI principles.",
+    "delay": "0.4s"
+  }
 ]

@@ -19,15 +19,15 @@
   },
   {
     "id": 4,
-    "name": "React",
+    "name": "React.js",
     "icon": "logo-react",
     "color": "#61DAFB"
   },
   {
     "id": 5,
-    "name": "Tailwind CSS",
-    "icon": "sparkles-outline",
-    "color": "#06B6D4"
+    "name": "Node.js",
+    "icon": "logo-nodejs",
+    "color": "#339933"
   },
   {
     "id": 6,
@@ -49,9 +49,9 @@
   },
   {
     "id": 9,
-    "name": "Node.js",
-    "icon": "logo-nodejs",
-    "color": "#339933"
+    "name": "SQL",
+    "icon": "code-slash-outline",
+    "color": "#FDD663"
   },
   {
     "id": 10,
@@ -79,27 +79,8 @@
   },
   {
     "id": 14,
-    "name": "GitHub",
-    "icon": "logo-github",
-    "color": "#FFFFFF"
-  },
-  {
-    "id": 15,
-    "name": "Figma",
-    "icon": "color-palette-outline",
-    "color": "#A259FF"
-  },
-  {
-    "id": 16,
-    "name": "Canva",
-    "icon": "brush-outline",
-    "color": "#00C4CC"
-  },
-  {
-    "id": 17,
     "name": "WordPress",
     "icon": "logo-wordpress",
     "color": "#21759B"
   }
 ]
-

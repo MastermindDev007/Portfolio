@@ -53,12 +53,15 @@ define(
 // ========================
 // Integrations
 // ========================
-define('DEV_GITHUB_USERNAME', 'devndavda59425');
+define('DEV_GITHUB_USERNAME', 'MastermindDev007');
+define('DEV_GITHUB_URL', 'https://github.com/' . DEV_GITHUB_USERNAME);
+define('DEV_LINKEDIN_URL', 'https://linkedin.com/in/dev-davda-ab8378239');
 define('VISITOR_COUNTER_NAMESPACE', 'dev-davda-portfolio');
 define('CONTACT_RECEIVER_EMAIL', 'devndavda59425@gmail.com');
-define('EMAILJS_SERVICE_ID', '');
-define('EMAILJS_TEMPLATE_ID', '');
-define('EMAILJS_PUBLIC_KEY', '');
+// Set these in environment variables for secure EmailJS form delivery.
+define('EMAILJS_SERVICE_ID', getenv('EMAILJS_SERVICE_ID') ?: '');
+define('EMAILJS_TEMPLATE_ID', getenv('EMAILJS_TEMPLATE_ID') ?: '');
+define('EMAILJS_PUBLIC_KEY', getenv('EMAILJS_PUBLIC_KEY') ?: '');
 define('GA4_MEASUREMENT_ID', '');
 
 // ========================

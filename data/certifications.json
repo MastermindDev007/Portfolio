@@ -1,11 +1,11 @@
 [
   {
     "id": 1,
-    "title": "TCS NQT - National Qualifier Test",
+    "title": "TCS NQT Score",
     "issuer": "Tata Consultancy Services",
     "score": "2122.52 / 3000",
-    "grade": "70.75 Percentile",
-    "date": "October 18, 2024",
+    "grade": "70.75%",
+    "date": "18 Oct 2024",
     "icon": "trophy-outline",
     "color": "gold",
     "delay": "0.1s"
@@ -27,7 +27,7 @@
     "issuer": "Saurashtra University",
     "score": "95 / 100",
     "grade": "Distinction",
-    "date": "2024",
+    "date": "2023",
     "icon": "ribbon-outline",
     "color": "silver",
     "delay": "0.3s"
@@ -45,10 +45,10 @@
   },
   {
     "id": 5,
-    "title": "Advanced Excel",
+    "title": "Advanced Excel Course",
     "issuer": "Udemy",
-    "score": "Certified",
-    "grade": "Online Course",
+    "score": "Completed",
+    "grade": "Online Certification",
     "date": "2021",
     "icon": "school-outline",
     "color": "blue",
@@ -58,8 +58,8 @@
     "id": 6,
     "title": "WordPress Course",
     "issuer": "Udemy",
-    "score": "Certified",
-    "grade": "Online Course",
+    "score": "Completed",
+    "grade": "Online Certification",
     "date": "2023",
     "icon": "school-outline",
     "color": "blue",
@@ -67,14 +67,13 @@
   },
   {
     "id": 7,
-    "title": "Tech Arena Event",
+    "title": "Tech Arena Participation",
     "issuer": "Christ College",
     "score": "Participant",
-    "grade": "February 2023",
-    "date": "February 2023",
+    "grade": "Event Participation",
+    "date": "26 Feb 2023",
     "icon": "flash-outline",
     "color": "purple",
     "delay": "0.7s"
   }
 ]
-

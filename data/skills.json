@@ -1,43 +1,50 @@
 [
   {
     "id": 1,
-    "category": "Frontend",
+    "category": "Front End Development",
     "icon": "browsers-outline",
-    "percentage": 90,
-    "technologies": "HTML/CSS, JavaScript, React.js, Bootstrap, Tailwind CSS",
+    "percentage": 92,
+    "technologies": "HTML5, CSS3, JavaScript, UI/UX Design Principles",
     "delay": "0.1s"
   },
   {
     "id": 2,
-    "category": "Backend",
+    "category": "Back End Development",
     "icon": "server-outline",
-    "percentage": 75,
-    "technologies": "Laravel, PHP, Python, REST APIs",
+    "percentage": 82,
+    "technologies": "Laravel, PHP, Node.js, REST API Development",
     "delay": "0.2s"
   },
   {
     "id": 3,
-    "category": "Databases",
+    "category": "Database Management",
     "icon": "server-outline",
-    "percentage": 70,
-    "technologies": "MySQL, PostgreSQL, MongoDB",
+    "percentage": 85,
+    "technologies": "SQL, MySQL, PostgreSQL, MongoDB",
     "delay": "0.3s"
   },
   {
     "id": 4,
-    "category": "Tools",
-    "icon": "git-branch-outline",
-    "percentage": 65,
-    "technologies": "Git, GitHub, Debugging, Project Planning",
+    "category": "Python Programming",
+    "icon": "logo-python",
+    "percentage": 80,
+    "technologies": "Python Automation, Scripting, Data Analysis Tasks",
     "delay": "0.4s"
   },
   {
     "id": 5,
-    "category": "Design",
-    "icon": "color-palette-outline",
-    "percentage": 60,
-    "technologies": "UI/UX Principles, Canva, Figma",
+    "category": "Collaboration and Planning",
+    "icon": "people-outline",
+    "percentage": 88,
+    "technologies": "Team Collaboration, Project Planning, Delivery Estimation",
     "delay": "0.5s"
+  },
+  {
+    "id": 6,
+    "category": "Version Control and Debugging",
+    "icon": "git-branch-outline",
+    "percentage": 78,
+    "technologies": "Git, Branching Workflows, Debugging Tools and Techniques",
+    "delay": "0.6s"
   }
 ]
-

@@ -26,9 +26,11 @@ require_once __DIR__ . '/../config/constants.php';
   <section class="contact-form wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
     <h3 class="h3 form-title">Send Me a Message</h3>
 
+    <p class="form-note">Messages are delivered directly via EmailJS.</p>
+
     <div class="form-status" data-form-status aria-live="polite"></div>
 
-    <form action="#" method="post" class="form" data-form
+    <form class="form" data-form
       data-emailjs-service="<?php echo htmlspecialchars(EMAILJS_SERVICE_ID, ENT_QUOTES, 'UTF-8'); ?>"
       data-emailjs-template="<?php echo htmlspecialchars(EMAILJS_TEMPLATE_ID, ENT_QUOTES, 'UTF-8'); ?>"
       data-emailjs-public="<?php echo htmlspecialchars(EMAILJS_PUBLIC_KEY, ENT_QUOTES, 'UTF-8'); ?>"

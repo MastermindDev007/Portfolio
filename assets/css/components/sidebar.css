@@ -414,12 +414,12 @@
 @media (min-width: 1250px) {
      .sidebar {
           position: sticky;
-          top: 20px;
-          max-height: max-content;
-          height: 100%;
+          top: 24px;
+          align-self: flex-start;
+          max-height: calc(100vh - 48px);
+          overflow-y: auto;
           margin-bottom: 0;
-          padding-top: 60px;
-          z-index: 1;
+          z-index: 4;
      }
 
      .sidebar::-webkit-scrollbar {
@@ -466,6 +466,9 @@
      .sidebar-info_more {
           opacity: 1;
           visibility: visible;
+          transform: none;
+          max-height: none;
+          overflow: visible;
      }
 
      .contacts-list {

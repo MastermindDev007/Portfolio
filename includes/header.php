@@ -3,6 +3,7 @@
 
 <head>
      <?php
+     require_once __DIR__ . '/../config/constants.php';
      $scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
      $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
      $scriptDir = dirname($_SERVER['SCRIPT_NAME'] ?? '/');
@@ -15,9 +16,9 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
      <!-- SEO Meta Tags -->
-     <title>Dev Davda - Full-Stack Web Developer | Laravel, Python, PHP Portfolio</title>
-     <meta name="description" content="Dev Davda is a passionate Full-Stack Web Developer specializing in Laravel, Python, PHP, and modern web technologies. View my portfolio showcasing innovative web solutions and projects.">
-     <meta name="keywords" content="Dev Davda, Full Stack Developer, Web Developer, Laravel Developer, Python Developer, PHP Developer, Portfolio, Web Design, DevOps, Gujarat Developer">
+     <title>Dev Davda - Full Stack Developer | Laravel, PHP, Python Portfolio</title>
+     <meta name="description" content="Dev Davda is a Full Stack Developer with hands-on experience in Laravel, PHP, Python, SQL, and modern frontend technologies for scalable web applications.">
+     <meta name="keywords" content="Dev Davda, Full Stack Developer, Laravel Developer, PHP Developer, Python Developer, SQL Developer, Web Developer, Jamnagar, Portfolio">
      <meta name="author" content="Dev Davda">
      <meta name="robots" content="index, follow">
      <meta name="language" content="English">
@@ -26,15 +27,15 @@
      <!-- Open Graph / Facebook -->
      <meta property="og:type" content="website">
      <meta property="og:url" content="<?php echo htmlspecialchars($siteUrl, ENT_QUOTES, 'UTF-8'); ?>/">
-     <meta property="og:title" content="Dev Davda - Full-Stack Web Developer Portfolio">
-     <meta property="og:description" content="Full-Stack Web Developer specializing in Laravel, Python, PHP. Explore innovative web solutions and projects.">
+     <meta property="og:title" content="Dev Davda - Full Stack Developer Portfolio">
+     <meta property="og:description" content="Full Stack Developer specializing in Laravel, PHP, Python, SQL, and scalable web application development.">
      <meta property="og:image" content="<?php echo htmlspecialchars($ogImageUrl, ENT_QUOTES, 'UTF-8'); ?>">
 
      <!-- Twitter -->
      <meta property="twitter:card" content="summary_large_image">
      <meta property="twitter:url" content="<?php echo htmlspecialchars($siteUrl, ENT_QUOTES, 'UTF-8'); ?>/">
-     <meta property="twitter:title" content="Dev Davda - Full-Stack Web Developer Portfolio">
-     <meta property="twitter:description" content="Full-Stack Web Developer specializing in Laravel, Python, PHP. Explore innovative web solutions and projects.">
+     <meta property="twitter:title" content="Dev Davda - Full Stack Developer Portfolio">
+     <meta property="twitter:description" content="Full Stack Developer specializing in Laravel, PHP, Python, SQL, and scalable web application development.">
      <meta property="twitter:image" content="<?php echo htmlspecialchars($ogImageUrl, ENT_QUOTES, 'UTF-8'); ?>">
 
      <!-- Canonical URL -->
@@ -88,7 +89,7 @@
                "name": "Dev Davda",
                "url": "<?php echo htmlspecialchars($siteUrl, ENT_QUOTES, 'UTF-8'); ?>",
                "image": "<?php echo htmlspecialchars($siteUrl, ENT_QUOTES, 'UTF-8'); ?>/assets/images/my-avatar.png",
-               "jobTitle": "Full-Stack Web Developer",
+               "jobTitle": "Full Stack Developer",
                "worksFor": {
                     "@type": "Organization",
                     "name": "Mehta Websolution"
@@ -102,12 +103,11 @@
                "email": "devndavda59425@gmail.com",
                "telephone": "+917779092005",
                "sameAs": [
-                    "https://github.com/devndavda59425",
-                    "https://www.linkedin.com/in/dev-davda-ab8378239",
-                    "https://www.instagram.com/dev_davda_555/",
+                    "<?php echo htmlspecialchars(DEV_GITHUB_URL, ENT_QUOTES, 'UTF-8'); ?>",
+                    "<?php echo htmlspecialchars(DEV_LINKEDIN_URL, ENT_QUOTES, 'UTF-8'); ?>",
                     "https://wa.me/7779092005"
                ],
-               "knowsAbout": ["Web Development", "Laravel", "Python", "PHP", "DevOps", "Full Stack Development"]
+               "knowsAbout": ["Full Stack Development", "Laravel", "PHP", "Python", "JavaScript", "SQL", "UI/UX Design"]
           }
      </script>
 </head>
@@ -120,7 +120,7 @@
 
      <div class="hire-banner" data-hire-banner>
           <p>
-               Open to Work: Available for Laravel, PHP, and React freelance projects.
+               Open to Work: Available for Full Stack, Laravel, and PHP freelance projects.
                <span class="visitor-count" data-visitor-count>Visitors: --</span>
           </p>
           <button type="button" class="hire-banner-close" data-hire-banner-close aria-label="Close banner">

@@ -9,10 +9,10 @@ $currentYear = date('Y');
           <span class="footer-tagline">Built with clean code and strong chai.</span>
      </p>
      <div class="footer-links">
-          <a href="https://github.com/<?php echo htmlspecialchars(DEV_GITHUB_USERNAME, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <a href="<?php echo htmlspecialchars(DEV_GITHUB_URL, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                <ion-icon name="logo-github"></ion-icon>
           </a>
-          <a href="https://www.linkedin.com/in/dev-davda-ab8378239" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <a href="<?php echo htmlspecialchars(DEV_LINKEDIN_URL, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                <ion-icon name="logo-linkedin"></ion-icon>
           </a>
           <a href="mailto:<?php echo htmlspecialchars(CONTACT_RECEIVER_EMAIL, ENT_QUOTES, 'UTF-8'); ?>" aria-label="Email">
@@ -32,10 +32,13 @@ $currentYear = date('Y');
 <script>
      window.PORTFOLIO_CONFIG = {
           githubUsername: <?php echo json_encode(DEV_GITHUB_USERNAME); ?>,
+          githubProfileUrl: <?php echo json_encode(DEV_GITHUB_URL); ?>,
+          linkedinUrl: <?php echo json_encode(DEV_LINKEDIN_URL); ?>,
           visitorNamespace: <?php echo json_encode(VISITOR_COUNTER_NAMESPACE); ?>,
           emailJsServiceId: <?php echo json_encode(EMAILJS_SERVICE_ID); ?>,
           emailJsTemplateId: <?php echo json_encode(EMAILJS_TEMPLATE_ID); ?>,
           emailJsPublicKey: <?php echo json_encode(EMAILJS_PUBLIC_KEY); ?>,
+          emailJsEnabled: <?php echo json_encode(!empty(EMAILJS_SERVICE_ID) && !empty(EMAILJS_TEMPLATE_ID) && !empty(EMAILJS_PUBLIC_KEY)); ?>,
           contactReceiverEmail: <?php echo json_encode(CONTACT_RECEIVER_EMAIL); ?>
      };
 </script>

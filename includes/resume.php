@@ -12,12 +12,17 @@ $skills = json_decode(file_get_contents('data/skills.json'), true);
 $certifications = json_decode(file_get_contents('data/certifications.json'), true);
 $certifications = is_array($certifications) ? $certifications : [];
 
+// Load interests from JSON
+$interests = json_decode(file_get_contents('data/interests.json'), true);
+$interests = is_array($interests) ? $interests : [];
+
 $certCount = count($certifications);
 $topScore = 0;
 foreach ($certifications as $cert) {
      if (preg_match('/(\\d+)\\s*\\/\\s*(\\d+)/', $cert['score'] ?? '', $matches)) {
           $score = (int) $matches[1];
-          if ($score > $topScore) {
+          $total = (int) $matches[2];
+          if ($total <= 100 && $score > $topScore) {
                $topScore = $score;
           }
      }
@@ -51,10 +56,20 @@ foreach ($certifications as $cert) {
                                         <strong>Company:</strong> <?php echo htmlspecialchars($exp['company']); ?><br>
                                         <strong>Location:</strong> <?php echo htmlspecialchars($exp['location']); ?><br>
                                         <strong>Duration:</strong> <?php echo htmlspecialchars($exp['duration']); ?>
+                                        <?php if (!empty($exp['website'])): ?>
+                                             <br><strong>Website:</strong> <a class="timeline-link" href="<?php echo htmlspecialchars($exp['website']); ?>" target="_blank" rel="noopener noreferrer"><?php echo htmlspecialchars($exp['website']); ?></a>
+                                        <?php endif; ?>
                                         <?php if (isset($exp['status'])): ?>
                                              <br><strong>Status:</strong> <span class="<?php echo $exp['isActive'] ? 'status-ongoing' : 'status-completed'; ?>"><?php echo htmlspecialchars($exp['status']); ?></span>
                                         <?php endif; ?>
                                    </p>
+                                   <?php if (!empty($exp['highlights']) && is_array($exp['highlights'])): ?>
+                                        <ul class="timeline-highlights">
+                                             <?php foreach ($exp['highlights'] as $highlight): ?>
+                                                  <li><?php echo htmlspecialchars($highlight); ?></li>
+                                             <?php endforeach; ?>
+                                        </ul>
+                                   <?php endif; ?>
                               </div>
                          </li>
                     <?php endforeach; ?>
@@ -133,6 +148,25 @@ foreach ($certifications as $cert) {
                <?php endforeach; ?>
           </ul>
      </section>
+
+     <?php if (!empty($interests)): ?>
+          <section class="interests">
+               <div class="title-wrapper wow animate__animated animate__fadeInUp">
+                    <div class="icon-box">
+                         <ion-icon name="sparkles-outline"></ion-icon>
+                    </div>
+                    <h3 class="h3 interests-title">Interests</h3>
+               </div>
+               <ul class="interests-list">
+                    <?php foreach ($interests as $interest): ?>
+                         <li class="interest-item wow animate__animated animate__fadeInUp" data-wow-delay="<?php echo htmlspecialchars($interest['delay'] ?? '0s'); ?>">
+                              <h4 class="h4 interest-title"><?php echo htmlspecialchars($interest['title']); ?></h4>
+                              <p class="interest-text"><?php echo htmlspecialchars($interest['description']); ?></p>
+                         </li>
+                    <?php endforeach; ?>
+               </ul>
+          </section>
+     <?php endif; ?>
 
      <!-- Skills Section -->
      <section class="skill">

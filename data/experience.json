@@ -5,9 +5,13 @@
     "company": "Auranics Solution",
     "location": "Rajkot, Gujarat",
     "duration": "2 weeks",
+    "website": "https://auranics.com/",
     "badge": "2022",
     "status": "Completed",
     "isActive": false,
+    "highlights": [
+      "Worked as a Web Design intern for 2 weeks."
+    ],
     "delay": "0.1s"
   },
   {
@@ -19,6 +23,9 @@
     "badge": "2023",
     "status": "Completed",
     "isActive": false,
+    "highlights": [
+      "Worked as a Web Developer intern for 3 months."
+    ],
     "delay": "0.2s"
   },
   {
@@ -27,21 +34,29 @@
     "company": "Web World Developing",
     "location": "Jamnagar, Gujarat",
     "duration": "6 months",
+    "website": "https://webworlddeveloping.com/",
     "badge": "2023 - 2024",
     "status": "Completed",
     "isActive": false,
+    "highlights": [
+      "Worked as a PHP Web Developer intern for 6 months."
+    ],
     "delay": "0.3s"
   },
   {
     "id": 4,
     "title": "Full Stack Developer",
     "company": "Mehta Websolution",
-    "location": "Jamnagar, Gujarat",
-    "duration": "Jan 2025 - Present",
-    "badge": "Jan 2025 - Present",
+    "location": "Khodiyar Colony, Jamnagar",
+    "duration": "15 Jan 2025 - Present",
+    "website": "https://mehtawebsolution.com/",
+    "badge": "15 Jan 2025 - Present",
     "status": "Ongoing",
     "isActive": true,
+    "highlights": [
+      "Worked as an intern for 6 months and then continued in a full-time role.",
+      "Assisted senior designers in implementing responsive web design principles across multiple projects."
+    ],
     "delay": "0.4s"
   }
 ]
-

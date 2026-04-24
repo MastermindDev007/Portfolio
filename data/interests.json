@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "Coding Challenges",
+    "description": "Solves algorithmic and programming challenges to sharpen logical thinking and technical proficiency.",
+    "delay": "0.1s"
+  },
+  {
+    "id": 2,
+    "title": "UI/UX Design",
+    "description": "Creates user journey mockups and wireframes for better web and mobile experiences.",
+    "delay": "0.2s"
+  },
+  {
+    "id": 3,
+    "title": "Machine Learning Projects",
+    "description": "Builds small-scale machine learning projects to experiment with predictive analytics and automation.",
+    "delay": "0.3s"
+  },
+  {
+    "id": 4,
+    "title": "Hackathons",
+    "description": "Participates in timed innovation events to prototype solutions under real-world constraints.",
+    "delay": "0.4s"
+  },
+  {
+    "id": 5,
+    "title": "API Development",
+    "description": "Designs and tests RESTful APIs to integrate systems and improve software interoperability.",
+    "delay": "0.5s"
+  }
+]
