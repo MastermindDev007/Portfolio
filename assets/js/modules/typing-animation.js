@@ -1,5 +1,3 @@
-// Typing Animation Module
-
 export function initTypingAnimation() {
      const typingElement = document.querySelector('[data-typing-text]');
 
@@ -18,10 +16,13 @@ export function initTypingAnimation() {
      let isDeleting = false;
      let typingSpeed = 100;
 
-     // Set fixed min-width to prevent sidebar height changes
-     typingElement.style.minWidth = '220px';
-     typingElement.style.display = 'inline-block';
+     // Set fixed dimensions to prevent layout shift
+     typingElement.style.minWidth = '280px';
+     typingElement.style.minHeight = '28px';
+     typingElement.style.display = 'inline-flex';
+     typingElement.style.alignItems = 'center';
      typingElement.style.whiteSpace = 'nowrap';
+     typingElement.style.overflow = 'hidden';
 
      function type() {
           const currentText = texts[textIndex];

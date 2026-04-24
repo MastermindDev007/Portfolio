@@ -1,44 +1,51 @@
-// Animations Module (WOW.js)
-
 let wowInstance = null;
 
-export function initAnimations() {
+// ─── Core WOW bootstrap (called once preloader is done) ──────────────────────
+function bootWOW() {
      if (typeof WOW === 'undefined') return;
 
-     const initWOW = () => {
-          if (wowInstance) {
-               wowInstance = null;
+     if (wowInstance) wowInstance = null;
+
+     wowInstance = new WOW({
+          boxClass:      'wow',
+          animateClass:  'animated',
+          offset:        80,   // px from viewport bottom before triggering on scroll
+          mobile:        true,
+          live:          true,
+          scrollContainer: null
+     });
+     wowInstance.init();
+
+     // Immediately reveal any .wow elements that are already in the viewport
+     // (the ones visible right after the preloader fades out)
+     const allWow = document.querySelectorAll('.wow');
+     allWow.forEach(el => {
+          const rect = el.getBoundingClientRect();
+          const inView = rect.top < window.innerHeight && rect.bottom > 0;
+          if (inView && !el.classList.contains('animated')) {
+               el.style.visibility = 'visible';
+               el.classList.add('animated');
           }
+     });
+}
 
-          wowInstance = new WOW({
-               boxClass: 'wow',
-               animateClass: 'animated',
-               offset: 80,
-               mobile: true,
-               live: true,
-               scrollContainer: null
-          });
-          wowInstance.init();
-     };
+export function initAnimations() {
+     // ✅ Wait for the preloader to fully disappear before starting any animation
+     window.addEventListener('preloaderDone', () => {
+          bootWOW();
+     }, { once: true });
 
-     if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', initWOW);
-     } else {
-          initWOW();
-     }
+     // ─── Re-sync WOW when the user switches pages ─────────────────────────────
+     const pages = document.querySelectorAll('[data-page]');
 
-     const pages = document.querySelectorAll("[data-page]");
-
-     const pageObserver = new MutationObserver((mutations) => {
-          mutations.forEach((mutation) => {
+     const pageObserver = new MutationObserver(mutations => {
+          mutations.forEach(mutation => {
                if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
                     const target = mutation.target;
                     if (target.classList.contains('active')) {
                          setTimeout(() => {
                               if (wowInstance) {
                                    wowInstance.sync();
-                              } else {
-                                   initWOW();
                               }
                          }, 100);
                     }
@@ -46,7 +53,7 @@ export function initAnimations() {
           });
      });
 
-     pages.forEach((page) => {
+     pages.forEach(page => {
           pageObserver.observe(page, {
                attributes: true,
                attributeFilter: ['class']
@@ -55,7 +62,5 @@ export function initAnimations() {
 }
 
 export function syncAnimations() {
-     if (wowInstance) {
-          wowInstance.sync();
-     }
+     if (wowInstance) wowInstance.sync();
 }

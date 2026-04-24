@@ -1,26 +1,42 @@
 [
      {
           "id": 1,
-          "category": "Designing Skills",
-          "icon": "color-palette-outline",
-          "percentage": 80,
-          "technologies": "HTML, CSS, JavaScript, AngularJS, Bootstrap, Tailwind CSS",
+          "category": "Frontend Development",
+          "icon": "browsers-outline",
+          "percentage": 90,
+          "technologies": "HTML5, CSS3, JavaScript, Bootstrap, Tailwind CSS, UI/UX Design",
           "delay": "0.1s"
      },
      {
           "id": 2,
-          "category": "Development Skills",
-          "icon": "terminal-outline",
-          "percentage": 70,
-          "technologies": "PHP, Laravel, Python, DevOps",
+          "category": "Backend Development",
+          "icon": "server-outline",
+          "percentage": 80,
+          "technologies": "Laravel, PHP, Python, REST APIs, Database Management (SQL)",
           "delay": "0.2s"
      },
      {
           "id": 3,
-          "category": "Other Skills",
-          "icon": "layers-outline",
-          "percentage": 60,
-          "technologies": "Canva, Python Machine Learning",
+          "category": "Version Control & Tools",
+          "icon": "git-branch-outline",
+          "percentage": 85,
+          "technologies": "Git, GitHub, Project Planning, Team Collaboration",
           "delay": "0.3s"
+     },
+     {
+          "id": 4,
+          "category": "Python & Data",
+          "icon": "analytics-outline",
+          "percentage": 70,
+          "technologies": "Python Programming, Machine Learning Basics, API Development",
+          "delay": "0.4s"
+     },
+     {
+          "id": 5,
+          "category": "Design & Creative",
+          "icon": "color-palette-outline",
+          "percentage": 75,
+          "technologies": "Canva, UI/UX Principles, Figma, Debugging",
+          "delay": "0.5s"
      }
 ]

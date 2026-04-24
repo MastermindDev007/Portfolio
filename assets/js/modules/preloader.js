@@ -47,11 +47,18 @@ export function initPreloader() {
           document.body.style.position = '';
           document.body.style.width = '';
 
+          // ✅ Notify all other modules that the preloader is fully done
+          // We wait for the CSS fade-out (0.5s) before firing so elements animate
+          // only after the preloader overlay is visually gone.
+          setTimeout(() => {
+               window.dispatchEvent(new CustomEvent('preloaderDone'));
+          }, 520); // slightly past the 0.5s CSS transition
+
           setTimeout(() => {
                if (preloader && preloader.parentNode) {
                     preloader.remove();
                }
-          }, 500);
+          }, 600);
      };
 
      // Fallback: Force hide after 3 seconds max

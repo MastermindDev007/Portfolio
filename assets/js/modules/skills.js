@@ -10,6 +10,7 @@ export function initSkills() {
           }
      };
 
+     // Scroll-triggered: animate bars as they enter the viewport
      const progressObserver = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
                if (entry.isIntersecting) {
@@ -26,7 +27,8 @@ export function initSkills() {
           progressObserver.observe(bar);
      });
 
-     window.addEventListener('load', () => {
+     // ✅ After preloader is gone, animate any bars already in the viewport
+     window.addEventListener('preloaderDone', () => {
           skillProgressBars.forEach(bar => {
                const rect = bar.getBoundingClientRect();
                const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
@@ -34,5 +36,5 @@ export function initSkills() {
                     animateProgressBar(bar);
                }
           });
-     });
+     }, { once: true });
 }

@@ -16,14 +16,15 @@ $techStack = json_decode(file_get_contents('data/tech-stack.json'), true);
         <div class="intro-content">
             <h3 class="h3">Full-Stack Developer & Digital Craftsman</h3>
             <p>
-                I transform ideas into elegant digital solutions. With a passion for clean code and innovative
-                design,
-                I specialize in building scalable web applications that drive business growth and deliver
-                exceptional user experiences.
+                Web Developer with hands-on experience in building and optimizing web applications using
+                <strong>Laravel</strong> and modern frontend technologies. Transitioned from intern to
+                full-time developer with a focus on performance optimization, debugging, and scalable
+                backend development. Passionate about clean code, intuitive UI/UX, and building products
+                that make a real impact.
             </p>
             <div class="intro-stats">
                 <div class="stat-item">
-                    <h4 class="stat-number">15+</h4>
+                    <h4 class="stat-number">10+</h4>
                     <p class="stat-label">Projects Completed</p>
                 </div>
                 <div class="stat-item">
@@ -31,7 +32,7 @@ $techStack = json_decode(file_get_contents('data/tech-stack.json'), true);
                     <p class="stat-label">Companies Worked With</p>
                 </div>
                 <div class="stat-item">
-                    <h4 class="stat-number">2+</h4>
+                    <h4 class="stat-number">3+</h4>
                     <p class="stat-label">Years Experience</p>
                 </div>
             </div>

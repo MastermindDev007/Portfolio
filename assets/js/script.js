@@ -8,35 +8,35 @@
 
 let wowInstance = null;
 
-// Initialize WOW.js for scroll animations
-function initWOW() {
-  if (typeof WOW !== 'undefined') {
-    // Destroy existing instance if it exists
-    if (wowInstance) {
-      wowInstance = null;
+// Boot WOW.js — called only after the preloader is fully gone
+function bootWOW() {
+  if (typeof WOW === 'undefined') return;
+
+  if (wowInstance) wowInstance = null;
+
+  wowInstance = new WOW({
+    boxClass: 'wow',
+    animateClass: 'animated',
+    offset: 80,
+    mobile: true,
+    live: true,
+    scrollContainer: null
+  });
+  wowInstance.init();
+
+  // Immediately reveal .wow elements already visible in the viewport
+  document.querySelectorAll('.wow').forEach(function (el) {
+    var rect = el.getBoundingClientRect();
+    var inView = rect.top < window.innerHeight && rect.bottom > 0;
+    if (inView && !el.classList.contains('animated')) {
+      el.style.visibility = 'visible';
+      el.classList.add('animated');
     }
-
-    wowInstance = new WOW({
-      boxClass: 'wow',
-      animateClass: 'animated',
-      offset: 80,
-      mobile: true,
-      live: true,
-      callback: function (box) {
-        // Optional callback when animation triggers
-      },
-      scrollContainer: null
-    });
-    wowInstance.init();
-  }
+  });
 }
 
-// Initialize on page load
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initWOW);
-} else {
-  initWOW();
-}
+// ✅ Start WOW.js only after the preloader has faded out
+window.addEventListener('preloaderDone', bootWOW, { once: true });
 
 // Re-initialize WOW.js when page changes (for single-page app)
 const pages = document.querySelectorAll("[data-page]");
@@ -117,12 +117,17 @@ function hidePreloader() {
       document.body.style.position = '';
       document.body.style.width = '';
 
-      // Remove preloader from DOM after animation
+      // ✅ Fire preloaderDone after CSS fade-out (0.5s) completes
+      setTimeout(function () {
+        window.dispatchEvent(new CustomEvent('preloaderDone'));
+      }, 520);
+
+      // Remove preloader from DOM shortly after
       setTimeout(function () {
         if (preloader && preloader.parentNode) {
           preloader.remove();
         }
-      }, 500);
+      }, 600);
     }
   }, 300);
 }
@@ -389,8 +394,8 @@ skillProgressBars.forEach(bar => {
   progressObserver.observe(bar);
 });
 
-// Animate on page load if already visible
-window.addEventListener('load', function () {
+// ✅ Animate bars visible in viewport only after preloader is gone
+window.addEventListener('preloaderDone', function () {
   skillProgressBars.forEach(bar => {
     const rect = bar.getBoundingClientRect();
     const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
@@ -398,7 +403,7 @@ window.addEventListener('load', function () {
       animateProgressBar(bar);
     }
   });
-});
+}, { once: true });
 
 // Content Protection
 // Disable right-click

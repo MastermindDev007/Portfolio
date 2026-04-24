@@ -1,7 +1,5 @@
 'use strict';
 
-// Main JavaScript Entry Point - UPDATED
-
 // Import modules
 import { initPreloader } from './modules/preloader.js';
 import { initAnimations } from './modules/animations.js';
@@ -20,14 +18,14 @@ import { initAutoSliders } from './modules/auto-sliders.js';
 
 // Initialize all modules
 document.addEventListener('DOMContentLoaded', () => {
-     initPreloader();
-     initAnimations();
+     initPreloader();      // ← fires 'preloaderDone' when the overlay is gone
+     initAnimations();     // ← listens for 'preloaderDone', then starts WOW.js
      initSidebar();
      initModal();
      initNavigation();
      initFilters();
      initForm();
-     initSkills();
+     initSkills();         // ← listens for 'preloaderDone' for viewport bars
      initSecurity();
      initThemeToggle();
      initTypingAnimation();

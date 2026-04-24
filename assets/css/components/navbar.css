@@ -1,4 +1,4 @@
-/* Navbar Component */
+/* Navbar Component - FIXED (Light Mode Support) */
 
 .navbar {
      position: fixed;
@@ -11,6 +11,13 @@
      border-radius: var(--radius-md) var(--radius-md) 0 0;
      box-shadow: var(--shadow-2);
      z-index: 5;
+     transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+/* Light mode navbar */
+html[data-theme="light"] .navbar {
+     background: hsla(0, 0%, 100%, 0.75);
+     border-color: var(--jet);
 }
 
 .navbar-list {
@@ -29,6 +36,11 @@
      position: relative;
 }
 
+/* Light mode navbar links */
+html[data-theme="light"] .navbar-link {
+     color: var(--white-1);
+}
+
 .navbar-link::before {
      content: "";
      position: absolute;
@@ -44,6 +56,12 @@
 .navbar-link:hover,
 .navbar-link:focus {
      color: var(--light-gray-70);
+}
+
+/* Light mode navbar link hover */
+html[data-theme="light"] .navbar-link:hover,
+html[data-theme="light"] .navbar-link:focus {
+     color: var(--orange-yellow-crayola);
 }
 
 .navbar-link.active {

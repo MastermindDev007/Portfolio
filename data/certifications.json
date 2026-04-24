@@ -1,0 +1,79 @@
+[
+     {
+          "id": 1,
+          "title": "TCS NQT — National Qualifier Test",
+          "issuer": "Tata Consultancy Services",
+          "score": "2122.52 / 3000",
+          "grade": "70.75 Percentile",
+          "date": "October 18, 2024",
+          "icon": "trophy-outline",
+          "color": "gold",
+          "delay": "0.1s"
+     },
+     {
+          "id": 2,
+          "title": "PHP Practical Exam",
+          "issuer": "Saurashtra University",
+          "score": "100 / 100",
+          "grade": "1st Rank 🏆",
+          "date": "2024",
+          "icon": "medal-outline",
+          "color": "gold",
+          "delay": "0.2s"
+     },
+     {
+          "id": 3,
+          "title": "HTML Practical Exam",
+          "issuer": "Saurashtra University",
+          "score": "95 / 100",
+          "grade": "Distinction",
+          "date": "2024",
+          "icon": "ribbon-outline",
+          "color": "silver",
+          "delay": "0.3s"
+     },
+     {
+          "id": 4,
+          "title": "C Language Practical Exam",
+          "issuer": "Saurashtra University",
+          "score": "96 / 100",
+          "grade": "Distinction",
+          "date": "2023",
+          "icon": "ribbon-outline",
+          "color": "silver",
+          "delay": "0.4s"
+     },
+     {
+          "id": 5,
+          "title": "Advanced Excel",
+          "issuer": "Udemy",
+          "score": "Certified",
+          "grade": "Online Course",
+          "date": "2021",
+          "icon": "school-outline",
+          "color": "blue",
+          "delay": "0.5s"
+     },
+     {
+          "id": 6,
+          "title": "WordPress Development",
+          "issuer": "Udemy",
+          "score": "Certified",
+          "grade": "Online Course",
+          "date": "2023",
+          "icon": "school-outline",
+          "color": "blue",
+          "delay": "0.6s"
+     },
+     {
+          "id": 7,
+          "title": "Tech Arena — Hackathon Event",
+          "issuer": "Christ College",
+          "score": "Participant",
+          "grade": "Competition",
+          "date": "February 2023",
+          "icon": "flash-outline",
+          "color": "purple",
+          "delay": "0.7s"
+     }
+]
