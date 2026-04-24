@@ -1,6 +1,5 @@
 'use strict';
 
-// Import modules
 import { initPreloader } from './modules/preloader.js';
 import { initAnimations } from './modules/animations.js';
 import { initSidebar } from './modules/sidebar.js';
@@ -15,21 +14,40 @@ import { initTypingAnimation } from './modules/typing-animation.js';
 import { initProjectModal } from './modules/project-modal.js';
 import { initBackToTop } from './modules/back-to-top.js';
 import { initAutoSliders } from './modules/auto-sliders.js';
+import { initBackgroundEffects } from './modules/background-effects.js';
+import { initCustomCursor } from './modules/custom-cursor.js';
+import { initScrollProgress } from './modules/scroll-progress.js';
+import { initTiltEffects } from './modules/tilt-effects.js';
+import { initStaggerReveal } from './modules/stagger-reveal.js';
+import { initLazyMedia } from './modules/lazy-media.js';
+import { initVisitorBanner } from './modules/visitor-banner.js';
+import { initPWA } from './modules/pwa.js';
+import { initGithubRepos } from './modules/github-repos.js';
+import { initKeyboardNavigation } from './modules/keyboard-navigation.js';
 
-// Initialize all modules
 document.addEventListener('DOMContentLoaded', () => {
-     initPreloader();      // ← fires 'preloaderDone' when the overlay is gone
-     initAnimations();     // ← listens for 'preloaderDone', then starts WOW.js
+     initBackgroundEffects();
+     initPreloader();
+     initAnimations();
+     initScrollProgress();
+     initCustomCursor();
      initSidebar();
      initModal();
      initNavigation();
+     initStaggerReveal();
      initFilters();
      initForm();
-     initSkills();         // ← listens for 'preloaderDone' for viewport bars
+     initSkills();
      initSecurity();
      initThemeToggle();
      initTypingAnimation();
      initProjectModal();
+     initKeyboardNavigation();
      initBackToTop();
      initAutoSliders();
+     initTiltEffects();
+     initLazyMedia();
+     initVisitorBanner();
+     initGithubRepos();
+     initPWA();
 });

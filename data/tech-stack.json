@@ -1,74 +1,105 @@
 [
-     {
-          "id": 1,
-          "name": "HTML5",
-          "icon": "logo-html5",
-          "color": "#E34F26"
-     },
-     {
-          "id": 2,
-          "name": "CSS3",
-          "icon": "logo-css3",
-          "color": "#1572B6"
-     },
-     {
-          "id": 3,
-          "name": "JavaScript",
-          "icon": "logo-javascript",
-          "color": "#F7DF1E"
-     },
-     {
-          "id": 4,
-          "name": "PHP",
-          "icon": "logo-php",
-          "color": "#777BB4"
-     },
-     {
-          "id": 5,
-          "name": "Laravel",
-          "icon": "logo-laravel",
-          "color": "#FF2D20"
-     },
-     {
-          "id": 6,
-          "name": "Python",
-          "icon": "logo-python",
-          "color": "#3776AB"
-     },
-     {
-          "id": 7,
-          "name": "MySQL",
-          "icon": "server-outline",
-          "color": "#4479A1"
-     },
-     {
-          "id": 8,
-          "name": "Bootstrap",
-          "icon": "logo-sass",
-          "color": "#7952B3"
-     },
-     {
-          "id": 9,
-          "name": "Tailwind CSS",
-          "icon": "logo-tailwind",
-          "color": "#06B6D4"
-     },
-     {
-          "id": 10,
-          "name": "Git",
-          "icon": "git-branch-outline",
-          "color": "#F05032"
-     },
-     {
-          "id": 11,
-          "name": "GitHub",
-          "icon": "logo-github",
-          "color": "#FFFFFF"
-     },
-     {
-          "id": 12,
-          "name": "WordPress",
-          "icon": "logo-wordpress",
-          "color": "#21759B"
-     }
+  {
+    "id": 1,
+    "name": "HTML5",
+    "icon": "logo-html5",
+    "color": "#E34F26"
+  },
+  {
+    "id": 2,
+    "name": "CSS3",
+    "icon": "logo-css3",
+    "color": "#1572B6"
+  },
+  {
+    "id": 3,
+    "name": "JavaScript",
+    "icon": "logo-javascript",
+    "color": "#F7DF1E"
+  },
+  {
+    "id": 4,
+    "name": "React",
+    "icon": "logo-react",
+    "color": "#61DAFB"
+  },
+  {
+    "id": 5,
+    "name": "Tailwind CSS",
+    "icon": "sparkles-outline",
+    "color": "#06B6D4"
+  },
+  {
+    "id": 6,
+    "name": "PHP",
+    "icon": "logo-php",
+    "color": "#777BB4"
+  },
+  {
+    "id": 7,
+    "name": "Laravel",
+    "icon": "logo-laravel",
+    "color": "#FF2D20"
+  },
+  {
+    "id": 8,
+    "name": "Python",
+    "icon": "logo-python",
+    "color": "#3776AB"
+  },
+  {
+    "id": 9,
+    "name": "Node.js",
+    "icon": "logo-nodejs",
+    "color": "#339933"
+  },
+  {
+    "id": 10,
+    "name": "MySQL",
+    "icon": "server-outline",
+    "color": "#4479A1"
+  },
+  {
+    "id": 11,
+    "name": "PostgreSQL",
+    "icon": "server-outline",
+    "color": "#336791"
+  },
+  {
+    "id": 12,
+    "name": "MongoDB",
+    "icon": "leaf-outline",
+    "color": "#47A248"
+  },
+  {
+    "id": 13,
+    "name": "Git",
+    "icon": "git-branch-outline",
+    "color": "#F05032"
+  },
+  {
+    "id": 14,
+    "name": "GitHub",
+    "icon": "logo-github",
+    "color": "#FFFFFF"
+  },
+  {
+    "id": 15,
+    "name": "Figma",
+    "icon": "color-palette-outline",
+    "color": "#A259FF"
+  },
+  {
+    "id": 16,
+    "name": "Canva",
+    "icon": "brush-outline",
+    "color": "#00C4CC"
+  },
+  {
+    "id": 17,
+    "name": "WordPress",
+    "icon": "logo-wordpress",
+    "color": "#21759B"
+  }
 ]
+

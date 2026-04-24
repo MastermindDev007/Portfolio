@@ -1,35 +1,36 @@
 [
-     {
-          "id": 1,
-          "title": "HSC — G.H.S.E.B",
-          "university": "Gujarat Secondary & Higher Secondary Education Board",
-          "college": "Junagadh, Gujarat",
-          "badge": "2021 — 2022",
-          "status": "Completed",
-          "note": "Score: 490 / 750",
-          "isActive": false,
-          "delay": "0.1s"
-     },
-     {
-          "id": 2,
-          "title": "B.C.A — Bachelor of Computer Application",
-          "university": "Saurashtra University",
-          "college": "SVET College, Jamnagar",
-          "badge": "2022 — 2025",
-          "status": "Completed",
-          "note": "Result: 65% (Pass) · Final semester project built from scratch",
-          "isActive": false,
-          "delay": "0.2s"
-     },
-     {
-          "id": 3,
-          "title": "M.Sc. IT & CA — Master of Science",
-          "university": "GCAS — Saurashtra University",
-          "college": "Vidhya Sagar Infotech College, Jamnagar",
-          "badge": "2025 — Present",
-          "status": "Ongoing",
-          "note": "Sem 1: 67.80% (Pass) · Actively building real-world projects",
-          "isActive": true,
-          "delay": "0.3s"
-     }
+  {
+    "id": 1,
+    "title": "G.H.S.E.B (12th)",
+    "university": "Gujarat Board",
+    "college": "Gujarat Board",
+    "badge": "2021 - 2022",
+    "status": "Completed",
+    "note": "Result: 490/750",
+    "isActive": false,
+    "delay": "0.1s"
+  },
+  {
+    "id": 2,
+    "title": "B.C.A",
+    "university": "Saurashtra University, Jamnagar",
+    "college": "Saurashtra University, Jamnagar",
+    "badge": "2022 - 2025",
+    "status": "Completed",
+    "note": "Result: 65% Pass",
+    "isActive": false,
+    "delay": "0.2s"
+  },
+  {
+    "id": 3,
+    "title": "MSc IT & CA",
+    "university": "Saurashtra University, Jamnagar",
+    "college": "Saurashtra University, Jamnagar",
+    "badge": "2025 - Present",
+    "status": "Ongoing",
+    "note": "Sem 1: 67.80%",
+    "isActive": true,
+    "delay": "0.3s"
+  }
 ]
+

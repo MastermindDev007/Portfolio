@@ -3,12 +3,12 @@
   <div class="sidebar-info">
 
     <figure class="avatar-box wow animate__animated animate__zoomIn" data-wow-delay="0.2s">
-      <img src="assets/images/my-avatar.png" alt="Dev Davda" width="80">
+      <img src="assets/images/my-avatar.png" alt="Dev Davda" width="80" loading="lazy" data-lazy-blur>
     </figure>
 
     <div class="info-content wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
       <h1 class="name" title="Dev Davda">Dev Davda</h1>
-      <p class="title" data-typing-text>Full‑Stack Web Developer</p>
+      <p class="title" data-typing-text>Full-Stack Web Developer</p>
     </div>
 
     <button class="info_more-btn" data-sidebar-btn>
@@ -20,7 +20,6 @@
 
   <div class="sidebar-info_more">
 
-    <!-- Theme Toggle -->
     <div class="theme-toggle">
       <button class="theme-toggle-btn" data-theme-toggle>
         <ion-icon name="sunny-outline" class="theme-icon" data-theme-icon></ion-icon>
@@ -79,7 +78,6 @@
 
     <div class="separator"></div>
 
-    <!-- Resume Download Button -->
     <div class="resume-download wow animate__animated animate__fadeInUp" data-wow-delay="0.5s">
       <a href="assets/resume/Dev_Davda.pdf" download="Dev_Davda_CV.pdf" class="resume-btn">
         <ion-icon name="download-outline"></ion-icon>
@@ -91,17 +89,22 @@
 
     <ul class="social-list wow animate__animated animate__zoomIn" data-wow-delay="0.6s">
       <li class="social-item">
-        <a href="https://www.linkedin.com/in/dev-davda-ab8378239" class="social-link" target="_blank">
+        <a href="https://github.com/devndavda59425" class="social-link" target="_blank" rel="noopener noreferrer">
+          <ion-icon name="logo-github"></ion-icon>
+        </a>
+      </li>
+      <li class="social-item">
+        <a href="https://www.linkedin.com/in/dev-davda-ab8378239" class="social-link" target="_blank" rel="noopener noreferrer">
           <ion-icon name="logo-linkedin"></ion-icon>
         </a>
       </li>
       <li class="social-item">
-        <a href="https://wa.me/7779092005" class="social-link" target="_blank">
+        <a href="https://wa.me/7779092005" class="social-link" target="_blank" rel="noopener noreferrer">
           <ion-icon name="logo-whatsapp"></ion-icon>
         </a>
       </li>
       <li class="social-item">
-        <a href="https://www.instagram.com/dev_davda_555/" class="social-link" target="_blank">
+        <a href="https://www.instagram.com/dev_davda_555/" class="social-link" target="_blank" rel="noopener noreferrer">
           <ion-icon name="logo-instagram"></ion-icon>
         </a>
       </li>

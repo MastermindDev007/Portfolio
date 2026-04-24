@@ -11,6 +11,7 @@ export function initAutoSliders() {
 
           function autoScrollCompanies() {
                const items = companiesList.children;
+               if (!items.length) return;
                const itemWidth = items[0]?.offsetWidth || 0;
                const gap = 30; // Gap between items
 
@@ -48,6 +49,7 @@ export function initAutoSliders() {
 
           function autoScrollTech() {
                const items = techStackGrid.children;
+               if (!items.length) return;
                const itemWidth = items[0]?.offsetWidth || 0;
                const gap = 25;
 

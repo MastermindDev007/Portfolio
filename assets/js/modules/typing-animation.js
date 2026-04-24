@@ -1,66 +1,46 @@
 export function initTypingAnimation() {
      const typingElement = document.querySelector('[data-typing-text]');
-
      if (!typingElement) return;
 
-     const texts = [
-          'Full-Stack Web Developer',
-          'Laravel Developer',
-          'Python Developer',
-          'DevOps Engineer',
-          'PHP Developer'
+     const phrases = [
+          'Full Stack Developer',
+          'Laravel Expert',
+          'UI Craftsman'
      ];
 
-     let textIndex = 0;
+     let phraseIndex = 0;
      let charIndex = 0;
      let isDeleting = false;
-     let typingSpeed = 100;
 
-     // Set fixed dimensions to prevent layout shift
-     typingElement.style.minWidth = '280px';
-     typingElement.style.minHeight = '28px';
-     typingElement.style.display = 'inline-flex';
-     typingElement.style.alignItems = 'center';
-     typingElement.style.whiteSpace = 'nowrap';
-     typingElement.style.overflow = 'hidden';
+     typingElement.style.minWidth = '240px';
+     typingElement.style.minHeight = '26px';
 
-     function type() {
-          const currentText = texts[textIndex];
+     const tick = () => {
+          const phrase = phrases[phraseIndex];
 
           if (isDeleting) {
-               typingElement.textContent = currentText.substring(0, charIndex - 1);
-               charIndex--;
-               typingSpeed = 50;
+               charIndex -= 1;
           } else {
-               typingElement.textContent = currentText.substring(0, charIndex + 1);
-               charIndex++;
-               typingSpeed = 100;
+               charIndex += 1;
           }
 
-          // Add blinking cursor
-          typingElement.style.borderRight = '2px solid var(--orange-yellow-crayola)';
-          typingElement.style.paddingRight = '5px';
+          typingElement.textContent = phrase.slice(0, charIndex);
 
-          if (!isDeleting && charIndex === currentText.length) {
+          let nextDelay = isDeleting ? 45 : 90;
+
+          if (!isDeleting && charIndex === phrase.length) {
                isDeleting = true;
-               typingSpeed = 2000; // Pause at end
-          } else if (isDeleting && charIndex === 0) {
-               isDeleting = false;
-               textIndex = (textIndex + 1) % texts.length;
-               typingSpeed = 500;
+               nextDelay = 1300;
           }
 
-          setTimeout(type, typingSpeed);
-     }
+          if (isDeleting && charIndex === 0) {
+               isDeleting = false;
+               phraseIndex = (phraseIndex + 1) % phrases.length;
+               nextDelay = 350;
+          }
 
-     // Start typing animation
-     type();
+          setTimeout(tick, nextDelay);
+     };
 
-     // Blinking cursor animation
-     setInterval(() => {
-          typingElement.style.borderRight =
-               typingElement.style.borderRight === '2px solid transparent'
-                    ? '2px solid var(--orange-yellow-crayola)'
-                    : '2px solid transparent';
-     }, 500);
+     tick();
 }

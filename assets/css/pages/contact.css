@@ -63,6 +63,10 @@
      color: var(--white-2);
 }
 
+.form-status:empty {
+     display: none;
+}
+
 .form-group {
      margin-bottom: 20px;
 }
@@ -161,6 +165,10 @@ textarea.form-input {
      margin-bottom: 25px;
      font-size: var(--fs-6);
      animation: slideInDown 0.3s ease;
+}
+
+.form-status p {
+     margin: 0;
 }
 
 @keyframes slideInDown {

@@ -196,6 +196,7 @@
      height: 10px;
      border-radius: 50%;
      background: var(--jet);
+     border: none;
      cursor: pointer;
      transition: all var(--transition-1);
 }
@@ -262,6 +263,7 @@
      display: flex;
      justify-content: center;
      gap: 15px;
+     flex-wrap: wrap;
 }
 
 .live-demo-btn {
@@ -303,6 +305,14 @@
 
 .live-demo-btn ion-icon {
      font-size: 20px;
+}
+
+.details-btn {
+     color: var(--white-2);
+}
+
+.details-btn::before {
+     background: hsla(0, 0%, 100%, 0.04);
 }
 
 /* Responsive */

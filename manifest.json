@@ -1,0 +1,21 @@
+{
+  "name": "Dev Davda Portfolio",
+  "short_name": "DevPortfolio",
+  "description": "Full-stack web developer portfolio by Dev Davda.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#111217",
+  "theme_color": "#14141a",
+  "icons": [
+    {
+      "src": "assets/images/logo-1-color.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/images/logo-1-color.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

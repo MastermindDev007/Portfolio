@@ -1,8 +1,15 @@
 <?php
+require_once __DIR__ . '/../config/constants.php';
+
 // Load services from JSON
 $services = json_decode(file_get_contents('data/services.json'), true);
 $companies = json_decode(file_get_contents('data/companies.json'), true);
 $techStack = json_decode(file_get_contents('data/tech-stack.json'), true);
+$projects = json_decode(file_get_contents('data/projects.json'), true);
+
+$projectCount = is_array($projects) ? count($projects) : 0;
+$companyCount = is_array($companies) ? count($companies) : 0;
+$githubUsername = DEV_GITHUB_USERNAME;
 ?>
 
 <article class="about active" data-page="about">
@@ -24,11 +31,11 @@ $techStack = json_decode(file_get_contents('data/tech-stack.json'), true);
             </p>
             <div class="intro-stats">
                 <div class="stat-item">
-                    <h4 class="stat-number">10+</h4>
+                    <h4 class="stat-number"><?php echo $projectCount; ?></h4>
                     <p class="stat-label">Projects Completed</p>
                 </div>
                 <div class="stat-item">
-                    <h4 class="stat-number">4</h4>
+                    <h4 class="stat-number"><?php echo $companyCount; ?></h4>
                     <p class="stat-label">Companies Worked With</p>
                 </div>
                 <div class="stat-item">
@@ -48,7 +55,7 @@ $techStack = json_decode(file_get_contents('data/tech-stack.json'), true);
                     data-wow-delay="<?php echo $service['delay']; ?>">
                     <div class="service-icon-box">
                         <img src="<?php echo htmlspecialchars($service['icon']); ?>"
-                            alt="<?php echo htmlspecialchars($service['title']); ?> icon" width="40">
+                            alt="<?php echo htmlspecialchars($service['title']); ?> icon" width="40" loading="lazy" data-lazy-blur>
                     </div>
                     <div class="service-content-box">
                         <h4 class="h4 service-item-title"><?php echo htmlspecialchars($service['title']); ?></h4>
@@ -75,6 +82,27 @@ $techStack = json_decode(file_get_contents('data/tech-stack.json'), true);
         </div>
     </section>
 
+    <!-- GitHub Stats Section -->
+    <section class="github-activity">
+        <h3 class="h3 github-activity-title wow animate__animated animate__fadeInUp">GitHub Activity</h3>
+        <div class="github-stats-grid">
+            <figure class="github-stat-card wow animate__animated animate__fadeInLeft">
+                <img loading="lazy" data-lazy-blur
+                    src="https://github-readme-stats.vercel.app/api?username=<?php echo urlencode($githubUsername); ?>&show_icons=true&theme=transparent&hide_border=true&title_color=fdd663&text_color=e8eaef&icon_color=fdd663"
+                    alt="GitHub stats for <?php echo htmlspecialchars($githubUsername); ?>">
+            </figure>
+            <figure class="github-stat-card wow animate__animated animate__fadeInRight">
+                <img loading="lazy" data-lazy-blur
+                    src="https://github-readme-streak-stats.herokuapp.com/?user=<?php echo urlencode($githubUsername); ?>&theme=transparent&hide_border=true&stroke=fdd663&ring=fdd663&fire=fdd663&currStreakLabel=fdd663"
+                    alt="GitHub streak for <?php echo htmlspecialchars($githubUsername); ?>">
+            </figure>
+        </div>
+
+        <div class="github-repo-feed wow animate__animated animate__fadeInUp" data-github-repos>
+            <p class="github-fallback">Loading latest repositories...</p>
+        </div>
+    </section>
+
     <!-- Companies Section -->
     <section class="companies">
         <h3 class="h3 companies-title wow animate__animated animate__fadeInUp">Companies I've Worked With</h3>
@@ -86,7 +114,7 @@ $techStack = json_decode(file_get_contents('data/tech-stack.json'), true);
                         <figure class="companies-avatar-box">
                             <img src="<?php echo htmlspecialchars($company['avatar']); ?>"
                                 alt="<?php echo htmlspecialchars($company['name']); ?>" width="60"
-                                data-companies-avatar>
+                                data-companies-avatar loading="lazy" data-lazy-blur>
                         </figure>
                         <h4 class="h4 companies-item-title" data-companies-title>
                             <?php echo htmlspecialchars($company['name']); ?></h4>
@@ -108,9 +136,9 @@ $techStack = json_decode(file_get_contents('data/tech-stack.json'), true);
             </button>
             <div class="modal-img-wrapper">
                 <figure class="modal-avatar-box">
-                    <img src="assets/images/avatar-1.png" alt="Company" width="80" data-modal-img>
+                    <img src="assets/images/avatar-1.png" alt="Company" width="80" data-modal-img loading="lazy" data-lazy-blur>
                 </figure>
-                <img src="assets/images/icon-quote.svg" alt="quote icon">
+                <img src="assets/images/icon-quote.svg" alt="quote icon" loading="lazy" data-lazy-blur>
             </div>
             <div class="modal-content">
                 <h4 class="h3 modal-title" data-modal-title>Company Name</h4>

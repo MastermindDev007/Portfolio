@@ -6,26 +6,20 @@ export function initProjectModal() {
 
      if (!modalContainer) return;
 
-     const PROJECTS_ROOT = 'projects'; // Root folder for all projects
      let currentProjectData = null;
      let currentImageIndex = 0;
 
-     // Open modal
      projectItems.forEach((item) => {
           const eyeIcon = item.querySelector('[data-project-eye]');
+          if (!eyeIcon) return;
 
-          if (eyeIcon) {
-               eyeIcon.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-
-                    const projectId = item.dataset.projectItem;
-                    loadProjectData(projectId, item);
-               });
-          }
+          eyeIcon.addEventListener('click', (event) => {
+               event.preventDefault();
+               event.stopPropagation();
+               loadProjectData(item);
+          });
      });
 
-     // Close modal
      if (modalCloseBtn) {
           modalCloseBtn.addEventListener('click', closeModal);
      }
@@ -34,37 +28,30 @@ export function initProjectModal() {
           overlay.addEventListener('click', closeModal);
      }
 
-     // Gallery navigation
      const prevBtn = document.querySelector('[data-gallery-prev]');
      const nextBtn = document.querySelector('[data-gallery-next]');
 
-     if (prevBtn) {
-          prevBtn.addEventListener('click', () => changeImage(-1));
-     }
+     if (prevBtn) prevBtn.addEventListener('click', () => changeImage(-1));
+     if (nextBtn) nextBtn.addEventListener('click', () => changeImage(1));
 
-     if (nextBtn) {
-          nextBtn.addEventListener('click', () => changeImage(1));
-     }
-
-     function loadProjectData(projectId, projectElement) {
-          const title = projectElement.dataset.projectTitle;
-          const category = projectElement.dataset.projectCategory;
-          const description = projectElement.dataset.projectDescription;
+     function loadProjectData(projectElement) {
+          const id = Number(projectElement.dataset.projectItem || 0);
+          const title = projectElement.dataset.projectTitle || 'Project';
+          const category = projectElement.dataset.projectCategory || 'Web';
+          const description = projectElement.dataset.projectDescription || '';
           const images = JSON.parse(projectElement.dataset.projectImages || '[]');
           const technologies = JSON.parse(projectElement.dataset.projectTech || '[]');
-          const demoUrl = projectElement.dataset.projectDemo;
-
-          // Build full path: projects/{folder}/index.html or projects/{folder}/index.php
-          const projectFolder = title.toLowerCase().replace(/\s+/g, '-');
-          const fullDemoPath = `${PROJECTS_ROOT}/${projectFolder}/${demoUrl}`;
+          const demoUrl = projectElement.dataset.projectDemo || '#';
 
           currentProjectData = {
+               id,
                title,
                category,
                description,
                images,
                technologies,
-               demoUrl: fullDemoPath
+               demoUrl,
+               detailsUrl: `project.php?id=${id}`
           };
           currentImageIndex = 0;
 
@@ -75,41 +62,39 @@ export function initProjectModal() {
      function updateModalContent() {
           if (!currentProjectData) return;
 
-          // Update title
           const titleEl = document.querySelector('[data-modal-project-title]');
           if (titleEl) titleEl.textContent = currentProjectData.title;
 
-          // Update category
           const categoryEl = document.querySelector('[data-modal-project-category]');
           if (categoryEl) categoryEl.textContent = currentProjectData.category;
 
-          // Update description
           const descEl = document.querySelector('[data-modal-project-description]');
           if (descEl) descEl.textContent = currentProjectData.description;
 
-          // Update image
           updateGalleryImage();
 
-          // Update technologies
           const techContainer = document.querySelector('[data-modal-tech-list]');
-          if (techContainer && currentProjectData.technologies) {
-               techContainer.innerHTML = currentProjectData.technologies
-                    .map(tech => `<span class="tech-tag">${tech}</span>`)
+          if (techContainer) {
+               techContainer.innerHTML = (currentProjectData.technologies || [])
+                    .map((tech) => `<span class="tech-tag">${tech}</span>`)
                     .join('');
           }
 
-          // Update demo button - opens in new tab
           const demoBtn = document.querySelector('[data-modal-demo-btn]');
-          if (demoBtn && currentProjectData.demoUrl) {
-               demoBtn.onclick = () => window.open(currentProjectData.demoUrl, '_blank');
+          if (demoBtn) {
+               demoBtn.onclick = () => window.open(currentProjectData.demoUrl, '_blank', 'noopener,noreferrer');
           }
 
-          // Update indicators
+          const detailsBtn = document.querySelector('[data-modal-details-btn]');
+          if (detailsBtn) {
+               detailsBtn.onclick = () => window.open(currentProjectData.detailsUrl, '_blank', 'noopener,noreferrer');
+          }
+
           updateIndicators();
      }
 
      function updateGalleryImage() {
-          if (!currentProjectData || !currentProjectData.images) return;
+          if (!currentProjectData || !currentProjectData.images || !currentProjectData.images.length) return;
 
           const imgEl = document.querySelector('[data-gallery-image]');
           if (imgEl) {
@@ -119,7 +104,7 @@ export function initProjectModal() {
      }
 
      function changeImage(direction) {
-          if (!currentProjectData || !currentProjectData.images) return;
+          if (!currentProjectData || !currentProjectData.images || currentProjectData.images.length < 2) return;
 
           currentImageIndex += direction;
 
@@ -134,13 +119,21 @@ export function initProjectModal() {
      }
 
      function updateIndicators() {
-          const indicators = document.querySelectorAll('[data-gallery-indicator]');
-          indicators.forEach((indicator, index) => {
-               if (index === currentImageIndex) {
-                    indicator.classList.add('active');
-               } else {
-                    indicator.classList.remove('active');
-               }
+          const indicatorsWrap = document.querySelector('[data-gallery-indicators]');
+          if (!indicatorsWrap || !currentProjectData?.images) return;
+
+          indicatorsWrap.innerHTML = '';
+          currentProjectData.images.forEach((_, index) => {
+               const button = document.createElement('button');
+               button.type = 'button';
+               button.className = `gallery-indicator ${index === currentImageIndex ? 'active' : ''}`;
+               button.setAttribute('aria-label', `Show image ${index + 1}`);
+               button.addEventListener('click', () => {
+                    currentImageIndex = index;
+                    updateGalleryImage();
+                    updateIndicators();
+               });
+               indicatorsWrap.appendChild(button);
           });
      }
 
@@ -160,10 +153,11 @@ export function initProjectModal() {
           }
      }
 
-     // Close modal on Escape key
-     document.addEventListener('keydown', (e) => {
-          if (e.key === 'Escape' && modalContainer.classList.contains('active')) {
-               closeModal();
-          }
+     document.addEventListener('keydown', (event) => {
+          if (!modalContainer.classList.contains('active')) return;
+
+          if (event.key === 'Escape') closeModal();
+          if (event.key === 'ArrowLeft') changeImage(-1);
+          if (event.key === 'ArrowRight') changeImage(1);
      });
 }

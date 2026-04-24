@@ -118,6 +118,9 @@ function sanitize_project($project)
         'description' => isset($project['description']) ? htmlspecialchars($project['description'], ENT_QUOTES, 'UTF-8') : '',
         'technologies' => isset($project['technologies']) ? $project['technologies'] : [],
         'demoUrl' => isset($project['demoUrl']) ? htmlspecialchars($project['demoUrl'], ENT_QUOTES, 'UTF-8') : '#',
+        'githubUrl' => isset($project['githubUrl']) ? htmlspecialchars($project['githubUrl'], ENT_QUOTES, 'UTF-8') : '#',
+        'story' => isset($project['story']) ? htmlspecialchars($project['story'], ENT_QUOTES, 'UTF-8') : '',
+        'features' => isset($project['features']) && is_array($project['features']) ? $project['features'] : [],
     ];
 
     return $sanitized;

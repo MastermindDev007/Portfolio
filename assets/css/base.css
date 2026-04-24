@@ -19,6 +19,14 @@ body {
      width: 100%;
 }
 
+body.cursor-active,
+body.cursor-active a,
+body.cursor-active button,
+body.cursor-active input,
+body.cursor-active textarea {
+     cursor: none;
+}
+
 body.preloader-active {
      overflow: hidden;
      height: 100vh;

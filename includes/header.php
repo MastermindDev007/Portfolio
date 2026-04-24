@@ -2,6 +2,14 @@
 <html lang="en">
 
 <head>
+     <?php
+     $scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+     $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
+     $scriptDir = dirname($_SERVER['SCRIPT_NAME'] ?? '/');
+     $basePath = $scriptDir === DIRECTORY_SEPARATOR ? '' : rtrim(str_replace('\\', '/', $scriptDir), '/');
+     $siteUrl = $scheme . '://' . $host . $basePath;
+     $ogImageUrl = $siteUrl . '/assets/images/og-image.svg';
+     ?>
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,20 +25,22 @@
 
      <!-- Open Graph / Facebook -->
      <meta property="og:type" content="website">
-     <meta property="og:url" content="https://yourwebsite.com/">
+     <meta property="og:url" content="<?php echo htmlspecialchars($siteUrl, ENT_QUOTES, 'UTF-8'); ?>/">
      <meta property="og:title" content="Dev Davda - Full-Stack Web Developer Portfolio">
      <meta property="og:description" content="Full-Stack Web Developer specializing in Laravel, Python, PHP. Explore innovative web solutions and projects.">
-     <meta property="og:image" content="https://yourwebsite.com/assets/images/og-image.jpg">
+     <meta property="og:image" content="<?php echo htmlspecialchars($ogImageUrl, ENT_QUOTES, 'UTF-8'); ?>">
 
      <!-- Twitter -->
      <meta property="twitter:card" content="summary_large_image">
-     <meta property="twitter:url" content="https://yourwebsite.com/">
+     <meta property="twitter:url" content="<?php echo htmlspecialchars($siteUrl, ENT_QUOTES, 'UTF-8'); ?>/">
      <meta property="twitter:title" content="Dev Davda - Full-Stack Web Developer Portfolio">
      <meta property="twitter:description" content="Full-Stack Web Developer specializing in Laravel, Python, PHP. Explore innovative web solutions and projects.">
-     <meta property="twitter:image" content="https://yourwebsite.com/assets/images/twitter-image.jpg">
+     <meta property="twitter:image" content="<?php echo htmlspecialchars($ogImageUrl, ENT_QUOTES, 'UTF-8'); ?>">
 
      <!-- Canonical URL -->
-     <link rel="canonical" href="https://yourwebsite.com/">
+     <link rel="canonical" href="<?php echo htmlspecialchars($siteUrl, ENT_QUOTES, 'UTF-8'); ?>/">
+     <meta name="theme-color" content="#14141a">
+     <link rel="manifest" href="manifest.json">
 
      <!-- Favicon -->
      <link rel="shortcut icon" href="assets/images/logo.ico" type="image/x-icon">
@@ -52,6 +62,8 @@
      <link rel="stylesheet" href="assets/css/components/project-modal.css">
      <link rel="stylesheet" href="assets/css/components/back-to-top.css">
      <link rel="stylesheet" href="assets/css/components/tech-stack.css">
+     <link rel="stylesheet" href="assets/css/components/enhancements.css">
+     <link rel="stylesheet" href="assets/css/components/footer.css">
 
      <!-- Page Styles -->
      <link rel="stylesheet" href="assets/css/pages/about.css">
@@ -63,7 +75,7 @@
      <!-- Google Fonts -->
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
      <!-- Animate.css -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
@@ -74,12 +86,12 @@
                "@context": "https://schema.org",
                "@type": "Person",
                "name": "Dev Davda",
-               "url": "https://yourwebsite.com",
-               "image": "https://yourwebsite.com/assets/images/my-avatar.png",
+               "url": "<?php echo htmlspecialchars($siteUrl, ENT_QUOTES, 'UTF-8'); ?>",
+               "image": "<?php echo htmlspecialchars($siteUrl, ENT_QUOTES, 'UTF-8'); ?>/assets/images/my-avatar.png",
                "jobTitle": "Full-Stack Web Developer",
                "worksFor": {
                     "@type": "Organization",
-                    "name": "Wenta Websolutions"
+                    "name": "Mehta Websolution"
                },
                "address": {
                     "@type": "PostalAddress",
@@ -90,6 +102,7 @@
                "email": "devndavda59425@gmail.com",
                "telephone": "+917779092005",
                "sameAs": [
+                    "https://github.com/devndavda59425",
                     "https://www.linkedin.com/in/dev-davda-ab8378239",
                     "https://www.instagram.com/dev_davda_555/",
                     "https://wa.me/7779092005"
@@ -100,6 +113,20 @@
 </head>
 
 <body>
+     <canvas class="particles-canvas" data-particles-canvas aria-hidden="true"></canvas>
+     <div class="cursor-dot" data-cursor-dot aria-hidden="true"></div>
+     <div class="cursor-ring" data-cursor-ring aria-hidden="true"></div>
+     <div class="scroll-progress" data-scroll-progress aria-hidden="true"></div>
+
+     <div class="hire-banner" data-hire-banner>
+          <p>
+               Open to Work: Available for Laravel, PHP, and React freelance projects.
+               <span class="visitor-count" data-visitor-count>Visitors: --</span>
+          </p>
+          <button type="button" class="hire-banner-close" data-hire-banner-close aria-label="Close banner">
+               <ion-icon name="close-outline"></ion-icon>
+          </button>
+     </div>
 
      <!-- Preloader -->
      <div class="preloader" id="preloader">

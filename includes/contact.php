@@ -1,10 +1,13 @@
+<?php
+require_once __DIR__ . '/../config/constants.php';
+?>
+
 <article class="contact" data-page="contact">
 
   <header>
     <h2 class="h2 article-title wow animate__animated animate__fadeInDown">Contact</h2>
   </header>
 
-  <!-- Map Section -->
   <section class="mapbox wow animate__animated animate__fadeInUp" data-wow-delay="0.1s" data-mapbox>
     <figure>
       <iframe
@@ -20,32 +23,16 @@
     </div>
   </section>
 
-  <!-- Contact Form Section -->
   <section class="contact-form wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
-
     <h3 class="h3 form-title">Send Me a Message</h3>
 
-    <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-      $fullname = htmlspecialchars($_POST['fullname']);
-      $email = htmlspecialchars($_POST['email']);
-      $message = htmlspecialchars($_POST['message']);
+    <div class="form-status" data-form-status aria-live="polite"></div>
 
-      if (!empty($fullname) && !empty($email) && !empty($message) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo "<div class='success-message'>
-                    <ion-icon name='checkmark-circle-outline'></ion-icon>
-                    <p>Thank you, $fullname! Your message has been sent successfully.</p>
-                  </div>";
-      } else {
-        echo "<div class='error-message'>
-                    <ion-icon name='alert-circle-outline'></ion-icon>
-                    <p>Please fill in all fields correctly.</p>
-                  </div>";
-      }
-    }
-    ?>
-
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="form" data-form>
+    <form action="#" method="post" class="form" data-form
+      data-emailjs-service="<?php echo htmlspecialchars(EMAILJS_SERVICE_ID, ENT_QUOTES, 'UTF-8'); ?>"
+      data-emailjs-template="<?php echo htmlspecialchars(EMAILJS_TEMPLATE_ID, ENT_QUOTES, 'UTF-8'); ?>"
+      data-emailjs-public="<?php echo htmlspecialchars(EMAILJS_PUBLIC_KEY, ENT_QUOTES, 'UTF-8'); ?>"
+      data-contact-email="<?php echo htmlspecialchars(CONTACT_RECEIVER_EMAIL, ENT_QUOTES, 'UTF-8'); ?>">
 
       <div class="input-wrapper">
         <div class="form-group">
@@ -57,6 +44,11 @@
           <input type="email" name="email" id="email" class="form-input" placeholder="Email Address"
             required data-form-input>
         </div>
+      </div>
+
+      <div class="form-group" style="display:none;">
+        <label for="company">Company</label>
+        <input type="text" name="company" id="company" autocomplete="off">
       </div>
 
       <div class="form-group">

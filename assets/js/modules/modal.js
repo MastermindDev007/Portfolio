@@ -13,6 +13,7 @@ export function initModal() {
           if (modalContainer && overlay) {
                modalContainer.classList.toggle("active");
                overlay.classList.toggle("active");
+               document.body.style.overflow = modalContainer.classList.contains('active') ? 'hidden' : '';
           }
      };
 
@@ -31,4 +32,14 @@ export function initModal() {
      if (modalCloseBtn) {
           modalCloseBtn.addEventListener("click", toggleModal);
      }
+
+     if (overlay) {
+          overlay.addEventListener('click', toggleModal);
+     }
+
+     document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape' && modalContainer?.classList.contains('active')) {
+               toggleModal();
+          }
+     });
 }

@@ -44,8 +44,25 @@ define('DEFAULT_PROJECT_IMAGE', IMAGES_URL . '/project-1.jpg');
 // ========================
 // Site Configuration
 // ========================
-define('SITE_NAME', 'vCard - Personal Portfolio');
+define('SITE_NAME', 'Dev Davda Portfolio');
 define(
     'SITE_DESCRIPTION',
     'A modern, responsive portfolio website showcasing professional work, skills, and achievements.'
 );
+
+// ========================
+// Integrations
+// ========================
+define('DEV_GITHUB_USERNAME', 'devndavda59425');
+define('VISITOR_COUNTER_NAMESPACE', 'dev-davda-portfolio');
+define('CONTACT_RECEIVER_EMAIL', 'devndavda59425@gmail.com');
+define('EMAILJS_SERVICE_ID', '');
+define('EMAILJS_TEMPLATE_ID', '');
+define('EMAILJS_PUBLIC_KEY', '');
+define('GA4_MEASUREMENT_ID', '');
+
+// ========================
+// Admin Panel
+// ========================
+define('ADMIN_USERNAME', 'admin');
+define('ADMIN_PASSWORD', 'ChangeThisAdmin123!');

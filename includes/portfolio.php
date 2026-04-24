@@ -90,6 +90,7 @@ $categoryCounts['all'] = count($projects);
                          $category_lower = strtolower(trim($project['category']));
                          $projectImages = json_encode($project['images'] ?? [$project['image']]);
                          $projectTech = json_encode($project['technologies'] ?? []);
+                         $detailsLink = $project['link'] !== '#' ? $project['link'] : ('project.php?id=' . $project['id']);
                     ?>
                          <li class="project-item active wow animate__animated animate__fadeInUp" data-filter-item
                               data-category="<?php echo htmlspecialchars($category_lower); ?>"
@@ -100,13 +101,20 @@ $categoryCounts['all'] = count($projects);
                               data-project-description="<?php echo $project['description']; ?>"
                               data-project-images='<?php echo $projectImages; ?>' data-project-tech='<?php echo $projectTech; ?>'
                               data-project-demo="<?php echo $project['demoUrl'] ?? '#'; ?>">
-                              <a href="<?php echo $project['link'] ?? '#'; ?>">
+                              <a href="<?php echo htmlspecialchars($detailsLink); ?>">
                                    <figure class="project-img">
                                         <div class="project-item-icon-box" data-project-eye>
                                              <ion-icon name="eye-outline"></ion-icon>
                                         </div>
+                                        <div class="project-hover-overlay" aria-hidden="true">
+                                             <div class="project-tech-tags">
+                                                  <?php foreach (($project['technologies'] ?? []) as $tech): ?>
+                                                       <span><?php echo htmlspecialchars($tech); ?></span>
+                                                  <?php endforeach; ?>
+                                             </div>
+                                        </div>
                                         <img src="<?php echo $project['image']; ?>" alt="<?php echo $project['alt']; ?>"
-                                             loading="lazy">
+                                             loading="lazy" data-lazy-blur>
                                    </figure>
                                    <h3 class="project-title"><?php echo $project['title']; ?></h3>
                                    <p class="project-category"><?php echo $project['category']; ?></p>
@@ -118,6 +126,13 @@ $categoryCounts['all'] = count($projects);
                     endforeach;
                endif; ?>
           </ul>
+
+          <div class="github-projects-sync wow animate__animated animate__fadeInUp">
+               <h3 class="h3">Live GitHub Repositories</h3>
+               <div class="github-repo-feed" data-github-repos>
+                    <p class="github-fallback">Loading latest repositories...</p>
+               </div>
+          </div>
 
      </section>
 
@@ -149,10 +164,7 @@ $categoryCounts['all'] = count($projects);
                               </button>
                          </div>
                     </div>
-                    <div class="gallery-indicators">
-                         <span class="gallery-indicator active" data-gallery-indicator></span>
-                         <span class="gallery-indicator" data-gallery-indicator></span>
-                    </div>
+                    <div class="gallery-indicators" data-gallery-indicators></div>
                </div>
 
                <!-- Description -->
@@ -174,6 +186,10 @@ $categoryCounts['all'] = count($projects);
                     <button class="live-demo-btn" data-modal-demo-btn>
                          <ion-icon name="rocket-outline"></ion-icon>
                          <span>Live Preview</span>
+                    </button>
+                    <button class="live-demo-btn details-btn" data-modal-details-btn>
+                         <ion-icon name="document-text-outline"></ion-icon>
+                         <span>Project Details</span>
                     </button>
                </div>
           </section>

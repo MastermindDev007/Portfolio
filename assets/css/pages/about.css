@@ -152,6 +152,86 @@
      margin-bottom: 30px;
 }
 
+/* GitHub activity */
+.github-activity {
+     margin-bottom: 35px;
+}
+
+.github-activity-title {
+     margin-bottom: 18px;
+}
+
+.github-stats-grid {
+     display: grid;
+     grid-template-columns: 1fr;
+     gap: 14px;
+     margin-bottom: 16px;
+}
+
+.github-stat-card {
+     border-radius: var(--radius-md);
+     border: 1px solid var(--jet);
+     padding: 10px;
+     background: var(--eerie-black-2);
+}
+
+.github-stat-card img {
+     width: 100%;
+     border-radius: var(--radius-sm);
+}
+
+.github-repo-feed {
+     display: grid;
+     grid-template-columns: 1fr;
+     gap: 12px;
+}
+
+.github-card {
+     background: var(--eerie-black-2);
+     border: 1px solid var(--jet);
+     border-radius: var(--radius-md);
+     padding: 14px;
+}
+
+.github-card h4 {
+     margin-bottom: 8px;
+     font-size: var(--fs-5);
+}
+
+.github-card h4 a {
+     color: var(--white-2);
+}
+
+.github-card h4 a:hover {
+     color: var(--orange-yellow-crayola);
+}
+
+.github-card p {
+     color: var(--light-gray);
+     font-size: var(--fs-7);
+     margin-bottom: 10px;
+     line-height: 1.5;
+}
+
+.github-meta {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 8px;
+}
+
+.github-meta span {
+     color: var(--light-gray-70);
+     font-size: var(--fs-8);
+     background: var(--onyx);
+     padding: 3px 8px;
+     border-radius: 999px;
+}
+
+.github-fallback {
+     color: var(--light-gray-70);
+     font-size: var(--fs-7);
+}
+
 .companies-title {
      margin-bottom: 25x;
 }
@@ -430,6 +510,14 @@
 
      .modal-avatar-box img {
           width: 80px;
+     }
+
+     .github-stats-grid {
+          grid-template-columns: 1fr 1fr;
+     }
+
+     .github-repo-feed {
+          grid-template-columns: 1fr 1fr;
      }
 }
 

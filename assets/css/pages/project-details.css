@@ -1,0 +1,130 @@
+.project-page {
+     max-width: 1120px;
+     margin: 40px auto;
+     padding: 24px;
+     background: var(--eerie-black-2);
+     border: 1px solid var(--jet);
+     border-radius: var(--radius-xl);
+}
+
+.project-back {
+     color: var(--light-gray);
+     margin-bottom: 16px;
+     font-size: var(--fs-6);
+}
+
+.project-back:hover {
+     color: var(--orange-yellow-crayola);
+}
+
+.project-hero {
+     display: grid;
+     grid-template-columns: 1fr;
+     gap: 20px;
+}
+
+.project-hero-media img {
+     width: 100%;
+     border-radius: var(--radius-lg);
+     border: 1px solid var(--jet);
+}
+
+.project-hero-meta h1 {
+     color: var(--white-2);
+     font-size: clamp(28px, 4vw, 42px);
+     margin-bottom: 10px;
+}
+
+.project-category {
+     display: inline-block;
+     margin-bottom: 12px;
+     color: var(--orange-yellow-crayola);
+     font-size: var(--fs-6);
+}
+
+.project-hero-meta p {
+     color: var(--light-gray);
+     line-height: 1.8;
+     margin-bottom: 16px;
+}
+
+.project-actions {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 10px;
+}
+
+.project-btn {
+     padding: 10px 16px;
+     border-radius: var(--radius-md);
+     border: 1px solid var(--jet);
+     background: var(--onyx);
+     color: var(--white-2);
+}
+
+.project-btn:hover {
+     color: var(--smoky-black);
+     background: var(--orange-yellow-crayola);
+}
+
+.project-grid {
+     margin-top: 24px;
+     display: grid;
+     grid-template-columns: 1fr;
+     gap: 18px;
+}
+
+.project-panel {
+     border: 1px solid var(--jet);
+     border-radius: var(--radius-md);
+     padding: 18px;
+     background: var(--onyx);
+}
+
+.project-panel h2 {
+     margin-bottom: 10px;
+}
+
+.project-panel p,
+.project-panel li {
+     color: var(--light-gray);
+     line-height: 1.7;
+}
+
+.project-tech-list {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 8px;
+}
+
+.project-tech-list span {
+     background: hsla(0, 0%, 100%, 0.08);
+     border: 1px solid hsla(0, 0%, 100%, 0.12);
+     color: var(--white-2);
+     border-radius: 999px;
+     padding: 4px 10px;
+     font-size: var(--fs-7);
+}
+
+.project-gallery-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+     gap: 12px;
+}
+
+.project-gallery-grid img {
+     width: 100%;
+     border-radius: var(--radius-md);
+     border: 1px solid var(--jet);
+}
+
+@media (min-width: 900px) {
+     .project-hero {
+          grid-template-columns: 1.2fr 1fr;
+          align-items: start;
+     }
+
+     .project-grid {
+          grid-template-columns: 1fr 1fr;
+     }
+}

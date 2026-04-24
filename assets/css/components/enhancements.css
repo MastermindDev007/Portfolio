@@ -1,0 +1,254 @@
+/* Global Enhancements: particles, cursor, progress, glass, banner, grain */
+
+body {
+     position: relative;
+     min-height: 100vh;
+     background:
+          radial-gradient(circle at 10% 20%, hsla(45, 100%, 72%, 0.08), transparent 38%),
+          radial-gradient(circle at 88% 80%, hsla(35, 100%, 68%, 0.06), transparent 45%),
+          var(--smoky-black);
+}
+
+body::before {
+     content: "";
+     position: fixed;
+     inset: 0;
+     background: linear-gradient(120deg,
+               hsla(45, 100%, 72%, 0.08),
+               transparent 35%,
+               hsla(35, 100%, 68%, 0.05) 60%,
+               transparent 85%);
+     background-size: 250% 250%;
+     animation: gradientMeshShift 18s ease-in-out infinite;
+     pointer-events: none;
+     z-index: -3;
+}
+
+@keyframes gradientMeshShift {
+     0% {
+          background-position: 0% 50%;
+     }
+
+     50% {
+          background-position: 100% 50%;
+     }
+
+     100% {
+          background-position: 0% 50%;
+     }
+}
+
+.particles-canvas {
+     position: fixed;
+     inset: 0;
+     width: 100%;
+     height: 100%;
+     z-index: -2;
+     pointer-events: none;
+     opacity: 0.45;
+}
+
+.scroll-progress {
+     position: fixed;
+     top: 0;
+     left: 0;
+     height: 3px;
+     width: 0%;
+     z-index: 150;
+     background: linear-gradient(90deg, var(--orange-yellow-crayola), var(--vegas-gold));
+     box-shadow: 0 0 12px hsla(45, 100%, 72%, 0.6);
+}
+
+.cursor-dot,
+.cursor-ring {
+     position: fixed;
+     top: 0;
+     left: 0;
+     border-radius: 50%;
+     pointer-events: none;
+     z-index: 200;
+     transform: translate3d(0, 0, 0);
+     opacity: 0;
+     transition: opacity 0.2s ease;
+}
+
+.cursor-dot {
+     width: 8px;
+     height: 8px;
+     background: var(--orange-yellow-crayola);
+     box-shadow: 0 0 15px hsla(45, 100%, 72%, 0.9);
+}
+
+.cursor-ring {
+     width: 34px;
+     height: 34px;
+     border: 1px solid hsla(45, 100%, 72%, 0.55);
+     box-shadow: 0 0 20px hsla(45, 100%, 72%, 0.25);
+}
+
+.cursor-active .cursor-dot,
+.cursor-active .cursor-ring {
+     opacity: 1;
+}
+
+.cursor-hover .cursor-ring {
+     border-color: var(--orange-yellow-crayola);
+     box-shadow: 0 0 28px hsla(45, 100%, 72%, 0.45);
+}
+
+.hire-banner {
+     position: sticky;
+     top: 10px;
+     z-index: 90;
+     margin: 12px auto 0;
+     max-width: 1180px;
+     background: linear-gradient(120deg, hsla(45, 100%, 72%, 0.16), hsla(35, 100%, 68%, 0.08));
+     border: 1px solid hsla(45, 100%, 72%, 0.35);
+     border-radius: var(--radius-lg);
+     padding: 10px 14px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     gap: 12px;
+     backdrop-filter: blur(12px);
+}
+
+.hire-banner p {
+     color: var(--white-2);
+     font-size: var(--fs-7);
+     line-height: 1.5;
+}
+
+.visitor-count {
+     display: inline;
+     color: var(--orange-yellow-crayola);
+     font-weight: var(--fw-600);
+     margin-left: 8px;
+}
+
+.hire-banner-close {
+     width: 32px;
+     height: 32px;
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     border-radius: 50%;
+     color: var(--white-2);
+     background: hsla(0, 0%, 0%, 0.18);
+     transition: var(--transition-1);
+}
+
+.hire-banner-close:hover {
+     color: var(--smoky-black);
+     background: var(--orange-yellow-crayola);
+}
+
+.hire-banner.hide {
+     display: none;
+}
+
+/* Glassmorphism + grain overlay for cards */
+.sidebar,
+article,
+.content-card,
+.service-item,
+.project-item > a,
+.skills-item,
+.timeline-card,
+.tech-item,
+.blog-post-item > a,
+.project-modal,
+.companies-modal,
+.map-info,
+.stat-item,
+.certification-item {
+     background: linear-gradient(145deg, hsla(0, 0%, 100%, 0.04), hsla(0, 0%, 100%, 0.015));
+     backdrop-filter: blur(12px);
+     -webkit-backdrop-filter: blur(12px);
+     border-color: hsla(0, 0%, 100%, 0.14);
+     box-shadow: 0 12px 30px hsla(0, 0%, 0%, 0.24), 0 0 0 1px hsla(45, 100%, 72%, 0.08) inset;
+}
+
+.sidebar::after,
+article::after,
+.content-card::after,
+.service-item::after,
+.project-item > a::after,
+.skills-item::after,
+.timeline-card::after,
+.tech-item::after,
+.blog-post-item > a::after,
+.project-modal::after,
+.companies-modal::after,
+.stat-item::after,
+.certification-item::after {
+     content: "";
+     position: absolute;
+     inset: 0;
+     border-radius: inherit;
+     background-image: radial-gradient(rgba(255, 255, 255, 0.035) 0.8px, transparent 0.8px);
+     background-size: 3px 3px;
+     opacity: 0.26;
+     pointer-events: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+     font-family: var(--ff-heading);
+}
+
+.project-item,
+.blog-post-item,
+.skills-item,
+.timeline-item,
+.certification-item,
+.service-item,
+.tech-item {
+     transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.lazy-blur {
+     filter: blur(8px);
+     transform: scale(1.02);
+     transition: filter 0.4s ease, transform 0.4s ease, opacity 0.4s ease;
+     opacity: 0.85;
+}
+
+.lazy-blur.loaded {
+     filter: blur(0);
+     transform: scale(1);
+     opacity: 1;
+}
+
+@media (max-width: 1023px), (pointer: coarse) {
+     .cursor-dot,
+     .cursor-ring {
+          display: none;
+     }
+}
+
+@media (max-width: 767px) {
+     .hire-banner {
+          margin: 8px 12px;
+          top: 8px;
+          padding: 8px 10px;
+     }
+
+     .hire-banner p {
+          font-size: var(--fs-8);
+     }
+}
+
+@media (prefers-reduced-motion: reduce) {
+     body::before {
+          animation: none;
+     }
+}
