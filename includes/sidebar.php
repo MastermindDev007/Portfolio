@@ -13,21 +13,22 @@ require_once __DIR__ . '/../config/constants.php';
     <div class="info-content wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
       <h1 class="name" title="Dev Davda">Dev Davda</h1>
       <p class="title" data-typing-text>Full Stack Developer</p>
+      <p class="profile-focus">Laravel, PHP, Python, and modern frontend systems.</p>
     </div>
 
-    <button class="info_more-btn" data-sidebar-btn>
+    <button class="info_more-btn" data-sidebar-btn aria-expanded="false" aria-controls="sidebar-info-more">
       <span>Show Contacts</span>
       <ion-icon name="chevron-down"></ion-icon>
     </button>
 
   </div>
 
-  <div class="sidebar-info_more">
+  <div class="sidebar-info_more" id="sidebar-info-more">
 
     <div class="theme-toggle">
       <button class="theme-toggle-btn" data-theme-toggle>
         <ion-icon name="sunny-outline" class="theme-icon" data-theme-icon></ion-icon>
-        <span style="color: var(--light-gray); font-size: var(--fs-7);">Toggle Theme</span>
+        <span class="theme-toggle-label">Switch Theme</span>
       </button>
     </div>
 
@@ -41,7 +42,9 @@ require_once __DIR__ . '/../config/constants.php';
         </div>
         <div class="contact-info">
           <p class="contact-title">Email</p>
-          <a href="mailto:devndavda59425@gmail.com" class="contact-link">devndavda59425@gmail.com</a>
+          <a href="mailto:<?php echo htmlspecialchars(CONTACT_RECEIVER_EMAIL, ENT_QUOTES, 'UTF-8'); ?>" class="contact-link">
+            <?php echo htmlspecialchars(CONTACT_RECEIVER_EMAIL, ENT_QUOTES, 'UTF-8'); ?>
+          </a>
         </div>
       </li>
 
@@ -97,6 +100,13 @@ require_once __DIR__ . '/../config/constants.php';
         <ion-icon name="download-outline"></ion-icon>
         <span>Download Resume</span>
       </a>
+    </div>
+
+    <div class="separator"></div>
+
+    <div class="sidebar-mini-card">
+      <h3>Availability</h3>
+      <p>Open for freelance and full-time opportunities in product engineering.</p>
     </div>
 
     <div class="separator"></div>

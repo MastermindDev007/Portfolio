@@ -1,6 +1,5 @@
-/* Utility Classes - Bootstrap-like utilities */
+/* Utility Classes */
 
-/* Typography */
 .h2,
 .h3,
 .h4,
@@ -8,18 +7,22 @@
      color: var(--white-2);
      text-transform: capitalize;
      font-family: var(--ff-heading);
+     letter-spacing: -0.015em;
 }
 
 .h2 {
      font-size: var(--fs-1);
+     font-weight: var(--fw-700);
 }
 
 .h3 {
      font-size: var(--fs-2);
+     font-weight: var(--fw-600);
 }
 
 .h4 {
      font-size: var(--fs-4);
+     font-weight: var(--fw-500);
 }
 
 .h5 {
@@ -27,29 +30,30 @@
      font-weight: var(--fw-500);
 }
 
-/* Layout */
 .sidebar,
-article {
-     background: var(--eerie-black-2);
-     border: 1px solid var(--jet);
+.main-content>article {
+     position: relative;
+     background: var(--bg-gradient-jet);
+     border: 1px solid hsla(0, 0%, 100%, 0.14);
      border-radius: var(--radius-xl);
-     padding: 15px;
-     box-shadow: var(--shadow-1);
+     padding: 20px;
+     box-shadow: var(--shadow-2);
      z-index: 1;
+     overflow: hidden;
 }
 
 .separator {
      width: 100%;
      height: 1px;
-     background: var(--jet);
+     background: linear-gradient(90deg, transparent, var(--jet), transparent);
      margin: var(--spacing-md) 0;
 }
 
 .icon-box {
      position: relative;
      background: var(--border-gradient-onyx);
-     width: 30px;
-     height: 30px;
+     width: 34px;
+     height: 34px;
      border-radius: var(--radius-sm);
      display: flex;
      justify-content: center;
@@ -73,29 +77,30 @@ article {
      --ionicon-stroke-width: 35px;
 }
 
-/* Article */
-article {
+.main-content>article {
      display: none;
 }
 
-article.active {
+.main-content>article.active {
      display: block;
-     animation: fadeIn 0.5s ease backwards;
+     animation: fadeIn 0.45s ease backwards;
 }
 
 @keyframes fadeIn {
      0% {
           opacity: 0;
+          transform: translateY(4px);
      }
 
      100% {
           opacity: 1;
+          transform: translateY(0);
      }
 }
 
 .article-title {
      position: relative;
-     padding-bottom: 7px;
+     padding-bottom: 10px;
 }
 
 .article-title::after {
@@ -103,29 +108,29 @@ article.active {
      position: absolute;
      bottom: 0;
      left: 0;
-     width: 30px;
-     height: 3px;
+     width: 52px;
+     height: 4px;
+     border-radius: 999px;
      background: var(--text-gradient-yellow);
-     border-radius: 3px;
 }
 
-/* Content Card */
 .content-card {
      position: relative;
      background: var(--eerie-black-2);
-     padding: 15px;
-     padding-top: 45px;
+     padding: 20px;
+     padding-top: 42px;
      border-radius: var(--radius-md);
      border: 1px solid var(--jet);
      cursor: pointer;
-     transition: border-color var(--transition-1);
+     transition: border-color var(--transition-1), transform var(--transition-1), box-shadow var(--transition-1);
 }
 
 .content-card:hover {
      border-color: var(--orange-yellow-crayola);
+     transform: translateY(-3px);
+     box-shadow: var(--shadow-3);
 }
 
-/* Scrollbar for specific elements */
 .has-scrollbar::-webkit-scrollbar {
      width: 6px;
      height: 6px;
@@ -152,76 +157,50 @@ article.active {
      display: none;
 }
 
-/* Responsive Utilities */
 @media (min-width: 580px) {
 
      .sidebar,
-     article {
-          width: 520px;
+     .main-content>article {
+          padding: 28px;
           margin-inline: auto;
-          padding: 30px;
+          width: min(100%, 820px);
      }
 
      .article-title {
-          font-weight: var(--fw-600);
-          padding-bottom: 15px;
+          padding-bottom: 14px;
      }
 
      .article-title::after {
-          width: 40px;
+          width: 66px;
           height: 5px;
      }
 
      .icon-box {
-          width: 48px;
-          height: 48px;
+          width: 46px;
+          height: 46px;
           border-radius: var(--radius-md);
           font-size: 18px;
      }
 
      .separator {
-          margin: 32px 0;
+          margin: 26px 0;
      }
 
      .content-card {
-          padding: 30px;
-          padding-top: 25px;
+          padding: 24px;
+          padding-top: 24px;
      }
 }
 
-@media (min-width: 768px) {
-
+/* @media (min-width: 1024px) {
      .sidebar,
-     article {
-          width: 700px;
-     }
-
-     .article-title {
-          padding-bottom: 20px;
-     }
-
-     .has-scrollbar::-webkit-scrollbar-button {
-          width: 100px;
-     }
-}
-
-@media (min-width: 1024px) {
-
-     .sidebar,
-     article {
-          width: 950px;
-          box-shadow: var(--shadow-5);
-     }
-}
-
-@media (min-width: 1250px) {
-
-     .sidebar,
-     article {
+     .main-content > article {
           width: auto;
      }
+} */
 
-     article {
-          min-height: 100%;
+@media (min-width: 1250px) {
+     .main-content>article {
+          min-height: calc(100vh - 120px);
      }
 }

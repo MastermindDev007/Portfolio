@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "title": "My 7-step Laravel Performance Checklist",
+    "category": "Laravel",
+    "date": "2026-03-18",
+    "readTime": "6 min read",
+    "image": "assets/images/blog-1.jpg",
+    "alt": "Laravel performance checklist",
+    "excerpt": "The exact checklist I use before shipping: query tuning, queue strategy, caching, and production monitoring.",
+    "url": "#"
+  },
+  {
+    "id": 2,
+    "title": "From Intern to Full Stack: What Changed",
+    "category": "Career",
+    "date": "2026-02-10",
+    "readTime": "5 min read",
+    "image": "assets/images/blog-2.jpg",
+    "alt": "Career growth in web development",
+    "excerpt": "Real lessons from client work: debugging habits, communication, and shipping under deadlines.",
+    "url": "#"
+  },
+  {
+    "id": 3,
+    "title": "How I Structure Medium-Sized Web Projects",
+    "category": "Architecture",
+    "date": "2026-01-21",
+    "readTime": "7 min read",
+    "image": "assets/images/blog-3.jpg",
+    "alt": "Project architecture notes",
+    "excerpt": "Folder layout, component boundaries, and naming conventions that keep PHP and JS projects clean.",
+    "url": "#"
+  },
+  {
+    "id": 4,
+    "title": "Small UI Details That Make Portfolios Feel Premium",
+    "category": "UI/UX",
+    "date": "2025-12-06",
+    "readTime": "4 min read",
+    "image": "assets/images/blog-4.jpg",
+    "alt": "Modern UI polish",
+    "excerpt": "Motion rhythm, contrast control, and micro-interactions that improve perceived quality fast.",
+    "url": "#"
+  },
+  {
+    "id": 5,
+    "title": "Practical REST API Patterns I Reuse in Every Build",
+    "category": "Backend",
+    "date": "2025-11-14",
+    "readTime": "8 min read",
+    "image": "assets/images/blog-5.jpg",
+    "alt": "REST API implementation tips",
+    "excerpt": "Input validation, consistent response contracts, and auth patterns that reduce bugs in production.",
+    "url": "#"
+  },
+  {
+    "id": 6,
+    "title": "My Client Delivery Workflow from Idea to Launch",
+    "category": "Workflow",
+    "date": "2025-10-02",
+    "readTime": "6 min read",
+    "image": "assets/images/blog-6.jpg",
+    "alt": "Project delivery workflow",
+    "excerpt": "Discovery, milestone planning, QA handoff, and post-launch support in one repeatable workflow.",
+    "url": "#"
+  }
+]

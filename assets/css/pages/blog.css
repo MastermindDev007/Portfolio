@@ -1,4 +1,17 @@
-/* Blog Page Styles */
+/* Blog Page */
+
+.blog-intro {
+     margin-bottom: 22px;
+     border: 1px solid var(--jet);
+     border-radius: var(--radius-md);
+     background: var(--onyx);
+     padding: 14px 16px;
+}
+
+.blog-intro p {
+     color: var(--light-gray);
+     line-height: 1.75;
+}
 
 .blog-posts {
      margin-bottom: 10px;
@@ -7,38 +20,28 @@
 .blog-posts-list {
      display: grid;
      grid-template-columns: 1fr;
-     gap: 20px;
+     gap: 18px;
 }
 
-.blog-post-item>a {
-     position: relative;
-     background: var(--border-gradient-onyx);
+.blog-post-item > a {
      height: 100%;
-     box-shadow: var(--shadow-4);
+     border: 1px solid var(--jet);
      border-radius: var(--radius-lg);
-     z-index: 1;
-     display: block;
+     background: var(--eerie-black-2);
      overflow: hidden;
-     transition: transform var(--transition-1);
+     display: block;
+     transition: transform var(--transition-1), border-color var(--transition-1), box-shadow var(--transition-1);
 }
 
-.blog-post-item>a::before {
-     content: "";
-     position: absolute;
-     inset: 1px;
-     border-radius: inherit;
-     background: var(--eerie-black-1);
-     z-index: -1;
-}
-
-.blog-post-item>a:hover {
+.blog-post-item > a:hover {
      transform: translateY(-5px);
+     border-color: hsla(42, 96%, 62%, 0.5);
+     box-shadow: var(--shadow-3);
 }
 
 .blog-banner-box {
      width: 100%;
-     height: 200px;
-     border-radius: var(--radius-md);
+     height: 220px;
      overflow: hidden;
 }
 
@@ -46,77 +49,82 @@
      width: 100%;
      height: 100%;
      object-fit: cover;
-     transition: var(--transition-1);
+     transition: transform var(--transition-1), filter var(--transition-1);
 }
 
-.blog-post-item>a:hover .blog-banner-box img {
-     transform: scale(1.1);
+.blog-post-item > a:hover .blog-banner-box img {
+     transform: scale(1.08);
+     filter: saturate(1.08);
 }
 
 .blog-content {
-     padding: 15px;
+     padding: 16px;
 }
 
 .blog-meta {
      display: flex;
-     justify-content: flex-start;
      align-items: center;
-     gap: 7px;
-     margin-bottom: 10px;
+     flex-wrap: wrap;
+     gap: 8px;
+     margin-bottom: 12px;
 }
 
-.blog-meta :is(.blog-category, time) {
+.blog-meta :is(.blog-category, time, .blog-read-time) {
      color: var(--light-gray-70);
-     font-size: var(--fs-6);
-     font-weight: var(--fw-300);
+     font-size: var(--fs-7);
+     font-weight: var(--fw-400);
+}
+
+.blog-category {
+     border-radius: 999px;
+     border: 1px solid hsla(42, 96%, 62%, 0.35);
+     padding: 3px 9px;
+     color: var(--orange-yellow-crayola);
 }
 
 .blog-meta .dot {
      background: var(--light-gray-70);
      width: 4px;
      height: 4px;
-     border-radius: 4px;
+     border-radius: 999px;
 }
 
 .blog-item-title {
      margin-bottom: 10px;
-     line-height: 1.3;
-     transition: var(--transition-1);
+     line-height: 1.35;
      color: var(--white-2);
+     transition: color var(--transition-1);
 }
 
-.blog-post-item>a:hover .blog-item-title {
+.blog-post-item > a:hover .blog-item-title {
      color: var(--orange-yellow-crayola);
 }
 
 .blog-text {
      color: var(--light-gray);
      font-size: var(--fs-6);
-     font-weight: var(--fw-300);
-     line-height: 1.6;
+     line-height: 1.7;
 }
 
-/* Responsive */
-@media (min-width: 580px) {
-     .blog-banner-box {
-          height: auto;
-     }
+.blog-empty-state {
+     border: 1px dashed var(--jet);
+     border-radius: var(--radius-md);
+     padding: 20px;
+}
+
+.blog-empty-state p {
+     color: var(--light-gray-70);
 }
 
 @media (min-width: 768px) {
      .blog-posts-list {
-          grid-template-columns: 1fr 1fr;
-          gap: 30px;
-     }
-
-     .blog-content {
-          padding: 25px;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 20px;
      }
 }
 
-@media (min-width: 1024px) {
-     .blog-banner-box {
-          height: 230px;
-          border-radius: var(--radius-lg);
+@media (min-width: 1100px) {
+     .blog-posts-list {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
      }
 }

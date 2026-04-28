@@ -73,8 +73,9 @@ export function initForm() {
 
           const fullName = form.querySelector('#fullname')?.value.trim() || '';
           const email = form.querySelector('#email')?.value.trim() || '';
+          const topic = form.querySelector('#subject')?.value.trim() || '';
           const message = form.querySelector('#message')?.value.trim() || '';
-          const subject = `Portfolio inquiry from ${fullName}`;
+          const subject = topic || `Portfolio inquiry from ${fullName}`;
 
           setSubmitting(true);
           toggleSubmit();
@@ -96,6 +97,23 @@ export function initForm() {
                          to_name: 'Dev Davda',
                          sent_at: new Date().toISOString()
                     });
+
+                    try {
+                         await fetch('api/contact-inquiry.php', {
+                              method: 'POST',
+                              headers: {
+                                   'Content-Type': 'application/json'
+                              },
+                              body: JSON.stringify({
+                                   name: fullName,
+                                   email,
+                                   subject,
+                                   message
+                              })
+                         });
+                    } catch (inquiryError) {
+                         // Inquiry log failure should not block successful message delivery feedback.
+                    }
 
                     setStatus('success-message', `Thank you, ${fullName}! Your message was sent successfully.`);
                     form.reset();

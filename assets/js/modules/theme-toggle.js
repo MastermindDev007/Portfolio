@@ -25,7 +25,11 @@ export function initThemeToggle() {
 
 function updateThemeIcon(theme) {
      const icon = document.querySelector('[data-theme-icon]');
+     const label = document.querySelector('.theme-toggle-label');
      if (!icon) return;
 
      icon.setAttribute('name', theme === 'dark' ? 'sunny-outline' : 'moon-outline');
+     if (label) {
+          label.textContent = theme === 'dark' ? 'Switch to Light Theme' : 'Switch to Dark Theme';
+     }
 }

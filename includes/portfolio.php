@@ -31,6 +31,12 @@ $categoryCounts['all'] = count($projects);
      </header>
 
      <section class="projects">
+          <div class="projects-intro wow animate__animated animate__fadeInUp">
+               <p>
+                    Selected builds across product engineering, full stack systems, and conversion-focused interfaces.
+                    Each project is crafted for performance, maintainability, and measurable business value.
+               </p>
+          </div>
 
           <!-- Filter List (Desktop) -->
           <ul class="filter-list">
@@ -116,8 +122,10 @@ $categoryCounts['all'] = count($projects);
                                         <img src="<?php echo $project['image']; ?>" alt="<?php echo $project['alt']; ?>"
                                              loading="lazy" data-lazy-blur>
                                    </figure>
-                                   <h3 class="project-title"><?php echo $project['title']; ?></h3>
-                                   <p class="project-category"><?php echo $project['category']; ?></p>
+                                   <div class="project-meta">
+                                        <h3 class="project-title"><?php echo $project['title']; ?></h3>
+                                        <p class="project-category"><?php echo $project['category']; ?></p>
+                                   </div>
                               </a>
                          </li>
                <?php
@@ -129,6 +137,7 @@ $categoryCounts['all'] = count($projects);
 
           <div class="github-projects-sync wow animate__animated animate__fadeInUp">
                <h3 class="h3">Live GitHub Repositories</h3>
+               <p class="github-projects-intro">Real-time repository snapshot for code consistency and active development visibility.</p>
                <div class="github-repo-feed" data-github-repos>
                     <p class="github-fallback">Loading latest repositories...</p>
                </div>

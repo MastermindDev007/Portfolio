@@ -4,20 +4,30 @@ $currentYear = date('Y');
 ?>
 
 <footer class="site-footer">
-     <p>
-          &copy; <?php echo $currentYear; ?> Dev Davda.
-          <span class="footer-tagline">Built with clean code and strong chai.</span>
-     </p>
-     <div class="footer-links">
-          <a href="<?php echo htmlspecialchars(DEV_GITHUB_URL, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-               <ion-icon name="logo-github"></ion-icon>
+     <div class="footer-brand">
+          <h3>Dev Davda</h3>
+          <p>Full Stack Developer crafting scalable web products with premium UX.</p>
+          <span>&copy; <?php echo $currentYear; ?> All rights reserved.</span>
+     </div>
+
+     <div class="footer-nav">
+          <p>Quick Navigation</p>
+          <div class="footer-nav-links">
+               <button type="button" data-page-trigger="about">About</button>
+               <button type="button" data-page-trigger="resume">Resume</button>
+               <button type="button" data-page-trigger="projects">Projects</button>
+               <button type="button" data-page-trigger="blog">Blog</button>
+               <button type="button" data-page-trigger="contact">Contact</button>
+          </div>
+     </div>
+
+     <div class="footer-connect">
+          <p>Let’s Build Something</p>
+          <a class="footer-mail" href="mailto:<?php echo htmlspecialchars(CONTACT_RECEIVER_EMAIL, ENT_QUOTES, 'UTF-8'); ?>">
+               <?php echo htmlspecialchars(CONTACT_RECEIVER_EMAIL, ENT_QUOTES, 'UTF-8'); ?>
           </a>
-          <a href="<?php echo htmlspecialchars(DEV_LINKEDIN_URL, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-               <ion-icon name="logo-linkedin"></ion-icon>
-          </a>
-          <a href="mailto:<?php echo htmlspecialchars(CONTACT_RECEIVER_EMAIL, ENT_QUOTES, 'UTF-8'); ?>" aria-label="Email">
-               <ion-icon name="mail-outline"></ion-icon>
-          </a>
+          <p class="footer-availability">Open for full stack product builds, optimization, and long-term collaboration.</p>
+          <button type="button" class="footer-contact-btn" data-page-trigger="contact">Start a Project</button>
      </div>
 </footer>
 

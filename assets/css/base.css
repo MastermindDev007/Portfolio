@@ -11,6 +11,7 @@
 html {
      font-family: var(--ff-poppins);
      overflow-x: hidden;
+     scroll-behavior: smooth;
 }
 
 body {
@@ -76,6 +77,11 @@ textarea {
 ::selection {
      background: var(--orange-yellow-crayola);
      color: var(--smoky-black);
+}
+
+html[data-theme="light"] ::selection {
+     background: var(--orange-yellow-crayola);
+     color: var(--white-1);
 }
 
 :focus {

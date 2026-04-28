@@ -2,6 +2,22 @@
 <html lang="en">
 
 <head>
+     <!-- Anti-FOUC: apply saved theme instantly before any CSS loads -->
+     <script>
+          (function(){
+               try {
+                    var t = localStorage.getItem('theme');
+                    if (t === 'light' || t === 'dark') {
+                         document.documentElement.setAttribute('data-theme', t);
+                    } else {
+                         document.documentElement.setAttribute('data-theme', 'dark');
+                    }
+               } catch(e) {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+               }
+          })();
+     </script>
+
      <?php
      require_once __DIR__ . '/../config/constants.php';
      $scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
@@ -65,6 +81,7 @@
      <link rel="stylesheet" href="assets/css/components/tech-stack.css">
      <link rel="stylesheet" href="assets/css/components/enhancements.css">
      <link rel="stylesheet" href="assets/css/components/footer.css">
+     <link rel="stylesheet" href="assets/css/components/light-theme.css">
 
      <!-- Page Styles -->
      <link rel="stylesheet" href="assets/css/pages/about.css">

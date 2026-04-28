@@ -1,0 +1,469 @@
+/*-----------------------------------*\
+  #LIGHT-THEME.CSS
+  Comprehensive overrides for light mode
+\*-----------------------------------*/
+
+/* ── Body & Page Background ── */
+html[data-theme="light"] body {
+     color: var(--white-1);
+}
+
+/* ── Article / Page sections ── */
+html[data-theme="light"] article {
+     background: linear-gradient(145deg, hsla(0, 0%, 100%, 0.92), hsla(210, 30%, 97%, 0.8));
+     border-color: hsla(218, 22%, 74%, 0.55);
+}
+
+/* ── Hire Banner ── */
+html[data-theme="light"] .hire-banner {
+     background: linear-gradient(120deg, hsla(42, 96%, 62%, 0.14), hsla(190, 87%, 66%, 0.10));
+     border-color: hsla(42, 65%, 46%, 0.30);
+}
+
+html[data-theme="light"] .hire-banner p {
+     color: var(--white-2);
+}
+
+html[data-theme="light"] .hire-banner-close {
+     color: var(--white-2);
+     background: hsla(0, 0%, 0%, 0.08);
+}
+
+/* ── Sidebar info text ── */
+html[data-theme="light"] .contact-title {
+     color: var(--light-gray-70);
+}
+
+html[data-theme="light"] .contact-info :is(.contact-link, time, address) {
+     color: var(--white-2);
+}
+
+html[data-theme="light"] .sidebar-mini-card {
+     background: hsla(210, 30%, 92%, 0.85);
+     border-color: hsla(218, 22%, 74%, 0.55);
+}
+
+html[data-theme="light"] .sidebar-mini-card h3 {
+     color: var(--white-2);
+}
+
+html[data-theme="light"] .sidebar-mini-card p {
+     color: var(--light-gray);
+}
+
+html[data-theme="light"] .resume-btn {
+     color: var(--white-2);
+     background: linear-gradient(130deg, hsla(42, 96%, 52%, 0.18), hsla(190, 87%, 50%, 0.10));
+     border-color: hsla(42, 80%, 46%, 0.40);
+}
+
+/* ── Theme toggle button ── */
+html[data-theme="light"] .theme-toggle-btn {
+     background: hsla(210, 30%, 92%, 0.85);
+     border-color: hsla(218, 22%, 74%, 0.55);
+}
+
+html[data-theme="light"] .theme-toggle-label {
+     color: var(--white-2);
+}
+
+/* ── Social links ── */
+html[data-theme="light"] .social-item .social-link {
+     background: hsla(210, 30%, 92%, 0.85);
+     border-color: hsla(218, 22%, 74%, 0.55);
+     color: var(--white-2);
+}
+
+/* ── About text ── */
+html[data-theme="light"] .about-text {
+     color: var(--light-gray);
+}
+
+/* ── Services ── */
+html[data-theme="light"] .service-item {
+     background: linear-gradient(145deg, hsla(0, 0%, 100%, 0.88), hsla(210, 30%, 98%, 0.75));
+}
+
+html[data-theme="light"] .service-item-text {
+     color: var(--light-gray);
+}
+
+/* ── Timeline / Resume ── */
+html[data-theme="light"] .timeline-text {
+     color: var(--light-gray);
+}
+
+html[data-theme="light"] .timeline-item-title {
+     color: var(--white-2);
+}
+
+html[data-theme="light"] .timeline-badge {
+     background: hsla(210, 30%, 90%, 0.9);
+     color: var(--vegas-gold);
+}
+
+html[data-theme="light"] .timeline-badge.active-badge {
+     background: var(--orange-yellow-crayola);
+     color: hsl(220, 24%, 10%);
+}
+
+html[data-theme="light"] .timeline-list span {
+     color: var(--vegas-gold);
+}
+
+/* ── Skills ── */
+html[data-theme="light"] .skill-tech {
+     color: var(--light-gray);
+}
+
+html[data-theme="light"] .skill-percentage {
+     color: var(--vegas-gold);
+}
+
+html[data-theme="light"] .skill-progress-bg {
+     background: hsla(220, 14%, 78%, 0.70);
+}
+
+html[data-theme="light"] .skill-icon {
+     background: hsla(210, 30%, 92%, 0.85);
+     color: var(--vegas-gold);
+}
+
+/* ── Projects ── */
+html[data-theme="light"] .project-title {
+     color: var(--white-2);
+}
+
+html[data-theme="light"] .project-category {
+     color: var(--light-gray);
+}
+
+html[data-theme="light"] .filter-item button {
+     color: var(--white-2);
+}
+
+html[data-theme="light"] .filter-item button:hover {
+     color: var(--light-gray);
+}
+
+html[data-theme="light"] .filter-item button.active {
+     color: var(--orange-yellow-crayola);
+}
+
+html[data-theme="light"] .filter-select {
+     background: hsla(0, 0%, 100%, 0.85);
+     color: var(--white-2);
+     border-color: hsla(218, 22%, 74%, 0.55);
+}
+
+html[data-theme="light"] .select-list {
+     background: hsl(0, 0%, 100%);
+     border-color: hsla(218, 22%, 74%, 0.55);
+}
+
+html[data-theme="light"] .select-item button {
+     background: hsl(0, 0%, 100%);
+     color: var(--white-2);
+}
+
+html[data-theme="light"] .select-item button:hover {
+     background: hsla(210, 30%, 94%, 0.9);
+}
+
+/* ── Blog ── */
+html[data-theme="light"] .blog-text {
+     color: var(--light-gray);
+}
+
+html[data-theme="light"] .blog-meta :is(.blog-category, time) {
+     color: var(--light-gray-70);
+}
+
+/* ── Contact ── */
+html[data-theme="light"] .form-input {
+     color: var(--white-2);
+     border-color: var(--jet);
+     background: hsla(0, 0%, 100%, 0.8);
+}
+
+html[data-theme="light"] .form-input::placeholder {
+     color: var(--light-gray-70);
+}
+
+html[data-theme="light"] .form-input:focus {
+     border-color: var(--orange-yellow-crayola);
+     background: hsl(0, 0%, 100%);
+}
+
+html[data-theme="light"] .form-btn {
+     color: var(--white-2);
+}
+
+html[data-theme="light"] .mapbox iframe {
+     filter: grayscale(0.2) brightness(0.95);
+}
+
+/* ── Article title underline ── */
+html[data-theme="light"] .article-title::after {
+     background: var(--text-gradient-yellow);
+}
+
+/* ── Section separator ── */
+html[data-theme="light"] .separator {
+     background: var(--jet);
+}
+
+/* ── icon-box ── */
+html[data-theme="light"] .icon-box {
+     background: hsla(210, 30%, 92%, 0.85);
+     color: var(--vegas-gold);
+}
+
+html[data-theme="light"] .icon-box::before {
+     background: hsl(0, 0%, 100%);
+}
+
+/* ── Content card ── */
+html[data-theme="light"] .content-card {
+     background: linear-gradient(145deg, hsla(0, 0%, 100%, 0.88), hsla(210, 30%, 98%, 0.75));
+}
+
+/* ── Modal ── */
+html[data-theme="light"] .companies-modal {
+     background: hsl(0, 0%, 100%);
+}
+
+html[data-theme="light"] .modal-close-btn {
+     background: hsla(210, 30%, 92%, 0.85);
+     color: var(--white-2);
+}
+
+html[data-theme="light"] .modal-content p {
+     color: var(--light-gray);
+}
+
+html[data-theme="light"] .modal-content time {
+     color: var(--light-gray-70);
+}
+
+/* ── Scrollbar light theme ── */
+html[data-theme="light"] body::-webkit-scrollbar-track {
+     background: hsl(206, 34%, 92%);
+     border-left: 1px solid hsl(206, 25%, 86%);
+}
+
+html[data-theme="light"] body::-webkit-scrollbar-thumb {
+     background: var(--orange-yellow-crayola);
+     border: 2px solid hsl(206, 34%, 92%);
+}
+
+/* ── Preloader light theme ── */
+html[data-theme="light"] .preloader {
+     background: hsl(210, 30%, 97%);
+}
+
+/* ── Back to top button ── */
+html[data-theme="light"] .back-to-top {
+     background: var(--onyx);
+     color: var(--white-2);
+     border-color: var(--jet);
+}
+
+/* ── Companies section ── */
+html[data-theme="light"] .companies-text {
+     color: var(--light-gray);
+}
+
+/* ── H2/H3/H4/H5 headings ── */
+html[data-theme="light"] .h2,
+html[data-theme="light"] .h3,
+html[data-theme="light"] .h4,
+html[data-theme="light"] .h5 {
+     color: var(--white-2);
+}
+
+/* ════════════════════════════════════════
+   ABOUT PAGE
+════════════════════════════════════════ */
+
+html[data-theme="light"] .about-intro {
+     background: linear-gradient(140deg, hsla(210, 35%, 96%, 0.92), hsla(205, 30%, 99%, 0.85));
+     border-color: var(--jet);
+     box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, 0.7);
+}
+
+html[data-theme="light"] .intro-content > p {
+     color: var(--light-gray);
+}
+
+html[data-theme="light"] .intro-content .intro-objective {
+     color: var(--light-gray-70);
+}
+
+html[data-theme="light"] .stat-item {
+     background: linear-gradient(145deg, hsla(0, 0%, 100%, 0.9), hsla(210, 30%, 97%, 0.8));
+     border-color: hsla(42, 96%, 62%, 0.22);
+}
+
+html[data-theme="light"] .stat-item::before {
+     background: linear-gradient(155deg, hsla(210, 30%, 98%, 0.5) 0%, hsla(210, 30%, 98%, 0.01) 70%),
+                 hsl(0, 0%, 100%);
+}
+
+html[data-theme="light"] .stat-label {
+     color: var(--light-gray-70);
+}
+
+html[data-theme="light"] .service-item::before {
+     background: linear-gradient(155deg, hsla(210, 30%, 98%, 0.5) 0%, hsla(210, 30%, 98%, 0.01) 70%),
+                 hsl(0, 0%, 100%);
+}
+
+html[data-theme="light"] .github-stat-card {
+     background: hsl(0, 0%, 100%);
+     border-color: var(--jet);
+}
+
+html[data-theme="light"] .github-card {
+     background: hsl(0, 0%, 100%);
+     border-color: var(--jet);
+}
+
+html[data-theme="light"] .github-card h4 a {
+     color: var(--white-2);
+}
+
+html[data-theme="light"] .github-card p {
+     color: var(--light-gray);
+}
+
+html[data-theme="light"] .github-meta span {
+     background: var(--onyx);
+     color: var(--light-gray-70);
+}
+
+html[data-theme="light"] .github-fallback {
+     color: var(--light-gray-70);
+}
+
+/* ════════════════════════════════════════
+   CONTACT PAGE
+════════════════════════════════════════ */
+
+html[data-theme="light"] .contact-hero-copy {
+     background: hsl(0, 0%, 100%);
+     border-color: var(--jet);
+}
+
+html[data-theme="light"] .contact-hero-copy p {
+     color: var(--light-gray);
+}
+
+html[data-theme="light"] .contact-hero-cards article {
+     background: hsl(0, 0%, 100%);
+     border-color: var(--jet);
+}
+
+html[data-theme="light"] .contact-hero-cards h4 {
+     color: var(--white-2);
+}
+
+html[data-theme="light"] .contact-hero-cards :is(a, p) {
+     color: var(--light-gray);
+}
+
+html[data-theme="light"] .contact-highlights li {
+     color: var(--light-gray);
+}
+
+html[data-theme="light"] .form-group label {
+     color: var(--light-gray-70);
+}
+
+html[data-theme="light"] .contact-form {
+     background: hsl(0, 0%, 100%);
+     border-color: var(--jet);
+}
+
+html[data-theme="light"] .form-input {
+     color: var(--white-2);
+     background: hsl(210, 30%, 98%);
+     border-color: var(--jet);
+}
+
+html[data-theme="light"] .form-input::placeholder {
+     color: var(--light-gray-70);
+}
+
+html[data-theme="light"] .form-input:focus {
+     background: hsl(0, 0%, 100%);
+     border-color: var(--orange-yellow-crayola);
+}
+
+html[data-theme="light"] .form-note {
+     color: var(--light-gray-70);
+}
+
+/* ════════════════════════════════════════
+   BLOG PAGE
+════════════════════════════════════════ */
+
+html[data-theme="light"] .blog-post-item > a {
+     background: linear-gradient(145deg, hsla(0, 0%, 100%, 0.88), hsla(210, 30%, 98%, 0.75));
+}
+
+html[data-theme="light"] .blog-post-item > a::before {
+     background: hsl(0, 0%, 100%);
+}
+
+html[data-theme="light"] .blog-item-title {
+     color: var(--white-2);
+}
+
+/* ════════════════════════════════════════
+   FOOTER
+════════════════════════════════════════ */
+
+html[data-theme="light"] .site-footer {
+     background: hsla(210, 30%, 95%, 0.9);
+     border-color: var(--jet);
+}
+
+html[data-theme="light"] .footer-brand h3 {
+     color: var(--white-2);
+}
+
+html[data-theme="light"] .footer-brand p,
+html[data-theme="light"] .footer-brand span {
+     color: var(--light-gray);
+}
+
+html[data-theme="light"] .footer-nav p {
+     color: var(--light-gray-70);
+}
+
+html[data-theme="light"] .footer-nav-links button {
+     color: var(--light-gray);
+}
+
+html[data-theme="light"] .footer-nav-links button:hover {
+     color: var(--orange-yellow-crayola);
+}
+
+html[data-theme="light"] .footer-connect p {
+     color: var(--light-gray-70);
+}
+
+html[data-theme="light"] .footer-mail {
+     color: var(--white-2);
+}
+
+html[data-theme="light"] .footer-availability {
+     color: var(--light-gray);
+}
+
+html[data-theme="light"] .footer-contact-btn {
+     border-color: var(--jet);
+     color: var(--white-2);
+}
+

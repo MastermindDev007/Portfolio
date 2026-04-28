@@ -606,12 +606,12 @@ main {
 
 .sidebar {
   margin-bottom: 15px;
-  max-height: 112px;
-  overflow: hidden;
+  min-height: auto;
+  height: auto;
   transition: var(--transition-2);
 }
 
-.sidebar.active { max-height: 405px; }
+.sidebar.active { max-height: none; }
 
 .sidebar-info {
   position: relative;
@@ -1737,11 +1737,12 @@ textarea.form-input::-webkit-resizer { display: none; }
    */
 
   .sidebar {
-    max-height: 180px;
+    min-height: auto;
+    height: auto;
     margin-bottom: 30px;
   }
 
-  .sidebar.active { max-height: 584px; }
+  .sidebar.active { max-height: none; }
 
   .sidebar-info { gap: 25px; }
 
@@ -2101,9 +2102,9 @@ textarea.form-input::-webkit-resizer { display: none; }
    */
 
   .navbar {
-    position: absolute;
+    position: sticky;
     bottom: auto;
-    top: 0;
+    top: 18px;
     left: auto;
     right: 0;
     width: max-content;
@@ -2214,7 +2215,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     margin-inline: auto;
     display: flex;
     justify-content: center;
-    align-items: stretch;
+    align-items: start;
     gap: 25px;
   }
 
@@ -2232,9 +2233,10 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .sidebar {
     position: sticky;
-    top: 60px;
-    max-height: max-content;
-    height: 100%;
+    top: 24px;
+    align-self: start;
+    min-height: auto;
+    height: auto;
     margin-bottom: 0;
     padding-top: 60px;
     z-index: 1;
